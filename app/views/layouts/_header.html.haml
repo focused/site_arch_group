@@ -1,0 +1,26 @@
+.inner
+  = link_to '', root_path, class: 'logo'
+  %nav
+    %ul#main_menu
+      %li= link_to 'контакты', '#' #web_path(:contacts)
+      %li= link_to 'клиенты', '#' #web_path(:clients)
+      %li.active
+        .wrap
+          = link_to 'pro бюро', '#' #web_path(:pro)
+          %ul
+            %li= link_to 'Новости', '#'
+            %li= link_to 'О компании', '#'
+            %li= link_to 'Публикации', '#'
+            %li= link_to 'Награды', '#'
+            %li= link_to 'Пресс-пакеты', '#'
+  %section#top_links
+    .social
+      = link_to '', '#', class: 'vkontakte'
+      = link_to '', '#', class: 'facebook'
+    = link_to 'eng', '#', class: 'locale'
+
+%ul#top_menu
+  %li= link_to 'архитектура', '#'
+  %li= link_to 'интерьеры', '#'
+  %li= link_to 'дизайн', '#'
+  %li= link_to 'градостроительство', '#'

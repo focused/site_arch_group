@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Journal Sans';
+  src: font-url('journalsansc.eot');
+  src: font-url('journalsansc.eot?#iefix') format('embedded-opentype'),
+       font-url('journalsansc.woff') format('woff'),
+       font-url('journalsansc.ttf') format('truetype'),
+       font-url('journalsansc.svg#journalsanscregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Journal Sans';
+  src: font-url('journalsansc-bold.eot');
+  src: font-url('journalsansc-bold.eot?#iefix') format('embedded-opentype'),
+       font-url('journalsansc-bold.woff') format('woff'),
+       font-url('journalsansc-bold.ttf') format('truetype'),
+       font-url('journalsansc-bold.svg#journalsanscbold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// @font-face {
+//   font-family: 'Journal Sans';
+//   src: font-url('journalsansc-italic.eot');
+//   src: font-url('journalsansc-italic.eot?#iefix') format('embedded-opentype'),
+//        font-url('journalsansc-italic.woff') format('woff'),
+//        font-url('journalsansc-italic.ttf') format('truetype'),
+//        font-url('journalsansc-italic.svg#journalsanscitalic') format('svg');
+//   font-weight: normal;
+//   font-style: italic;
+// }
