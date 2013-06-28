@@ -206,6 +206,9 @@ ul#projects_index {
         clear: left;
         p {
           margin-top: 5px;
+          span {
+            display: block;
+          }
           img {
             float: right;
             margin: 0 0 15px 15px;
