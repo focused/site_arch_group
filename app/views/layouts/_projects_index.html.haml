@@ -2,16 +2,20 @@
   %li
     .wrap
       - (1..35).each do
-        = link_to '', '#', class: %w(item_low item_high ready_low ready_high)[rand(4)]
+        = link_to '#', class: %w(item_low item_high ready_low ready_high)[rand(4)] do
+          = image_tag image_url('tmp/top_preview.png')
   %li
     .wrap
       - (1..30).each do
-        = link_to '', '#', class: %w(item_low item_high ready_low ready_high)[rand(4)]
+        = link_to '#', class: %w(item_low item_high ready_low ready_high)[rand(4)] do
+          = image_tag image_url('tmp/top_preview.png')
   %li
     .wrap
       - (1..25).each do
-        = link_to '', '#', class: %w(item_low item_high ready_low ready_high)[rand(4)]
+        = link_to '#', class: %w(item_low item_high ready_low ready_high)[rand(4)] do
+          = image_tag image_url('tmp/top_preview.png')
   %li
     .wrap
       - (1..20).each do
-        = link_to '', '#', class: %w(item_low item_high ready_low ready_high)[rand(4)]
+        = link_to '#', class: %w(item_low item_high ready_low ready_high)[rand(4)] do
+          = image_tag image_url('tmp/top_preview.png')

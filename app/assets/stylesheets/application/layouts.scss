@@ -141,6 +141,7 @@ ul#projects_index {
         background-position: center center;
         background-repeat: no-repeat;
         margin: 0 2px 0;
+        position: relative;
         &.item_low {
           background-image: image_url('projects_index_item_low.png')
         }
@@ -152,6 +153,14 @@ ul#projects_index {
         }
         &.ready_high {
           background-image: image_url('projects_index_ready_high.png')
+        }
+        img {
+          position: absolute;
+          bottom: 18px;
+          right: 18px;
+          z-index: 1001;
+          border: solid 2px #fff;
+          display: none;
         }
       }
     }
@@ -207,7 +216,7 @@ ul#projects_index {
         p {
           margin-top: 5px;
           span {
-            display: block;
+
           }
           img {
             float: right;

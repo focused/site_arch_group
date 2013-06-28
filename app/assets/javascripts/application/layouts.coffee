@@ -8,3 +8,11 @@ App.refine_home_bg = ->
 $ ->
   $(window).resize ->
     App.refine_home_bg()
+
+  $('ul#projects_index li .wrap').on('mouseover', 'a', ->
+    $(@).find('img').show()
+  )
+
+  $('ul#projects_index li .wrap').on('mouseout', 'a', ->
+    $(@).find('img').hide()
+  )
