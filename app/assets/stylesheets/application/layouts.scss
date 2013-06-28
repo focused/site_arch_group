@@ -160,9 +160,35 @@ ul#projects_index {
 
 #content {
   clear: both;
+  padding-right: 2.8%;
+  position: relative;
+  .present {
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    left: 2.8%;
+    h1 {
+      height: 23px;
+      margin: 0;
+      padding: 20px 0 0;
+      font-family: $title_font;
+      font-weight: normal;
+      font-size: 16.5px;
+    }
+    a {
+      display: block;
+      width: 132px;
+      height: 92px;
+      margin-bottom: 22px;
+      background: image_url('tmp/home_main_preview.png') no-repeat center center;
+      border: solid 2px #fff;
+    }
+  }
   .left_column {
     width: 70%;
     overflow: hidden;
+    float: left;
+    position: relative;
     img.bg {
       display: block;
       width: 100%;
@@ -171,12 +197,31 @@ ul#projects_index {
   .right_column {
     width: 30%;
     float: right;
+    font-size: 13px;
+    line-height: 15.5px;
+    ul {
+      list-style: none;
+      padding: 0 0 0 7%;
+      li {
+        clear: left;
+        p {
+          margin-top: 5px;
+          img {
+            float: right;
+            margin: 0 0 15px 15px;
+          }
+        }
+      }
+    }
   }
 }
 
 #footer {
+  clear: both;
   padding: 26px 2.8%;
   color: #777;
+  font-size: 13px;
+  line-height: 15.5px;
   .copy {
     float: left;
   }
