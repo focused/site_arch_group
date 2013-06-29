@@ -1,10 +1,10 @@
 window.App ||= {}
 
-App.refine_home_bg = ->
-  $el = $('#content .left_column img.bg')
-  w = $('#content .left_column').width()
-  $el.width(w)
-  $el.height(200)
+# App.refine_home_bg = ->
+#   $el = $('#content .left_column img.bg')
+#   w = $('#content .left_column').width()
+#   $el.width(w)
+#   $el.height(200)
 
 $ ->
   $(window).resize ->
