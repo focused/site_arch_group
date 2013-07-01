@@ -1,5 +1,13 @@
 @import '_base.scss';
 
+@mixin inner_content {
+  min-width: 995px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+$h_pad: 50 / 1024;
+
 html {
 
 }
@@ -20,7 +28,7 @@ header {
     color: #000;
   }
   .inner {
-    margin: 0 2.8%;
+    @include inner_content;
     position: relative;
   }
   a.logo {
@@ -33,6 +41,7 @@ header {
     background: image_url('logo.png') center center no-repeat;
   }
   nav {
+    margin: 0 $h_pad * 100%;
     text-transform: capitalize;
     height: 70px;
     position: relative;
@@ -85,7 +94,7 @@ header {
 section#top_links {
   position: absolute;
   top: 35px;
-  right: 0;
+  right: $h_pad * 100%;
   .social {
     margin: 0 26px;
     float: left;
@@ -105,78 +114,86 @@ section#top_links {
   }
 }
 
-ul#top_menu {
+#top_menu {
+  @include inner_content;
   height: 27px;
   background: #f6a41f;
-  font-family: $title_font;
-  font-size: 16.5px;
-  list-style: none;
-  padding: 0 2.8%;
-  margin: 0;
-  li {
-    width: 25%;
-    float: left;
-    padding: 7px 0 0;
-    a {
-      text-decoration: none;
-      color: #000;
+  ul {
+    padding: 0 $h_pad * 100%;
+    font-family: $title_font;
+    font-size: 16.5px;
+    list-style: none;
+    li {
+      width: 25%;
+      float: left;
+      padding: 7px 0 0;
+      a {
+        text-decoration: none;
+        color: #000;
+      }
     }
   }
 }
 
-ul#projects_index {
-  padding: 0;
-  list-style: none;
-  padding: 0 2.8%;
-  margin: 0;
-  li {
-    width: 25%;
-    float: left;
-    padding: 7px 0 27px;
-    .wrap {
-      width: 90%;
-      a {
-        float: left;
-        width: 13px;
-        height: 13px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        margin: 0 2px 0;
-        position: relative;
-        &.item_low {
-          background-image: image_url('projects_index_item_low.png')
+#projects_index {
+  @include inner_content;
+  ul {
+    padding: 0 $h_pad * 100%;
+    list-style: none;
+    li {
+      width: 25%;
+      float: left;
+      padding: 7px 0 27px;
+      .wrap {
+        width: 90%;
+        a {
+          float: left;
+          width: 13px;
+          height: 13px;
+          background-position: center center;
+          background-repeat: no-repeat;
+          margin: 0 2px 0;
+          position: relative;
+          left: -4px;
+          &.item_low {
+            background-image: image_url('projects_index_item_low.png')
+          }
+          &.item_high {
+            background-image: image_url('projects_index_item_high.png')
+          }
+          &.ready_low {
+            background-image: image_url('projects_index_ready_low.png')
+          }
+          &.ready_high {
+            background-image: image_url('projects_index_ready_high.png')
+          }
+          img {
+            position: absolute;
+            bottom: 15px;
+            right: 4px;
+            z-index: 1001;
+            border: solid 2px #fff;
+            display: none;
+          }
         }
-        &.item_high {
-          background-image: image_url('projects_index_item_high.png')
-        }
-        &.ready_low {
-          background-image: image_url('projects_index_ready_low.png')
-        }
-        &.ready_high {
-          background-image: image_url('projects_index_ready_high.png')
-        }
-        img {
-          position: absolute;
-          bottom: 18px;
-          right: 18px;
-          z-index: 1001;
-          border: solid 2px #fff;
-          display: none;
-        }
+      }
+      &:first-child img {
+        right: auto;
+        left: 4px;
       }
     }
   }
 }
 
 #content {
+  @include inner_content;
   clear: both;
-  padding-right: 2.8%;
   position: relative;
   .present {
     position: absolute;
     z-index: 500;
     top: 0;
-    left: 2.8%;
+    left: $h_pad * 100%;
     h1 {
       height: 23px;
       margin: 0;
@@ -196,11 +213,8 @@ ul#projects_index {
   }
   .left_column {
     width: 70%;
-    // overflow: hidden;
     float: left;
-    // position: relative;
     img.bg {
-      // position: relative;
       display: block;
       width: 100%;
       height: 100%;
@@ -209,13 +223,14 @@ ul#projects_index {
     }
   }
   .right_column {
-    width: 30%;
+    width: 30% - $h_pad * 100%;
+    padding: 0 $h_pad * 100% 0 0;
     float: right;
     font-size: 13px;
     line-height: 15.5px;
     ul {
       list-style: none;
-      padding: 0 0 0 7%;
+      padding: 0 0 0 10%;
       li {
         clear: left;
         p {
@@ -234,15 +249,19 @@ ul#projects_index {
 }
 
 #footer {
+  @include inner_content;
   clear: both;
-  padding: 26px 2.8%;
+  padding: 26px 0;
   color: #777;
   font-size: 13px;
   line-height: 15.5px;
-  .copy {
-    float: left;
-  }
-  .contacts {
-    float: right;
+  .inner {
+    padding: 0 100% * $h_pad;
+    .copy {
+      float: left;
+    }
+    .contacts {
+      float: right;
+    }
   }
 }

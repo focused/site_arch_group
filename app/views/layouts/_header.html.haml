@@ -1,6 +1,6 @@
 .inner
-  = link_to '', root_path, class: 'logo'
   %nav
+    = link_to '', root_path, class: 'logo'
     %ul#main_menu
       %li= link_to 'контакты', '#' #web_path(:contacts)
       %li= link_to 'клиенты', '#' #web_path(:clients)
@@ -19,8 +19,9 @@
       = link_to '', '#', class: 'facebook'
     = link_to 'eng', '#', class: 'locale'
 
-%ul#top_menu
-  %li= link_to 'архитектура', '#'
-  %li= link_to 'интерьеры', '#'
-  %li= link_to 'дизайн', '#'
-  %li= link_to 'градостроительство', '#'
+#top_menu
+  %ul
+    %li= link_to 'архитектура', '#'
+    %li= link_to 'интерьеры', '#'
+    %li= link_to 'дизайн', '#'
+    %li= link_to 'градостроительство', '#'

@@ -7,13 +7,19 @@ window.App ||= {}
 #   $el.height(200)
 
 $ ->
-  $(window).resize ->
+  # $(window).resize ->
     # App.refine_home_bg()
 
-  $('ul#projects_index li .wrap').on('mouseover', 'a', ->
-    $(@).find('img').show()
-  )
+  $('#projects_index ul li .wrap').on 'click', 'a', (e)->
+    $el = $(@).find('img')
+    visible = $el.is(":visible")
 
-  $('ul#projects_index li .wrap').on('mouseout', 'a', ->
-    $(@).find('img').hide()
-  )
+    $('#projects_index ul li .wrap a img').hide()
+    $el.show() unless visible
+
+    e.preventDefault()
+
+
+  # $('ul#projects_index li .wrap').on 'click', 'a', ->
+  #   $(@).find('img').hide()
+
