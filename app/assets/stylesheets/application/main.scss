@@ -1,0 +1,22 @@
+h1 {
+  font: bold 16.5px/16.5px "Journal Sans"
+}
+
+p {
+  font-size: 13px;
+  line-height: 15.5px;
+}
+
+ul.articles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    font-size: 14.5px;
+    margin: 0 0 20px;
+    p {
+      margin: 0 0 10px;
+      line-height: 16.5px;
+    }
+  }
+}

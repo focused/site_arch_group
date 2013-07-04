@@ -8,7 +8,6 @@ Rails.application.config.generators do |g|
   g.decorator_specs false # does it work?
 
   g.helper false
-  g.stylesheets false
-  g.javascripts false
+  g.assets false
   g.decorator false # does it work?
 end

@@ -2,4 +2,15 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-end
+
+  layout :resolve_layout
+
+  protected
+
+  def resolve_layout
+    if (controller_name == 'web_documents' && action_name == 'home')
+      return 'application'
+    end
+    'inner'
+  end
+ end

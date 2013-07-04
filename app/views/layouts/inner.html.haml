@@ -1,23 +1,12 @@
 !!!
 %html
-  %head
-    %meta{ charset: Rails.application.config.encoding }
-    %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=Edge,chrome=1' }
-    %meta{ name: 'viewport', content: 'width=device-width' }
-    %title SiteArchGroup
+  %head= render 'layouts/html_head'
 
-    = stylesheet_link_tag    "application", media: "all"#, "data-turbolinks-track" => true
-    /[if lt IE 8]
-      = stylesheet_link_tag 'ie'
-
-    = javascript_include_tag "application"#, "data-turbolinks-track" => true
-    /[if lt IE 9]
-      = javascript_include_tag 'ie'
-
-    = csrf_meta_tags
-
-  %body.inner
+  %body.inner{ id: "#{ controller_name }_controller" }
     %header= render 'layouts/header'
     = render 'layouts/projects_index'
 
-    = yield
+    #content
+      .inner= yield
+
+    #footer= render 'layouts/footer'

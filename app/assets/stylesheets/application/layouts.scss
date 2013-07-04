@@ -22,6 +22,7 @@ header {
   font-weight: normal;
   font-family: $title_font;
   font-size: 14.5px;
+  background: #fff;
   a {
     text-decoration: none;
     white-space: nowrap;
@@ -45,43 +46,43 @@ header {
     text-transform: capitalize;
     height: 70px;
     position: relative;
-    ul#main_menu {
-      position: absolute;
-      right: 155px;
-      top: 35px;
-      margin: 0;
-      list-style: none;
-      width: 35%;
-      & > li {
-        float: left;
-        width: 33%;
-        text-align: center;
-        &.active {
+  }
+  ul#main_menu {
+    position: absolute;
+    right: 155px;
+    top: 35px;
+    margin: 0;
+    list-style: none;
+    width: 35%;
+    & > li {
+      float: left;
+      width: 33%;
+      text-align: center;
+      &.active {
+        position: relative;
+        .wrap {
+          display: inline-block;
+          margin: 0 auto;
           position: relative;
-          .wrap {
-            display: inline-block;
-            margin: 0 auto;
-            position: relative;
-            & > a {
-              font-weight: bold;
-              padding: 0 14px;
-              background: image_url('menu_arrow.png') center right no-repeat;
-            }
-            ul {
-              position: absolute;
-              z-index: 1000;
-              list-style: none;
-              padding: 5px 12px;
-              margin: 0;
-              background: #fff;
-              border: solid 2px #f6a41f;
-              border-top: none;
-              li {
-                text-align: left;
-                a {
-                  font-size: 13px;
-                  line-height: 20px;
-                }
+          & > a {
+            font-weight: bold;
+            padding: 0 14px;
+            background: image_url('menu_arrow.png') center right no-repeat;
+          }
+          ul {
+            position: absolute;
+            z-index: 1000;
+            list-style: none;
+            padding: 5px 12px;
+            margin: 0;
+            background: #fff;
+            border: solid 2px #f6a41f;
+            border-top: none;
+            li {
+              text-align: left;
+              a {
+                font-size: 13px;
+                line-height: 20px;
               }
             }
           }
@@ -93,7 +94,7 @@ header {
 
 section#top_links {
   position: absolute;
-  top: 35px;
+  top: 34px;
   right: $h_pad * 100%;
   .social {
     margin: 0 26px;
@@ -123,6 +124,7 @@ section#top_links {
     font-family: $title_font;
     font-size: 16.5px;
     list-style: none;
+    margin: 0;
     li {
       width: 25%;
       float: left;
@@ -139,6 +141,7 @@ section#top_links {
   @include inner_content;
   ul {
     padding: 0 $h_pad * 100%;
+    margin: 0;
     list-style: none;
     li {
       width: 25%;
@@ -185,10 +188,36 @@ section#top_links {
   }
 }
 
+body.inner {
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    a.logo {
+      top: 0;
+    }
+    nav {
+      height: 53px;
+    }
+    ul#main_menu {
+      top: 23px;
+    }
+  }
+  section#top_links {
+    top: 22px;
+  }
+  #projects_index {
+    padding-top: 81px;
+  }
+}
+
 #content {
   @include inner_content;
   clear: both;
   position: relative;
+  .inner {
+    padding: 0 $h_pad * 100%;
+  }
   .present {
     position: absolute;
     z-index: 500;

@@ -44,6 +44,24 @@ group :development do
   gem 'thin'
 end
 
+group :test do
+  # gem 'factory_girl_rails'
+  # gem 'capybara'
+  # gem 'selenium-webdriver'
+  # gem 'database_cleaner'
+  # gem 'rb-fsevent'
+  gem 'zeus'
+  # gem 'timecop'
+  # gem 'rspec-apotomo'
+end
+group :test, :development do
+  gem 'rspec-rails'
+  # gem 'parallel_tests'
+  # gem 'zeus-parallel_tests'
+  # gem 'ffaker'
+end
+
+
 # Auth.
 gem 'devise'
 gem 'cancan'
