@@ -215,9 +215,6 @@ body.inner {
   @include inner_content;
   clear: both;
   position: relative;
-  .inner {
-    padding: 0 $h_pad * 100%;
-  }
   .present {
     position: absolute;
     z-index: 500;
@@ -253,13 +250,16 @@ body.inner {
   }
   .right_column {
     width: 30% - $h_pad * 100%;
-    padding: 0 $h_pad * 100% 0 0;
+    padding: 15px $h_pad * 100% 0 0;
     float: right;
     font-size: 13px;
     line-height: 15.5px;
-    ul {
+    & > * {
       list-style: none;
       padding: 0 0 0 10%;
+    }
+    ul {
+      margin: 0;
       li {
         clear: left;
         p {
@@ -273,6 +273,18 @@ body.inner {
           }
         }
       }
+    }
+  }
+  .inner {
+    .left_column {
+      width: 70% - $h_pad * 100%;
+      padding: 0 0 0 $h_pad * 100%;
+      img.bg {
+        max-width: 725px;
+      }
+    }
+    .right_column {
+      padding-top: 25px;
     }
   }
 }
