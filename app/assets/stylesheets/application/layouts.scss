@@ -286,6 +286,9 @@ body.inner {
     .right_column {
       padding-top: 25px;
     }
+    .full {
+      padding: 0 $h_pad * 100%;
+    }
   }
 }
 

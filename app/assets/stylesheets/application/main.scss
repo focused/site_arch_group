@@ -16,7 +16,58 @@ ul.articles {
     margin: 0 0 20px;
     p {
       margin: 0 0 10px;
+      font-size: 14.5px;
       line-height: 16.5px;
+    }
+  }
+}
+
+ul.entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    // font-size: 14.5px;
+    // line-height: 16.5px;
+    float: left;
+    text-align: center;
+    height: 90px;
+    padding: 10px 0 0;
+    margin-bottom: 40px;
+    .wrap {
+      height: 90px;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    p {
+      margin: 0;
+      padding: 0 20px;
+    }
+  }
+  &.x3 {
+    li {
+      width: 33%;
+      &.c {
+        width: 34%;
+      }
+    }
+  }
+  &.x4 {
+    li {
+      width: 25%;
+    }
+  }
+  &.x5 {
+    li {
+      width: 20%;
+    }
+  }
+  &.x6 {
+    li {
+      width: 16.7%;
+      &.s {
+        width: 16.6%;
+      }
     }
   }
 }

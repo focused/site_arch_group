@@ -1,5 +1,5 @@
 SiteArchGroup::Application.routes.draw do
-  resources :news, only: %i(index show)
+  resources :news, only: %i(index)
 
   get ':action' => 'web_documents', constraints: { action: /[a-z]+/ }, as: 'web'
 

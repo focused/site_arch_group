@@ -4,4 +4,7 @@ class WebDocumentsController < ApplicationController
 
   def contacts
   end
+
+  def clients
+  end
 end
