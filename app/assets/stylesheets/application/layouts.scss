@@ -281,7 +281,8 @@ section#top_links {
   .right_column {
     width: 30% - $h_pad * 100%;
     padding: 15px $h_pad * 100% 0 0;
-    float: right;
+    // float: right;
+    overflow: hidden;
     font-size: 13px;
     line-height: 15.5px;
     & > * {

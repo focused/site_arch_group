@@ -1,7 +1,7 @@
 #content #about_action {
   .left_column {
-    width: 540px;
-    position: absolute;
+    width: 535px;
+    // position: absolute;
     p.center {
       text-align: center;
       strong {
@@ -10,11 +10,13 @@
     }
   }
   .right_column {
-    padding: 0 0 0 560px;
+    float: none;
+    overflow: visible;
+    padding: 0 0 0 0px;
     ul {
       padding: 0;
       position: relative;
-      right: -10px;
+      right: -25px;
       li {
         float: left;
         position: relative;
@@ -29,7 +31,6 @@
           text-align: center;
           width: 170px;
           margin: 0 auto;
-          // display: none;
         }
         img {
           display: block;
