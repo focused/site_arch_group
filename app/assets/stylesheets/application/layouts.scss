@@ -8,14 +8,65 @@
 
 $h_pad: 50 / 1024;
 
-html {
-
+html, body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
   background: #fff;
   font: normal 13px/15.5px $normal_font;
   min-width: 995px;
+}
+
+body.inner {
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    a.logo {
+      top: 0;
+    }
+    nav {
+      height: 53px;
+    }
+    ul#main_menu {
+      top: 23px;
+    }
+  }
+  section#top_links {
+    top: 22px;
+  }
+  #projects_index {
+    padding-top: 81px;
+  }
+}
+
+.global_wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+
+#footer {
+  @include inner_content;
+  clear: both;
+  padding: 25px 0 0;
+  color: #777;
+  font-size: 13px;
+  line-height: 15.5px;
+  height: 30px;
+  margin-top: -70px;
+  .inner {
+    padding: 0 100% * $h_pad;
+    .copy {
+      float: left;
+    }
+    .contacts {
+      float: right;
+    }
+  }
 }
 
 header {
@@ -188,33 +239,12 @@ section#top_links {
   }
 }
 
-body.inner {
-  header {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    a.logo {
-      top: 0;
-    }
-    nav {
-      height: 53px;
-    }
-    ul#main_menu {
-      top: 23px;
-    }
-  }
-  section#top_links {
-    top: 22px;
-  }
-  #projects_index {
-    padding-top: 81px;
-  }
-}
-
 #content {
   @include inner_content;
   clear: both;
   position: relative;
+  min-height: 500px;
+  // padding-bottom: 150px;
   .present {
     position: absolute;
     z-index: 500;
@@ -261,7 +291,6 @@ body.inner {
     ul {
       margin: 0;
       li {
-        clear: left;
         p {
           margin-top: 5px;
           span {
@@ -279,33 +308,32 @@ body.inner {
     .left_column {
       width: 70% - $h_pad * 100%;
       padding: 0 0 0 $h_pad * 100%;
-      img.bg {
-        max-width: 725px;
-      }
     }
     .right_column {
       padding-top: 25px;
     }
+    section.picture {
+      position: relative;
+      padding: 0 0 0 750px;
+      width: auto;
+      img {
+        width: 725px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
     .full {
       padding: 0 $h_pad * 100%;
+      .left_column {
+        padding: 0;
+        float: left;
+      }
+      .right_column {
+        width: auto;
+      }
     }
   }
 }
 
-#footer {
-  @include inner_content;
-  clear: both;
-  padding: 26px 0;
-  color: #777;
-  font-size: 13px;
-  line-height: 15.5px;
-  .inner {
-    padding: 0 100% * $h_pad;
-    .copy {
-      float: left;
-    }
-    .contacts {
-      float: right;
-    }
-  }
-}
+

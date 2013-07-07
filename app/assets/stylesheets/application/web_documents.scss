@@ -1,0 +1,44 @@
+#content #about_action {
+  .left_column {
+    width: 540px;
+    position: absolute;
+    p.center {
+      text-align: center;
+      strong {
+        font-size: 11.5px !important;
+      }
+    }
+  }
+  .right_column {
+    padding: 0 0 0 560px;
+    ul {
+      padding: 0;
+      position: relative;
+      right: -10px;
+      li {
+        float: left;
+        position: relative;
+        width: 130px;
+        height: 205px;
+        padding: 0 0 0 40px;
+        overflow: visible;
+        text-align: center;
+        p {
+          position: absolute;
+          right: -20px;
+          text-align: center;
+          width: 170px;
+          margin: 0 auto;
+          // display: none;
+        }
+        img {
+          display: block;
+          margin: 0 auto 5px;
+        }
+        strong {
+          font-size: 11.5px !important;
+        }
+      }
+    }
+  }
+}

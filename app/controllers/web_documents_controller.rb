@@ -7,4 +7,7 @@ class WebDocumentsController < ApplicationController
 
   def clients
   end
+
+  def about
+  end
 end

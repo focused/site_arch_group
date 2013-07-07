@@ -3,10 +3,11 @@
   %head= render 'layouts/html_head'
 
   %body.inner{ id: "#{ controller_name }_controller" }
-    %header= render 'layouts/header'
-    = render 'layouts/projects_index'
+    .global_wrap
+      %header= render 'layouts/header'
+      = render 'layouts/projects_index'
 
-    #content
-      .inner= yield
+      #content
+        .inner{ id: "#{ action_name }_action" }= yield
 
     #footer= render 'layouts/footer'
