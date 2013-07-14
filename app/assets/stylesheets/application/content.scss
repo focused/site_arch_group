@@ -1,5 +1,8 @@
+@import '_base.scss';
+
 h1 {
-  font: bold 16.5px/16.5px "Journal Sans"
+  font: bold 16.5px/16.5px $title_font;
+  margin-top: 0;
 }
 
 p {
@@ -7,7 +10,7 @@ p {
   line-height: 15.5px;
 }
 
-ul.articles {
+ul.news {
   list-style: none;
   margin: 0;
   padding: 0;

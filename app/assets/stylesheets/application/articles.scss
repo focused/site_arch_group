@@ -1,0 +1,50 @@
+@import '_base.scss';
+
+#content .inner .full .left_column.articles {
+  padding: 30px 0 0 15% !important;
+  width: 55%;
+  position: relative;
+  h1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  h2 {
+    font: bold 13px/15px $title_font;
+    text-transform: uppercase;
+  }
+  p.upper {
+    text-transform: uppercase;
+  }
+}
+.right_column.articles {
+  overflow: visible;
+  padding-bottom: 60px !important;
+  ul {
+    // position: relative;
+    // right: -18px;
+    li {
+      width: 78px;
+      height: 118px;
+      float: left;
+      padding: 0 0 0 18px;
+      position: relative;
+      a, img {
+        display: block;
+      }
+      span.tooltip {
+        font-size: 11px;
+        position: absolute;
+        top: -15px;
+        left: -25px;
+        width: 200px;
+        display: none;
+      }
+      &.active {
+        img {
+          border: solid 2px #f6a41f;
+        }
+      }
+    }
+  }
+}

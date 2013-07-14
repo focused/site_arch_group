@@ -1,13 +1,18 @@
 $normal_font: Helvetica, sans-serif;
 $title_font: "Journal Sans", "Trebuchet MS";
+// $title_font: "Trebuchet MS", Helvetica, sans-serif;
 $h_pad: 50 / 1024;
 
 @mixin inner_content {
   min-width: 995px;
-  max-width: 1600px;
+  max-width: 1680px;
   margin: 0 auto;
 }
 
 .clear {
   clear: both;
+}
+
+.hidden {
+  display: none;
 }

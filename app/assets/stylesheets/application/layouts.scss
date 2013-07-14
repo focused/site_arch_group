@@ -150,10 +150,12 @@ body.inner {
       padding: 0 $h_pad * 100%;
       .left_column {
         padding: 0;
+        width: 70%;
         float: left;
       }
       .right_column {
         width: auto;
+        padding-right: 0;
       }
     }
   }
