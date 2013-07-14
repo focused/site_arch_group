@@ -1,4 +1,5 @@
 SiteArchGroup::Application.routes.draw do
+  resources :awards, only: %i(index)
   resources :articles, only: %i(index)
   resources :news, only: %i(index)
 
