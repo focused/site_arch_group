@@ -7,5 +7,5 @@ $ ->
   $('body').on 'mouseup tap mousemove', (e)->
     $container = $('.right_column.articles')
     $object = $container.find("span.tooltip:visible")
-    App.fadeOutOthers($container, $object, e)
+    Overlays.fadeOutOthers($container, $object, e)
 

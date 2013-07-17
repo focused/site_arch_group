@@ -40,7 +40,7 @@ header {
       float: left;
       width: 33%;
       text-align: center;
-      &.active {
+      &.submenu {
         position: relative;
         .wrap {
           display: inline-block;
@@ -64,6 +64,8 @@ header {
             li {
               text-align: left;
               a {
+                min-width: 80px;
+                display: inline-block;
                 font-size: 13px;
                 line-height: 20px;
               }

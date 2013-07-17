@@ -4,7 +4,7 @@
     %ul#main_menu
       %li= link_to 'контакты', web_path(:contacts)
       %li= link_to 'клиенты', web_path(:clients)
-      %li#main_menu_pro.active{ data: { overlay: 'container' } }
+      %li#main_menu_pro.submenu{ data: { overlay: 'container' } }
         .wrap
           = link_to 'pro бюро', '', data: { overlay: 'switcher' }
           %ul{ data: { overlay: 'object' } }

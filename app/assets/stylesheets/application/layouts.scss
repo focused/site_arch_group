@@ -9,7 +9,7 @@ html, body {
 body {
   background: #fff;
   font: normal 13px/15.5px $normal_font;
-  min-width: 995px;
+  // min-width: 995px;
 }
 
 body.inner {
@@ -102,7 +102,7 @@ body.inner {
   }
   .right_column {
     width: 30% - $h_pad * 100%;
-    padding: 15px $h_pad * 100% 0 0;
+    padding: 15px $h_pad * 100% 65px 0;
     // float: right;
     overflow: hidden;
     font-size: 13px;

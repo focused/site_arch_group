@@ -4,7 +4,7 @@ $title_font: "Journal Sans", "Trebuchet MS";
 $h_pad: 50 / 1024;
 
 @mixin inner_content {
-  min-width: 995px;
+  min-width: 980px;
   max-width: 1680px;
   margin: 0 auto;
 }
