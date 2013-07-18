@@ -1,10 +1,10 @@
 $ ->
-  $('.right_column.articles').on 'click tap mouseover', 'a', (e)->
+  $('.right_column.articles').on 'mouseover', 'a', (e)->
     $('.right_column.articles span.tooltip:visible').hide()
     $(@).closest('li').find('span.tooltip').show()
-    e.preventDefault()
+    # e.preventDefault()
 
-  $('body').on 'mouseup tap mousemove', (e)->
+  $('body').on 'click', (e)->
     $container = $('.right_column.articles')
     $object = $container.find("span.tooltip:visible")
     Overlays.fadeOutOthers($container, $object, e)

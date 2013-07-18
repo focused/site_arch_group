@@ -2,24 +2,29 @@ window.App ||= {}
 
 $ ->
   # Fades in project previews.
-  $('#projects_index ul li').on 'click tap mouseover', 'a', (e)->
+  $('#projects_index ul li').on 'click', 'span', (e)->
     return if $('#main_menu li .wrap [data-overlay=object]:visible').length > 0
     $('#projects_index ul li img:visible').hide()
-    $(@).find("img:hidden").show()
-    e.preventDefault()
+    $el = $(@).find("img:hidden")
+    $el.show()
+    setTimeout(->
+        hideProjectPreview($el)
+      , 1000)
 
   # Clears menu timeout when over menu and fades out others.
-  $('#main_menu li .wrap').on 'click tap mouseover', 'a, ul', (e)->
+  $('#main_menu li').on 'click', '.wrap', (e)->
     Overlays.wontHide($(@).closest('.submenu'))
     $('#projects_index ul li img:visible').hide()
+    # e.preventDefault()
 
   # Fades out all others.
-  $('body').on 'mouseup tap mouseover', (e)->
-    $container = $('#projects_index ul li .wrap')
-    $object = $container.find("img:visible")
-    Overlays.fadeOutOthers($container, $object, e)
+  # $('body').on 'touchstart mouseup', (e)->
+  #   $container = $('#projects_index ul li .wrap')
+  #   $object = $container.find("img:visible")
+  #   Overlays.fadeOutOthers($container, $object, e)
 
   # ----------------------------------------------------------------------------
 
-
+hideProjectPreview = ($el)->
+  $el.hide()
 

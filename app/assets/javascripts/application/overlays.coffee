@@ -2,21 +2,21 @@ window.Overlays ||= {}
 
 $ ->
   # Fades in overlays.
-  $("[data-overlay*='container']").on 'click tap mouseover', "[data-overlay*='switcher']", (e)->
+  $("[data-overlay*='container']").on 'click', "[data-overlay*='switcher']", (e)->
     $container = $(@).closest("[data-overlay*='container']")
     $container.find("[data-overlay=object]:hidden").fadeIn(100)
     Overlays.wontHide($container)
     e.preventDefault()
 
   # Fades out overlays.
-  $('body').on 'mouseup tap mouseover', (e)->
+  $('body').on 'click', (e)->
     $container = $("[data-overlay*='container']")
     $object = $container.find("[data-overlay=object]:visible")
     if !$container.is(e.target) && $container.has(e.target).size() == 0 && $object.length > 0
       $container.data('overlayWillHide', true).attr('data-overlay-will-hide', true)
       setTimeout(->
           Overlays.hide()
-        , 2000)
+        , 1000)
 
 
 Overlays.hide = ->
@@ -26,10 +26,11 @@ Overlays.hide = ->
 Overlays.wontHide = ($container)->
   $container.removeData('overlayWillHide').removeAttr('data-overlay-will-hide')
 
-Overlays.fadeOutOthers = ($container, $object, e)->
+Overlays.fadeOutOthers = ($container, $object, time, e)->
+  time ||= 2000
   if !$container.is(e.target) && $container.has(e.target).size() == 0 && $object
     setTimeout(->
       $object.fadeOut(100)
-    , 2000)
+    , time)
 
 

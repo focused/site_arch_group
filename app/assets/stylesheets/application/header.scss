@@ -29,46 +29,47 @@ header {
     height: 70px;
     position: relative;
   }
-  ul#main_menu {
-    position: absolute;
-    right: 155px;
-    top: 35px;
-    margin: 0;
-    list-style: none;
-    width: 35%;
-    & > li {
-      float: left;
-      width: 33%;
-      text-align: center;
-      &.submenu {
+}
+
+ul#main_menu {
+  position: absolute;
+  right: 155px;
+  top: 35px;
+  margin: 0;
+  list-style: none;
+  width: 35%;
+  & > li {
+    float: left;
+    width: 33%;
+    text-align: center;
+    &.submenu {
+      position: relative;
+      .wrap {
+        display: inline-block;
+        margin: 0 auto;
         position: relative;
-        .wrap {
-          display: inline-block;
-          margin: 0 auto;
-          position: relative;
-          & > a {
-            font-weight: bold;
-            padding: 0 14px;
-            background: image_url('menu_arrow.png') center right no-repeat;
-          }
-          ul {
-            display: none;
-            position: absolute;
-            z-index: 1000;
-            list-style: none;
-            padding: 5px 12px;
-            margin: 0;
-            background: #fff;
-            border: solid 1px #f6a41f;
-            border-top: none;
-            li {
-              text-align: left;
-              a {
-                min-width: 80px;
-                display: inline-block;
-                font-size: 13px;
-                line-height: 20px;
-              }
+        & > a {
+          font-weight: bold;
+          padding: 0 14px;
+          background: image_url('menu_arrow.png') center right no-repeat;
+        }
+        ul {
+          display: none;
+          position: absolute;
+          z-index: 1000;
+          list-style: none;
+          padding: 5px 12px;
+          margin: 0;
+          background: #fff;
+          border: solid 1px #f6a41f;
+          border-top: none;
+          li {
+            text-align: left;
+            a {
+              min-width: 80px;
+              display: inline-block;
+              font-size: 13px;
+              line-height: 20px;
             }
           }
         }
@@ -113,7 +114,13 @@ section#top_links {
     li {
       width: 25%;
       float: left;
-      padding: 7px 0 0;
+      .wrap {
+        height: 20px;
+        padding: 7px 10px 0;
+      }
+      &.active .wrap {
+        background: #fff;
+      }
       a {
         text-decoration: none;
         color: #000;
@@ -134,7 +141,7 @@ section#top_links {
       padding: 7px 0 27px;
       .wrap {
         width: 90%;
-        a {
+        span {
           float: left;
           width: 13px;
           height: 13px;
