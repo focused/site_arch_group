@@ -9,7 +9,7 @@ $ ->
     $el.show()
     setTimeout(->
         hideProjectPreview($el)
-      , 1000)
+      , 2000)
 
   # Clears menu timeout when over menu and fades out others.
   $('#main_menu li').on 'click', '.wrap', (e)->
@@ -18,7 +18,7 @@ $ ->
     # e.preventDefault()
 
   # Fades out all others.
-  # $('body').on 'touchstart mouseup', (e)->
+  # $('body').on 'click', (e)->
   #   $container = $('#projects_index ul li .wrap')
   #   $object = $container.find("img:visible")
   #   Overlays.fadeOutOthers($container, $object, e)

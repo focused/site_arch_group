@@ -16,7 +16,7 @@ $ ->
       $container.data('overlayWillHide', true).attr('data-overlay-will-hide', true)
       setTimeout(->
           Overlays.hide()
-        , 1000)
+        , 500)
 
 
 Overlays.hide = ->
@@ -26,11 +26,10 @@ Overlays.hide = ->
 Overlays.wontHide = ($container)->
   $container.removeData('overlayWillHide').removeAttr('data-overlay-will-hide')
 
-Overlays.fadeOutOthers = ($container, $object, time, e)->
-  time ||= 2000
+Overlays.fadeOutOthers = ($container, $object, e)->
   if !$container.is(e.target) && $container.has(e.target).size() == 0 && $object
     setTimeout(->
       $object.fadeOut(100)
-    , time)
+    , 2000)
 
 
