@@ -116,14 +116,19 @@ section#top_links {
       float: left;
       .wrap {
         height: 20px;
-        padding: 7px 10px 0;
+        padding: 0 23% 0 0;
       }
-      &.active .wrap {
-        background: #fff;
+      &.active {
+        a {
+          background: #fff;
+        }
       }
       a {
         text-decoration: none;
         color: #000;
+        display: block;
+        height: 20px;
+        padding: 7px 0 0 10px;
       }
     }
   }

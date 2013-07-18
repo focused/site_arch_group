@@ -21,6 +21,43 @@
       }
     }
   }
+  #content .inner .full {
+    .left_column {
+      padding: 0 3% 0 5%;
+      width: 60%;
+    }
+    .right_column {
+      overflow: visible;
+      padding-bottom: 60px !important;
+      float: right;
+      width: 32%;
+      ul {
+        position: relative;
+        // right: 40px;
+        left: 0%;
+        padding: 0;
+        li {
+          width: 76px;
+          height: 57px;
+          float: left;
+          padding: 0 0 16px 16px;
+          position: relative;
+          &.double {
+            width: 168px;
+          }
+          img {
+            display: block;
+            cursor: pointer;
+          }
+          &.active {
+            img {
+              border: solid 2px #f6a41f;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 #project_groups_menu, .projects_menu {
