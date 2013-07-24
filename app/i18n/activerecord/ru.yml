@@ -1,0 +1,31 @@
+activerecord:
+  attributes:
+    news:
+      content: текст
+      created_at: дата/время
+      picture: изображение
+      title: заголовок
+      updated_at: изменена
+
+    user:
+      confirmed: подтвержден
+      created_at: создан
+      current_password: текущий пароль
+      email: эл. адрес
+      name: имя (полное)
+      password: пароль
+      password_confirmation: повтор пароля
+      remember_me: запомнить меня
+      reset_password_token: ключ
+      roles: роли
+      roles_mask: маска ролей
+      sign_in_count: сеансов
+      updated_at: изменен
+
+
+  # models:
+  #   user: !!pl
+  #     1: пользователь
+  #     2: пользователя
+  #     n: пользователи
+

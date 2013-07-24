@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+class ProjectsController < SiteController
   def index
   end
 

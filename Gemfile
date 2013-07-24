@@ -41,7 +41,8 @@ gem 'unicorn'
 group :development do
   gem 'capistrano'
   gem 'capistrano-recipes', git: 'https://github.com/auxilium/capistrano-recipes.git'
-  gem 'thin'
+  gem 'puma'
+  gem 'rack-mini-profiler'
 end
 
 group :test do
@@ -50,7 +51,7 @@ group :test do
   # gem 'selenium-webdriver'
   # gem 'database_cleaner'
   # gem 'rb-fsevent'
-  gem 'zeus'
+  # gem 'zeus'
   # gem 'timecop'
   # gem 'rspec-apotomo'
 end
@@ -64,19 +65,26 @@ end
 
 # Auth.
 gem 'devise'
-gem 'cancan'
+# gem 'cancan'
 
 # I18n, L10n.
-# gem 'r18n-rails'
+gem 'r18n-rails'
 
 # Views.
 # gem 'simple_navigation' # cannot use while config paths are in 'lens_base'
 # gem 'draper'
 gem 'haml-rails'
 # gem 'kaminari'
-# gem 'kramdown'
-gem 'simple_form'
+gem 'kramdown'
+gem 'simple_form', '>= 3.0.0.rc'
 
 # Media.
 gem 'carrierwave'
 gem 'mini_magick'
+
+# Admin.
+gem 'rails_admin'
+# gem 'rails_admin-i18n'
+gem 'ckeditor'
+
+

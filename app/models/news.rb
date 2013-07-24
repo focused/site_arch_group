@@ -1,0 +1,16 @@
+class News < ActiveRecord::Base
+  mount_uploader :picture, NewsImageUploader
+
+  scope :recent, -> n { limit(n).order(:created_at) }
+
+  validate :title, length: { max: 255 }
+  validates_presence_of :title
+
+  validates_presence_of :created_at
+  # validate :created_at_is_valid_datetime
+
+  # def created_at_is_valid_datetime
+  #   return unless (DateTime.parse(created_at) rescue ArgumentError) == ArgumentError
+  #   errors.add(:created_at, 'must be a valid datetime')
+  # end
+end
