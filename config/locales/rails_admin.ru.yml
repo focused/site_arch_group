@@ -27,7 +27,7 @@ ru:
       log_out: "Выйти"
       ago: "назад"
     flash:
-      successful: "%{name} успешно %{action}"
+      successful: "Успешно %{action} (%{name})"
       error: "Не удалось %{action} %{name}"
       noaction: "Никаких изменений не выполнено"
       model_not_found: "Модель '%{model}' не найдена"
@@ -61,7 +61,7 @@ ru:
         menu: "Создание"
         breadcrumb: "Новый элемент"
         link: "Добавить экземпляр %{model_label}"
-        done: "создание"
+        done: "создано"
       edit:
         title: "Редактировение %{model_label} '%{object_label}'"
         menu: "Редактирование"
@@ -108,7 +108,7 @@ ru:
       all_of_the_following_related_items_will_be_deleted: "Следующие объекты будут удалены:"
       are_you_sure_you_want_to_delete_the_object: "Вы уверены что хотите удалить %{model_name}"
       confirmation: "Да, уверен"
-      bulk_delete: "Следующие объекты будут удалены, что может сломать связи с другими объектами:"
+      bulk_delete: "Следующие объекты будут удалены, что может также удалить связи с другими объектами:"
       new_model: "%{name} (новое)"
     export:
       confirmation: "Экспортировать в %{name}"

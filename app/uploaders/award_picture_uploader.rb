@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class NewsImageUploader < CarrierWave::Uploader::Base
+class AwardPictureUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -43,7 +43,11 @@ class NewsImageUploader < CarrierWave::Uploader::Base
   end
 
   version :main do
-    process resize_to_fit: [132, 100]
+    process resize_to_fit: [500, 550]
+  end
+
+  version :item do
+    process resize_and_pad: [78, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

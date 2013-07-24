@@ -1,10 +1,30 @@
 activerecord:
   attributes:
+    article:
+      content: текст
+      created_at: создана
+      picture: изображение
+      position: порядок
+      title: заголовок
+      updated_at: изменена
+
+    award:
+      created_at: создана
+      picture: изображение
+      position: порядок
+      updated_at: изменена
+
+    client:
+      created_at: создан
+      picture: изображение
+      position: порядок
+      title: заголовок
+      updated_at: изменен
+
     news:
       content: текст
       created_at: дата/время
       picture: изображение
-      title: заголовок
       updated_at: изменена
 
     user:

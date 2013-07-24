@@ -1,10 +1,9 @@
 class News < ActiveRecord::Base
-  mount_uploader :picture, NewsImageUploader
+  mount_uploader :picture, NewsPictureUploader
 
   scope :recent, -> n { limit(n).order(:created_at) }
 
-  validate :title, length: { max: 255 }
-  validates_presence_of :title
+  validates_presence_of :content
 
   validates_presence_of :created_at
   # validate :created_at_is_valid_datetime

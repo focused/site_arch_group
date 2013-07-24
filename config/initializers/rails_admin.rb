@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['News']
 
   # Include specific models (exclude the others):
-  config.included_models = %w(News User)
+  config.included_models = %w(News Article Award Client User)
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -55,22 +55,112 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.news_one')
     label_plural I18n.t('admin.menu.news')
     navigation_icon 'icon-time'
+    weight 1
     list do
-      field :title
-      field :created_at
+      field :picture do
+        column_width 120
+      end
+      field :content
+      field :created_at do
+        sort_reverse true
+      end
+      sort_by :created_at
       field :updated_at
     end
     edit do
       field :created_at
-      field :title
       field :content, :ck_editor
       field :picture
     end
     show do
       field :created_at
-      field :title
       field :content
       field :picture
+      field :updated_at
+    end
+  end
+
+
+
+  config.model 'Article' do
+    label I18n.t('admin.menu.article')
+    label_plural I18n.t('admin.menu.articles')
+    navigation_icon 'icon-font'
+    weight 3
+    list do
+      field :picture do
+        column_width 120
+      end
+      field :title
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :title
+      field :picture
+      field :position
+      field :content, :ck_editor
+    end
+    show do
+      field :title
+      field :picture
+      field :content
+      field :created_at
+      field :updated_at
+    end
+  end
+
+  config.model 'Award' do
+    label I18n.t('admin.menu.award')
+    label_plural I18n.t('admin.menu.awards')
+    navigation_icon 'icon-star'
+    weight 4
+    list do
+      field :picture do
+        column_width 120
+      end
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :picture
+      field :position
+    end
+    show do
+      field :picture
+      field :created_at
+      field :updated_at
+    end
+  end
+
+  config.model 'Client' do
+    label I18n.t('admin.menu.client')
+    label_plural I18n.t('admin.menu.clients')
+    navigation_icon 'icon-briefcase'
+    weight 5
+    list do
+      field :picture do
+        column_width 120
+      end
+      field :title
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :title
+      field :picture
+      field :position
+    end
+    show do
+      field :title
+      field :picture
+      field :created_at
       field :updated_at
     end
   end
@@ -84,6 +174,7 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.user')
     label_plural I18n.t('admin.menu.users')
     navigation_icon 'icon-user'
+    weight 100
     list do
       field :email
       field :sign_in_count

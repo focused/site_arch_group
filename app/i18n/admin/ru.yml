@@ -1,5 +1,11 @@
 admin:
   menu:
+    award: Награда
+    awards: Награды
+    article: Публикация
+    articles: Публикации
+    client: Клиент
+    clients: Клиенты
     news_one: Новость
     news: Новости
     user: Пользователь
