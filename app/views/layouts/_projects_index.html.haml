@@ -1,25 +1,14 @@
-- f_class = -> { %w(item_low item_high ready_low ready_high)[rand(4)] }
+-# f_class = -> { %w(item_low item_high ready_low ready_high)[rand(4)] }
 
 #projects_index
   %ul
-    %li
-      .wrap
-        - (1..35).each do
-          %span{ class: f_class.call }
-            = image_tag image_url('tmp/top_preview.png')
-    %li
-      .wrap
-        - (1..30).each do
-          %span{ class: f_class.call }
-            = image_tag image_url('tmp/top_preview.png')
-    %li
-      .wrap
-        - (1..25).each do
-          %span{ class: f_class.call }
-            = image_tag image_url('tmp/top_preview.png')
-    %li
-      .wrap
-        - (1..20).each do
-          %span{ class: f_class.call }
-            = image_tag image_url('tmp/top_preview.png')
+    - @project_categories.each do |pc|
+      %li
+        .wrap
+          - if pc.projects
+            - pc.projects.each do |pr|
+              %span{ class: 'item_low' }
+                - if pr.main_item
+                  = image_tag image_url(pr.picture.index_item.url)
+            =# link_to pc.title, projects_path(category: pc)
 

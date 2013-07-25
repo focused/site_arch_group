@@ -42,7 +42,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-recipes', git: 'https://github.com/auxilium/capistrano-recipes.git'
   gem 'puma'
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
 end
 
 group :test do

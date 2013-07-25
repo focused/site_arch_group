@@ -5,9 +5,18 @@ class ApplicationController < ActionController::Base
 
   prepend_before_filter :set_locale
 
+  layout :resolve_layout
+
   protected
 
   def set_locale
     params[:locale] ||= :ru
+  end
+
+  def resolve_layout
+    if (controller_name == 'web_documents' && action_name == 'home')
+      return 'application'
+    end
+    'inner'
   end
  end

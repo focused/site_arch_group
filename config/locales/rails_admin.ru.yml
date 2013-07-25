@@ -55,18 +55,19 @@ ru:
         menu: "Просмотр"
         breadcrumb: "%{object_label}"
       show_in_app:
+        title: "В приложении %{model_label} '%{object_label}'"
         menu: "Показать в приложении"
       new:
-        title: "Новый %{model_label}"
+        title: "Новый (%{model_label})"
         menu: "Создание"
         breadcrumb: "Новый элемент"
-        link: "Добавить экземпляр %{model_label}"
+        link: "Добавить элемент"
         done: "создано"
       edit:
-        title: "Редактировение %{model_label} '%{object_label}'"
+        title: "Редактирование %{model_label} '%{object_label}'"
         menu: "Редактирование"
         breadcrumb: "Редактирование"
-        link: "Редактировать %{model_label}"
+        link: "Редактировать"
         done: "сохранено"
       delete:
         title: "Удаление %{model_label} '%{object_label}'"

@@ -14,5 +14,11 @@ admin:
     project_groups: Разделы проектов
     project: Проект
     projects: Проекты
+    project_item: Превью проекта
+    project_items: Превью проекта
     user: Пользователь
     users: Пользователи
+    web_document: Документ
+    web_documents: Документы
+    web_section: Фрагмент
+    web_sections: Фрагменты

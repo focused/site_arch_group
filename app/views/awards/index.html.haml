@@ -1,44 +1,16 @@
 .full
-  .left_column.articles
+  .left_column.awards
     %h1 Награды
 
-    = image_tag 'tmp/award.png'
+    = image_tag @award.picture.main.url
 
   .right_column.articles
     %ul
-      %li.active
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview2.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview2.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview2.png'
-      %li
-        = link_to '' do
-          = image_tag 'tmp/award_preview2.png'
+      - @awards.each do |award|
+        %li{ class: award.id == @award.id ? 'active' : '' }
+          = link_to award do
+            = image_tag award.picture.item.url
+
 
 
 

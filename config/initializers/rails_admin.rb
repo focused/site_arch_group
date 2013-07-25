@@ -54,7 +54,7 @@ RailsAdmin.config do |config|
   config.model 'News' do
     label I18n.t('admin.menu.news_one')
     label_plural I18n.t('admin.menu.news')
-    navigation_icon 'icon-time'
+    navigation_icon 'icon-chevron-right'
     weight 101
     list do
       field :picture do
@@ -83,7 +83,7 @@ RailsAdmin.config do |config|
   config.model 'Article' do
     label I18n.t('admin.menu.article')
     label_plural I18n.t('admin.menu.articles')
-    navigation_icon 'icon-font'
+    navigation_icon 'icon-chevron-right'
     weight 102
     list do
       field :picture do
@@ -113,9 +113,10 @@ RailsAdmin.config do |config|
   config.model 'Project' do
     label I18n.t('admin.menu.project')
     label_plural I18n.t('admin.menu.projects')
-    navigation_icon 'icon-gift'
-    weight 202
+    navigation_icon 'icon-chevron-right'
+    weight 201
     list do
+      field :picture
       field :title
       field :project_group do
         sortable :position
@@ -128,23 +129,55 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :project_group
-      field :content
+      field :picture
+      field :vertical
+      field :content, :ck_editor
       field :position
+      field :project_items
     end
     show do
       field :title
       field :project_group
+      field :picture
+      field :vertical
       field :content
+      field :project_items
       field :created_at
       field :updated_at
+    end
+  end
+
+  config.model 'ProjectItem' do
+    label I18n.t('admin.menu.project_item')
+    label_plural I18n.t('admin.menu.project_items')
+    navigation_icon 'icon-chevron-right'
+    weight 202
+    list do
+      field :picture do
+        column_width 120
+      end
+      field :project do
+        sortable :position
+      end
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :picture
+      field :project
+      field :position
+    end
+    show do
+      field :picture
+      field :project
     end
   end
 
   config.model 'ProjectGroup' do
     label I18n.t('admin.menu.project_group')
     label_plural I18n.t('admin.menu.project_groups')
-    navigation_icon 'icon-folder-close'
-    weight 202
+    navigation_icon 'icon-chevron-right'
+    weight 203
     list do
       field :title
       field :project_category do
@@ -173,8 +206,8 @@ RailsAdmin.config do |config|
   config.model 'ProjectCategory' do
     label I18n.t('admin.menu.project_category')
     label_plural I18n.t('admin.menu.project_categories')
-    navigation_icon 'icon-book'
-    weight 203
+    navigation_icon 'icon-chevron-right'
+    weight 204
     list do
       field :title
       field :created_at
@@ -198,7 +231,7 @@ RailsAdmin.config do |config|
   config.model 'Award' do
     label I18n.t('admin.menu.award')
     label_plural I18n.t('admin.menu.awards')
-    navigation_icon 'icon-star'
+    navigation_icon 'icon-chevron-right'
     weight 301
     list do
       field :picture do
@@ -223,7 +256,7 @@ RailsAdmin.config do |config|
   config.model 'Client' do
     label I18n.t('admin.menu.client')
     label_plural I18n.t('admin.menu.clients')
-    navigation_icon 'icon-briefcase'
+    navigation_icon 'icon-chevron-right'
     weight 302
     list do
       field :picture do
@@ -248,15 +281,66 @@ RailsAdmin.config do |config|
     end
   end
 
-  # config.model 'System' do
-  #   navigation_label 'System'
-  # end
+  config.model 'WebDocument' do
+    label I18n.t('admin.menu.web_document')
+    label_plural I18n.t('admin.menu.web_documents')
+    navigation_icon 'icon-chevron-right'
+    weight 303
+    list do
+      field :title
+      field :alias_name
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :title
+      field :alias_name
+      field :position
+      field :web_sections
+    end
+    show do
+      field :title
+      field :alias_name
+      field :web_sections
+      field :created_at
+      field :updated_at
+    end
+  end
+
+  config.model 'WebSection' do
+    label I18n.t('admin.menu.web_section')
+    label_plural I18n.t('admin.menu.web_sections')
+    navigation_icon 'icon-chevron-right'
+    weight 304
+    list do
+      field :alias_name
+      field :web_document do
+        sortable :position
+      end
+      field :position
+      sort_by :web_document
+    end
+    edit do
+      field :alias_name
+      field :web_document do
+        sortable :position
+      end
+      field :content, :ck_editor
+      field :position
+    end
+    show do
+      field :alias_name
+      field :web_document
+      field :content
+    end
+  end
 
   config.model 'User' do
-    # parent 'System'
     label I18n.t('admin.menu.user')
     label_plural I18n.t('admin.menu.users')
-    navigation_icon 'icon-user'
+    navigation_icon 'icon-chevron-right'
     weight 1101
     list do
       field :email

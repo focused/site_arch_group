@@ -45,10 +45,18 @@ activerecord:
     project:
       content: текст
       created_at: дата/время
+      picture: изображение
       position: порядок
       project_group: раздел
+      project_items: превью
       title: заголовок
+      vertical: вертикальное изображение
       updated_at: изменен
+
+    project_item:
+      picture: изображение
+      position: порядок
+      project: проект
 
     user:
       confirmed: подтвержден
@@ -64,6 +72,22 @@ activerecord:
       roles_mask: маска ролей
       sign_in_count: сеансов
       updated_at: изменен
+
+    web_document:
+      alias_name: псевдоним (системный)
+      created_at: создан
+      position: порядок
+      title: заголовок
+      updated_at: изменен
+      web_sections: фрагменты
+
+    web_section:
+      alias_name: псевдоним (системный)
+      content: текст
+      created_at: создан
+      position: порядок
+      updated_at: изменен
+      web_document: документ
 
 
   # models:

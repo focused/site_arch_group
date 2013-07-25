@@ -1,56 +1,37 @@
 .full
-  #project_groups_menu{ data: { overlay: 'container' } }
-    = link_to 'pro бюро', '', data: { overlay: 'switcher' }
-    %ul{ data: { overlay: 'object' } }
-      %li= link_to 'все', projects_path
-      %li= link_to 'жилые', projects_path
-      %li= link_to 'офисные', projects_path
-      %li= link_to 'торговые', projects_path
+  - if @group
+    #project_groups_menu{ data: { overlay: 'container' } }
+      = link_to @group.title, projects_path(group: @group), data: { overlay: 'switcher' }
 
-  %ul.entries.x3
-    %li.s.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      Рабочий стол Экобаланс
-    %li.c.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      Рабочий стол Экобаланс Рабочий стол Экобаланс
-    %li.v
-      = link_to image_tag('tmp/projects_index_preview_v.png'), project_path(1)
-      Рабочий стол Экобаланс Рабочий стол Экобаланс Рабочий стол Экобаланс
-    %li.v
-      = link_to image_tag('tmp/projects_index_preview_v.png'), project_path(1)
-      Рабочий стол Экобаланс
-    %li.c.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      .projects_menu{ data: { overlay: 'container' } }
-        = link_to 'Рабочий стол Экобаланс', '', data: { overlay: 'switcher' }
-        %ul{ data: { overlay: 'object' } }
-          %li
-            %span Публикации
-          %li= link_to 'Эксперт', article_path(1)
-          %li= link_to 'Большой город', article_path(1)
-    %li.s.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      .projects_menu{ data: { overlay: 'container' } }
-        = link_to 'Рабочий стол Экобаланс Рабочий стол Экобаланс', '', data: { overlay: 'switcher' }
-        %ul{ data: { overlay: 'object' } }
-          %li
-            %span Публикации
-          %li= link_to 'Эксперт', article_path(1)
-          %li= link_to 'Большой город', article_path(1)
-    %li.s.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      Рабочий стол Экобаланс
-    %li.c.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      Рабочий стол Экобаланс Рабочий стол Экобаланс
-    %li.v
-      = link_to image_tag('tmp/projects_index_preview_v.png'), project_path(1)
-      Рабочий стол Экобаланс
-    %li.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
-      Рабочий стол Экобаланс
-    %li.c.h
-      = link_to image_tag('tmp/projects_index_preview_h.png'), project_path(1)
+      %ul{ data: { overlay: 'object' } }
+        - @category.project_groups.each do |g|
+          %li= link_to g.title, projects_path(group: g)
+
+  - if @projects
+    %ul.entries.x3
+      - @projects.each_with_index do |pr, i|
+        - cls = [(i % 6 == 0 || i + 1 % 6 == 0) && 's', (i + 2) % 3 == 0 && 'c', pr.vertical ? 'v' : 'h'].reject(&:blank?).join(' ')
+
+        %li{ class: cls }
+          = link_to image_tag(pr.picture.item.url), pr
+          = pr.title
+
 
   .clear
+
+
+
+-#
+  <li class="s h">
+  <a href="/projects/1"><img alt="Projects index preview h" src="/assets/tmp/projects_index_preview_h-c058c9b6dadd268b701a077bbb409b41.png"></a>
+  <div class="projects_menu" data-overlay="container">
+  <a data-overlay="switcher" href="">Рабочий стол Экобаланс Рабочий стол Экобаланс</a>
+  <ul data-overlay="object" style="width: 214px;">
+  <li>
+  <span>Публикации</span>
+  </li>
+  <li><a href="/articles/1">Эксперт</a></li>
+  <li><a href="/articles/1">Большой город</a></li>
+  </ul>
+  </div>
+  </li>

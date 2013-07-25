@@ -2,42 +2,9 @@
   %h1 Клиенты
 
   %ul.entries.x3
-    %li.s
-      .wrap{ style: "background-image: url('#{ image_url('tmp/rzhd.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li.c
-      .wrap{ style: "background-image: url('#{ image_url('tmp/lucoil.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li
-      .wrap{ style: "background-image: url('#{ image_url('tmp/aeroexpress.png') }');" }
-      %p
-        "РЖД" (Российские железные дороги)
-        ОАО "РЖД" (Российские железные дороги)
-    %li
-      .wrap{ style: "background-image: url('#{ image_url('tmp/mts.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li.c
-      .wrap{ style: "background-image: url('#{ image_url('tmp/mosenergo.png') }');" }
-      %p
-        ОАО "РЖД" (Российские железные дороги)
-        ОАО "РЖД" (Российские железные дороги)
-    %li.s
-      .wrap{ style: "background-image: url('#{ image_url('tmp/vtb.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li.s
-      .wrap{ style: "background-image: url('#{ image_url('tmp/locomotiv.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li.c
-      .wrap{ style: "background-image: url('#{ image_url('tmp/caravan.png') }');" }
-      %p
-        ОАО "РЖД" (Российские железные дороги)
-        ОАО "РЖД" (Российские железные дороги)
-        ОАО "РЖД" (Российские железные дороги)
-    %li
-      .wrap{ style: "background-image: url('#{ image_url('tmp/ees.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li
-      .wrap{ style: "background-image: url('#{ image_url('tmp/pilgrim.png') }');" }
-      %p ОАО "РЖД" (Российские железные дороги)
-    %li.c
-      .wrap{ style: "background-image: url('#{ image_url('tmp/moesk.png') }');" }
+    - @clients.each_with_index do |client, i|
+      - cls = [(i % 6 == 0 || i + 1 % 6 == 0) && 's', (i + 2) % 3 == 0 && 'c'].reject(&:blank?).join(' ')
+      %li{ class: cls }
+        .wrap{ style: "background-image: url('#{ client.picture.item.url }');" }
+        %p= client.title
+

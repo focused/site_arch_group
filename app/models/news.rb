@@ -12,4 +12,12 @@ class News < ActiveRecord::Base
   #   return unless (DateTime.parse(created_at) rescue ArgumentError) == ArgumentError
   #   errors.add(:created_at, 'must be a valid datetime')
   # end
+
+  def intro
+    s = if (par1 = content[/<p>(.+?)<\/p>/m, 1])
+      par1.strip
+    else
+      content
+    end
+  end
 end

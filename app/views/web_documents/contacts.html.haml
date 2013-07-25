@@ -1,18 +1,2 @@
 .full
-  %h1 Контакты
-
-  %section.picture
-    = image_tag 'contacts_map.png'
-
-    %p
-      119002, Москва, Большой Власьевский переулок д. 14 стр 2
-    %p
-      тел. +7 (495) 988-25-54
-      %br
-      тел./факс +7 (495) 241-29-67
-    %p
-      info@arch-group.ru
-
-
-
-
+  = raw @doc.section(:full).content

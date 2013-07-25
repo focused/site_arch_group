@@ -67,6 +67,9 @@ body.inner {
   position: relative;
   min-height: 500px;
   // padding-bottom: 150px;
+  a {
+    color: #d67400;
+  }
   .present {
     position: absolute;
     z-index: 500;
@@ -85,8 +88,8 @@ body.inner {
       width: 132px;
       height: 92px;
       margin-bottom: 22px;
-      background: image_url('tmp/home_main_preview.png') no-repeat center center;
-      border: solid 2px #fff;
+      // background: image_url('tmp/home_main_preview.png') no-repeat center center;
+      border: solid 1px #fff;
     }
   }
   .left_column {
@@ -135,7 +138,7 @@ body.inner {
     .right_column {
       padding-top: 25px;
     }
-    section.picture {
+    .picture {
       position: relative;
       padding: 0 0 0 750px;
       width: auto;

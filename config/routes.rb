@@ -1,6 +1,7 @@
 SiteArchGroup::Application.routes.draw do
 
-  resources :projects, only: %i(index show)
+  get 'projects(/category/:category)(/group/:group)' => 'projects#index', as: 'projects'
+  resources :projects, only: %i(show)
   resources :awards, only: %i(index show)
   resources :articles, only: %i(index show)
   resources :news, only: %i(index)

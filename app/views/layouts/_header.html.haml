@@ -22,11 +22,7 @@
 
 #top_menu
   %ul
-    %li
-      .wrap= link_to 'архитектура', projects_path
-    %li
-      .wrap= link_to 'интерьеры', projects_path
-    %li{ class: (request.path =~ /projects/) ? 'active' : '' }
-      .wrap= link_to 'дизайн', projects_path
-    %li
-      .wrap= link_to 'градостроительство', projects_path
+    - @project_categories.each do |pc|
+      %li{ class: (params[:category].to_i == pc.id) ? 'active' : '' }
+        .wrap= link_to pc.title, projects_path(category: pc)
+
