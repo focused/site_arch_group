@@ -62,7 +62,7 @@ SiteArchGroup::Application.configure do
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w(ie.js ie.css)
   config.assets.precompile += %w(rails_admin/rails_admin.css rails_admin/rails_admin.js)
-  config.assets.precompile += %w(ckeditor/ckeditor.js)
+  config.assets.precompile += %w(ckeditor/*)
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
