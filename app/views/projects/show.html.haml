@@ -10,7 +10,7 @@
 
   .right_column
     %ul
-      - @project.project_items.each_with_index do |item, i|
+      - @project.items.each_with_index do |item, i|
         - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
         %li{ class: cls }
           = image_tag item.picture.preview

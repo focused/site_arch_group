@@ -13,6 +13,10 @@ class Project < ActiveRecord::Base
     project_items.order(:position).first
   end
 
+  def items
+    project_items.order(:position).all
+  end
+
   def get_size
     vertical ? [135, 180] : [236, 120]
   end
