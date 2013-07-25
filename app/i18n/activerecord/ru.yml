@@ -56,6 +56,7 @@ activerecord:
       updated_at: изменен
 
     project_item:
+      double: двойное
       picture: изображение
       position: порядок
       project: проект

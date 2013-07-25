@@ -1,74 +1,17 @@
 .full
   .left_column
-    %h1 Проект №777
+    %h1= @project.title
 
-    = image_tag 'tmp/project.png', class: 'bg'
+    - s = @project.main_item ? @project.main_item.picture.url : @project.picture.url
+    = image_tag s, class: 'bg'
 
-    %p &nbsp;
-
-    %p
-      Архитектор Горяйнов Алексей
-      %br
-      2012 год.
-
-    %p
-      %strong Полученные награды
-      %br
-      "Золотое сечение" 2013
-      %br
-      1 место в номинации "Общественный интерьер"
-
-    %p
-      %strong Главная идея
-      %br
-      Создать забавный, дружелюбный объект, который видно издалека.
-      %br
-      Сделать так, чтобы урны больше не вызывали негативных эмоций из-за разбросанных вокруг бутылок и прочего мусора, чтобы на скамье хотелось посидеть.
-      %br
-      И чтобы на скамье можно было сидеть даже после дождя, снегопада или если она испачкается.
-
-    %p
-      %strong Устройство скамьи
-      %br
-      Скамья имеет четыре спинки-сиденья, соединенные крестообразно на вращающемся валу, которые можно менять просто прокрутив их наверх.
-      %br
-      При подъеме сидения фиксатор разблокируется и скамья вращается.
-      %br
-      В то время как одно сиденье оказывается мокрым от дождя или покрыто снегом, ругие три сиденья всегда защищены цилиндрическим корпусом.
-
-    %p
-      %strong Мусороулавливатели.
-      %ul
-        %li Предназначены для раздельного сбора двух разных типов мусора.
-        %li предотвращают непопадание мусора в урну.
-        %li предотвращают растаскивание мусора птицами и животными.
-        %li защищают урну от осадков, не создавая неудобств при бросании мусора.
-        %li видны издалека, показывая посетителям место для отдыха и расположение урн.
-        %li имеют большу поверхность для нанесения поясняющих пиктограмм и текста.
-        %li предотвращают вываливание избыточного или крупного мусора.
+    = raw @project.content
 
 
   .right_column
     %ul
-      %li.active
-        = image_tag 'tmp/projects_show_preview.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
-      %li.double
-        = image_tag 'tmp/projects_show_preview_2.png'
-      %li.double
-        = image_tag 'tmp/projects_show_preview_2.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
-      %li.double
-        = image_tag 'tmp/projects_show_preview_2.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
-      %li
-        = image_tag 'tmp/projects_show_preview.png'
+      - @project.project_items.each_with_index do |item, i|
+        - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
+        %li{ class: cls }
+          = image_tag item.picture.preview
+

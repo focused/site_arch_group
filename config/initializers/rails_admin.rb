@@ -170,11 +170,13 @@ RailsAdmin.config do |config|
     end
     edit do
       field :picture
+      field :double
       field :project
       field :position
     end
     show do
       field :picture
+      field :double
       field :project
     end
   end

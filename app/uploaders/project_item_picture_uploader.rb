@@ -43,7 +43,11 @@ class ProjectItemPictureUploader < CarrierWave::Uploader::Base
   end
 
   version :preview do
-    process resize_to_fit: [168, 57]
+    process dynamic_process: true
+  end
+
+  def dynamic_process(*args)
+    resize_to_fill *(model.get_size)
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

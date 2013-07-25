@@ -1,6 +1,6 @@
 $ ->
   # Clears menu timeout when over menu and fades out others.
-  $('#project_groups_menu, .projects_menu').on 'click', 'ul', (e)->
+  $('#project_groups_menu, .projects_menu').on 'mousemove', 'ul', (e)->
     Overlays.wontHide($(@).parents('div'))
     # e.preventDefault()
 
