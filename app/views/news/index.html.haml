@@ -7,5 +7,5 @@
         = link_to nil, '', name: "id#{ news.id }"
         .event_date= l news.created_at.to_date
         = raw news.content
-        = image_tag image_url(news.picture.item.url)
+        = image_tag image_url(news.picture.item.url) if news.picture.item.present?
 
