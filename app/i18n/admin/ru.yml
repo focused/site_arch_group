@@ -8,5 +8,11 @@ admin:
     clients: Клиенты
     news_one: Новость
     news: Новости
+    project_category: Рубрика проектов
+    project_categories: Рубрики проектов
+    project_group: Раздел проектов
+    project_groups: Разделы проектов
+    project: Проект
+    projects: Проекты
     user: Пользователь
     users: Пользователи

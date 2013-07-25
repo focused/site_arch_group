@@ -27,6 +27,29 @@ activerecord:
       picture: изображение
       updated_at: изменена
 
+    project_category:
+      position: порядок
+      project_groups: разделы
+      title: заголовок
+      created_at: дата/время
+      updated_at: изменена
+
+    project_group:
+      position: порядок
+      projects: проекты
+      project_category: рубрика
+      title: заголовок
+      created_at: дата/время
+      updated_at: изменена
+
+    project:
+      content: текст
+      created_at: дата/время
+      position: порядок
+      project_group: раздел
+      title: заголовок
+      updated_at: изменен
+
     user:
       confirmed: подтвержден
       created_at: создан

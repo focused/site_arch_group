@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
   # config.excluded_models = ['News']
 
   # Include specific models (exclude the others):
-  config.included_models = %w(News Article Award Client User)
+  # config.included_models = %w(News Article Award Client User)
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -55,7 +55,7 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.news_one')
     label_plural I18n.t('admin.menu.news')
     navigation_icon 'icon-time'
-    weight 1
+    weight 101
     list do
       field :picture do
         column_width 120
@@ -80,13 +80,11 @@ RailsAdmin.config do |config|
     end
   end
 
-
-
   config.model 'Article' do
     label I18n.t('admin.menu.article')
     label_plural I18n.t('admin.menu.articles')
     navigation_icon 'icon-font'
-    weight 3
+    weight 102
     list do
       field :picture do
         column_width 120
@@ -112,11 +110,96 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Project' do
+    label I18n.t('admin.menu.project')
+    label_plural I18n.t('admin.menu.projects')
+    navigation_icon 'icon-gift'
+    weight 202
+    list do
+      field :title
+      field :project_group do
+        sortable :position
+      end
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :project_group
+    end
+    edit do
+      field :title
+      field :project_group
+      field :content
+      field :position
+    end
+    show do
+      field :title
+      field :project_group
+      field :content
+      field :created_at
+      field :updated_at
+    end
+  end
+
+  config.model 'ProjectGroup' do
+    label I18n.t('admin.menu.project_group')
+    label_plural I18n.t('admin.menu.project_groups')
+    navigation_icon 'icon-folder-close'
+    weight 202
+    list do
+      field :title
+      field :project_category do
+        sortable :position
+      end
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :project_category
+    end
+    edit do
+      field :title
+      field :project_category
+      field :position
+      field :projects
+    end
+    show do
+      field :title
+      field :project_category
+      field :projects
+      field :created_at
+      field :updated_at
+    end
+  end
+
+  config.model 'ProjectCategory' do
+    label I18n.t('admin.menu.project_category')
+    label_plural I18n.t('admin.menu.project_categories')
+    navigation_icon 'icon-book'
+    weight 203
+    list do
+      field :title
+      field :created_at
+      field :updated_at
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :title
+      field :position
+      field :project_groups
+    end
+    show do
+      field :title
+      field :project_groups
+      field :created_at
+      field :updated_at
+    end
+  end
+
   config.model 'Award' do
     label I18n.t('admin.menu.award')
     label_plural I18n.t('admin.menu.awards')
     navigation_icon 'icon-star'
-    weight 4
+    weight 301
     list do
       field :picture do
         column_width 120
@@ -141,7 +224,7 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.client')
     label_plural I18n.t('admin.menu.clients')
     navigation_icon 'icon-briefcase'
-    weight 5
+    weight 302
     list do
       field :picture do
         column_width 120
@@ -174,7 +257,7 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.user')
     label_plural I18n.t('admin.menu.users')
     navigation_icon 'icon-user'
-    weight 100
+    weight 1101
     list do
       field :email
       field :sign_in_count

@@ -1,17 +1,35 @@
 module Eon::Functional
+  module Let
+    def function(y = nil)
+      y || raise('You must specify a Proc or &block.')
+      y.arity < 2 && raise('You must define 2 arguments: function name and parameter.')
+
+      [
+        y.parameters[0][1],
+        -> g = nil { -> x { g ? g.(y.(nil, x)) : y.(nil, x) } }
+      ]
+    end
+  end
+
+  include Let
+
   def self.included(base)
     base.extend(ClassMethods)
   end
 
-  module ClassMethods
-    def let(proc = nil, &block)
-      y = (proc || block)
-      y || raise('You must specify a Proc or &block.')
-      y.arity < 2 && raise('You must define 2 arguments: function name and parameter.')
+  def let(proc = nil, &block)
+    self.class.send :define_method, *function(proc || block)
+  end
 
-      define_method y.parameters[0][1] do |g = nil|
-        -> x { g ? g.(y.(nil, x)) : y.(nil, x) }
-      end
+  module ClassMethods
+    include Let
+
+    def let(proc = nil, &block)
+      define_method *function(proc || block)
+    end
+
+    def let_self(proc = nil, &block)
+      define_singleton_method *function(proc || block)
     end
   end
 end
