@@ -12,6 +12,7 @@
         %p
           = image_tag image_url(news.picture.item.url)
           %span.event_date= link_to l(news.created_at.to_date), "#{ news_index_path }#id#{ news.id }"
+          %br
           = raw news.intro
         .clear
 
