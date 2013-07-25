@@ -28,23 +28,25 @@ activerecord:
       updated_at: изменена
 
     project_category:
+      created_at: создана
       position: порядок
       project_groups: разделы
       title: заголовок
-      created_at: дата/время
       updated_at: изменена
 
     project_group:
+      created_at: создана
       position: порядок
       projects: проекты
       project_category: рубрика
       title: заголовок
-      created_at: дата/время
       updated_at: изменена
 
     project:
       content: текст
-      created_at: дата/время
+      created_at: создан
+      finished: завершен
+      important: важный
       picture: изображение
       position: порядок
       project_group: раздел

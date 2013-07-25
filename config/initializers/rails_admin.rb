@@ -90,10 +90,10 @@ RailsAdmin.config do |config|
         column_width 120
       end
       field :title
-      field :created_at
-      field :updated_at
       field :position
       sort_by :position
+      field :created_at
+      field :updated_at
     end
     edit do
       field :title
@@ -121,15 +121,19 @@ RailsAdmin.config do |config|
       field :project_group do
         sortable :position
       end
-      field :created_at
-      field :updated_at
+      field :finished
+      field :important
       field :position
       sort_by :project_group
+      field :created_at
+      field :updated_at
     end
     edit do
       field :title
       field :project_group
       field :picture
+      field :finished
+      field :important
       field :vertical
       field :content, :ck_editor
       field :position
@@ -139,6 +143,8 @@ RailsAdmin.config do |config|
       field :title
       field :project_group
       field :picture
+      field :finished
+      field :important
       field :vertical
       field :content
       field :project_items
@@ -183,10 +189,10 @@ RailsAdmin.config do |config|
       field :project_category do
         sortable :position
       end
-      field :created_at
-      field :updated_at
       field :position
       sort_by :project_category
+      field :created_at
+      field :updated_at
     end
     edit do
       field :title
@@ -210,10 +216,10 @@ RailsAdmin.config do |config|
     weight 204
     list do
       field :title
-      field :created_at
-      field :updated_at
       field :position
       sort_by :position
+      field :created_at
+      field :updated_at
     end
     edit do
       field :title
@@ -237,10 +243,10 @@ RailsAdmin.config do |config|
       field :picture do
         column_width 120
       end
-      field :created_at
-      field :updated_at
       field :position
       sort_by :position
+      field :created_at
+      field :updated_at
     end
     edit do
       field :picture
@@ -263,10 +269,10 @@ RailsAdmin.config do |config|
         column_width 120
       end
       field :title
-      field :created_at
-      field :updated_at
       field :position
       sort_by :position
+      field :created_at
+      field :updated_at
     end
     edit do
       field :title
@@ -289,10 +295,10 @@ RailsAdmin.config do |config|
     list do
       field :title
       field :alias_name
-      field :created_at
-      field :updated_at
       field :position
       sort_by :position
+      field :created_at
+      field :updated_at
     end
     edit do
       field :title

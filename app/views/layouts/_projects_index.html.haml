@@ -1,14 +1,15 @@
--# f_class = -> { %w(item_low item_high ready_low ready_high)[rand(4)] }
+- f_class = -> x { [x.finished ? 'ready' : 'item', x.important ? 'high' : 'low'].join('_') }
 
 #projects_index
-  %ul
-    - @project_categories.each do |pc|
-      %li
-        .wrap
-          - if pc.projects
-            - pc.projects.each do |pr|
-              %span{ class: 'item_low' }
-                - if pr.picture
-                  = image_tag image_url(pr.picture.index_item.url)
-            =# link_to pc.title, projects_path(category: pc)
+  - if @project_categories
+    %ul
+      - @project_categories.each do |pc|
+        %li
+          .wrap
+            - if pc.projects
+              - pc.projects.each do |pr|
+                %span{ class: f_class[pr] }
+                  - if pr.picture
+                    = image_tag image_url(pr.picture.index_item.url)
+              =# link_to pc.title, projects_path(category: pc)
 

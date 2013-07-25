@@ -21,8 +21,9 @@
     = link_to 'eng', '#', class: 'locale'
 
 #top_menu
-  %ul
-    - @project_categories.each do |pc|
-      %li{ class: (params[:category].to_i == pc.id) ? 'active' : '' }
-        .wrap= link_to pc.title, projects_path(category: pc)
+  - if @project_categories
+    %ul
+      - @project_categories.each do |pc|
+        %li{ class: (params[:category].to_i == pc.id) ? 'active' : '' }
+          .wrap= link_to pc.title, projects_path(category: pc)
 
