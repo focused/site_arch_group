@@ -7,4 +7,9 @@ class ProjectItem < ActiveRecord::Base
   def get_size
     double ? [168, 57] : [76, 57]
   end
+
+  after_save :recreate_delayed_versions!
+  def recreate_delayed_versions!
+    picture.recreate_versions!
+  end
 end

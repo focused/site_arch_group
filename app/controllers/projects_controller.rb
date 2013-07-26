@@ -9,10 +9,14 @@ class ProjectsController < SiteController
     @group = if params[:group]
       ProjectGroup.find(params[:group])
     else
-      @category.project_groups.order(:position).first
+      @category.groups.first
     end
 
-    @projects = @group.projects.order(:position).all if @group
+    @projects = if @group && @group.persisted?
+      @group.projects.order(:position).all
+    else
+      @category.projects
+    end
   end
 
   def show

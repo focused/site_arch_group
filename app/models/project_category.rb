@@ -11,4 +11,9 @@ class ProjectCategory < ActiveRecord::Base
     Project.where("project_group_id IN (#{ group_ids.join(',') })")
       .order(:position).all
   end
+
+  def groups
+    all_group = ProjectGroup.new(title: I18n.t('helpers.labels.all'))
+    [all_group] + project_groups.all
+  end
 end

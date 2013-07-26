@@ -5,7 +5,11 @@
 
       %ul{ data: { overlay: 'object' } }
         - @category.project_groups.each do |g|
-          %li= link_to g.title, projects_path(group: g)
+          %li
+            - if g.persisted?
+              = link_to g.title, projects_path(group: g)
+            - else
+              = link_to g.title, projects_path(category: @category)
 
   - if @projects
     %ul.entries.x3

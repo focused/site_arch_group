@@ -7,10 +7,10 @@ $ ->
   $('#projects_controller #content .right_column ul').on 'click', 'li img', (e)->
     $main = $('.left_column img.bg')
 
-    $main.fadeOut("fast", =>
+    $main.fadeTo("fast", 0.01, =>
       $main.attr('src', $(@).data('src')) if $(@).data('src')
 
-      $main.css('display', 'block').css('opacity', '0.01')
+      $main.css('opacity', '0.01').css('display', 'block')
       $main.animate({ opacity: 1 }, { queue: false, duration: "fast" })
     )
 
