@@ -29,8 +29,12 @@
       float: left;
       padding: 0 0 0 18px;
       position: relative;
-      a, img {
+      a {
         display: block;
+      }
+      img {
+        display: block;
+        opacity: 0.6;
       }
       span.tooltip {
         font-size: 11px;
@@ -42,7 +46,8 @@
       }
       &.active {
         img {
-          border: solid 2px #f6a41f;
+          border: solid 1px #f6a41f;
+          opacity: 1;
         }
       }
     }

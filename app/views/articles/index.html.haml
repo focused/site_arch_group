@@ -2,11 +2,12 @@
   .left_column.articles
     %h1 Публикации
 
-    = image_tag @article.picture.main.url
+    - if @article
+      = image_tag @article.picture.main.url
 
-    %h2= @article.title
+      %h2= @article.title
 
-    = raw @article.content
+      = raw @article.content
 
   .right_column.articles
     %ul

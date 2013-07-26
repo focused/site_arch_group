@@ -13,5 +13,5 @@
       - @project.items.each_with_index do |item, i|
         - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
         %li{ class: cls }
-          = image_tag item.picture.preview
+          = image_tag item.picture.preview, data: { src: item.picture.url }
 

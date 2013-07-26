@@ -2,14 +2,14 @@ window.Overlays ||= {}
 
 $ ->
   # Fades in overlays.
-  $("[data-overlay*='container']").on 'mousemove', "[data-overlay*='switcher']", (e)->
+  $("[data-overlay*='container']").on 'click mousemove', "[data-overlay*='switcher']", (e)->
     $container = $(@).closest("[data-overlay*='container']")
     $container.find("[data-overlay=object]:hidden").fadeIn(100)
     Overlays.wontHide($container)
     e.preventDefault()
 
   # Fades out overlays.
-  $('body').on 'mousemove', (e)->
+  $('body').on 'click mousemove', (e)->
     $container = $("[data-overlay*='container']")
     $object = $container.find("[data-overlay=object]:visible")
     if !$container.is(e.target) && $container.has(e.target).size() == 0 && $object.length > 0

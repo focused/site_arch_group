@@ -2,7 +2,8 @@
   .left_column.awards
     %h1 Награды
 
-    = image_tag @award.picture.main.url
+    - if @award
+      = image_tag @award.picture.main.url
 
   .right_column.articles
     %ul

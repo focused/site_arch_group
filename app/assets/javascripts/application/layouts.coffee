@@ -12,7 +12,7 @@ $ ->
       , 1000)
 
   # Clears menu timeout when over menu and fades out others.
-  $('#main_menu li').on 'mousemove', '.wrap', (e)->
+  $('#main_menu li').on 'click mousemove', '.wrap', (e)->
     Overlays.wontHide($(@).closest('.submenu'))
     $('#projects_index ul li img:visible').hide()
     # e.preventDefault()
