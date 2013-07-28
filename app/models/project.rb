@@ -20,4 +20,9 @@ class Project < ActiveRecord::Base
   def get_size
     vertical ? [135, 180] : [236, 120]
   end
+
+  after_save :recreate_delayed_versions!
+  def recreate_delayed_versions!
+    picture.recreate_versions!
+  end
 end

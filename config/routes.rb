@@ -10,6 +10,9 @@ SiteArchGroup::Application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
+  #elfinder
+  get 'filemanager/:action' => 'file_manager', constraints: { action: /elfinder|browser/ }
+  get 'filemanager' => 'file_manager#index'
 
   get ':action' => 'web_documents', constraints: { action: /[a-z]+/ }, as: 'web'
 

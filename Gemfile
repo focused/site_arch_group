@@ -86,5 +86,6 @@ gem 'mini_magick'
 gem 'rails_admin'
 # gem 'rails_admin-i18n'
 gem 'ckeditor'
+gem 'el_finder'#, '= 1.0.21'
 
 
