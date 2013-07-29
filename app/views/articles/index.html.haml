@@ -3,7 +3,8 @@
     %h1 Публикации
 
     - if @article
-      = image_tag @article.picture.main.url
+      = link_to @article.picture.url, class: 'fancybox' do
+        = image_tag @article.picture.main.url
 
       %h2= @article.title
 

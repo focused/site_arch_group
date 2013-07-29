@@ -6,9 +6,11 @@ $ ->
 
   $('#projects_controller #content .right_column ul').on 'click', 'li img', (e)->
     $main = $('.left_column img.bg')
+    $link = $('.left_column a.fancybox')
 
     $main.fadeTo("fast", 0.01, =>
       $main.attr('src', $(@).data('src')) if $(@).data('src')
+      $link.attr('href', $(@).data('full')) if $(@).data('full')
 
       $main.css('opacity', '0.01').css('display', 'block')
       $main.animate({ opacity: 1 }, { queue: false, duration: "fast" })

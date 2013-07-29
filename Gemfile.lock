@@ -68,6 +68,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
     haml (4.0.3)
@@ -232,6 +234,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   el_finder
+  fancybox-rails
   haml-rails
   jbuilder (~> 1.2)
   kramdown

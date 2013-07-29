@@ -21,6 +21,14 @@ activerecord:
       title: заголовок
       updated_at: изменен
 
+    employee:
+      created_at: создан
+      photo: фото
+      position: порядок
+      post: должность
+      name: имя
+      updated_at: изменен
+
     news:
       content: текст
       created_at: дата/время
@@ -88,6 +96,7 @@ activerecord:
       alias_name: псевдоним (системный)
       content: текст
       created_at: создан
+      picture: изображение
       position: порядок
       updated_at: изменен
       web_document: документ

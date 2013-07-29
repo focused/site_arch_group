@@ -1,4 +1,6 @@
 class WebSection < ActiveRecord::Base
+  mount_uploader :picture, WebSectionPictureUploader
+
   # validate :alias_cant_change
   # def alias_cant_change
   #   return if new_record?

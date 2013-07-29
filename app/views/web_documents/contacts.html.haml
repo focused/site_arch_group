@@ -1,2 +1,6 @@
 .full
-  = raw @doc.section(:full).content
+  %h1 Контакты
+  .picture
+    = link_to @doc.section(:full).picture.url, class: 'fancybox' do
+      = image_tag @doc.section(:full).picture.main.url
+    = raw @doc.section(:full).content

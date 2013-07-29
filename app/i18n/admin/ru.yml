@@ -6,6 +6,8 @@ admin:
     articles: Публикации
     client: Клиент
     clients: Клиенты
+    employee: Сотрудник
+    employees: Сотрудники
     news_one: Новость
     news: Новости
     project_category: Рубрика проектов

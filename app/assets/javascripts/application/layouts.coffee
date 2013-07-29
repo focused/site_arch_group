@@ -23,6 +23,8 @@ $ ->
   #   $object = $container.find("img:visible")
   #   Overlays.fadeOutOthers($container, $object, e)
 
+  $('a.fancybox').fancybox()
+
   # ----------------------------------------------------------------------------
 
 hideProjectPreview = ($el)->

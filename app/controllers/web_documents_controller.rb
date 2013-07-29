@@ -14,5 +14,6 @@ class WebDocumentsController < SiteController
 
   def about
     @doc = WebDocument.where(alias_name: 'about').first
+    @employees = Employee.order(:position).limit(128).all
   end
 end

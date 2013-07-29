@@ -261,11 +261,42 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Employee' do
+    label I18n.t('admin.menu.employee')
+    label_plural I18n.t('admin.menu.employees')
+    navigation_icon 'icon-chevron-right'
+    weight 302
+    list do
+      field :photo do
+        column_width 120
+      end
+      field :name
+      field :post
+      field :position
+      sort_by :position
+      field :created_at
+      field :updated_at
+    end
+    edit do
+      field :name
+      field :post
+      field :photo
+      field :position
+    end
+    show do
+      field :name
+      field :post
+      field :photo
+      field :created_at
+      field :updated_at
+    end
+  end
+
   config.model 'Client' do
     label I18n.t('admin.menu.client')
     label_plural I18n.t('admin.menu.clients')
     navigation_icon 'icon-chevron-right'
-    weight 302
+    weight 303
     list do
       field :picture do
         column_width 120
@@ -293,7 +324,7 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.web_document')
     label_plural I18n.t('admin.menu.web_documents')
     navigation_icon 'icon-chevron-right'
-    weight 303
+    weight 401
     list do
       field :title
       field :alias_name
@@ -321,8 +352,11 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.web_section')
     label_plural I18n.t('admin.menu.web_sections')
     navigation_icon 'icon-chevron-right'
-    weight 304
+    weight 402
     list do
+      field :picture do
+        column_width 120
+      end
       field :alias_name
       field :web_document do
         sortable :position
@@ -335,12 +369,14 @@ RailsAdmin.config do |config|
       field :web_document do
         sortable :position
       end
+      field :picture
       field :content, :ck_editor
       field :position
     end
     show do
       field :alias_name
       field :web_document
+      field :picture
       field :content
     end
   end

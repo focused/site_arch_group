@@ -3,7 +3,8 @@
     %h1 Награды
 
     - if @award
-      = image_tag @award.picture.main.url
+      = link_to @award.picture.url, class: 'fancybox' do
+        = image_tag @award.picture.main.url
 
   .right_column.articles
     %ul
