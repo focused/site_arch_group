@@ -3,9 +3,8 @@
     %h1= @project.title
 
     - if @project.main_item
-      - s = @project.main_item.picture.main.present? ? @project.main_item.picture.main.url : @project.picture.url
-      - s1 = @project.main_item.picture ? @project.main_item.picture.url : @project.picture.url
-    = link_to s1, class: 'fancybox' do
+      - s = @project.main_item.picture ? @project.main_item.picture.url : @project.picture.url
+    = link_to s, class: 'fancybox' do
       = image_tag(s, class: 'bg')
       %span.left_arrow.hidden
       %span.right_arrow.hidden
