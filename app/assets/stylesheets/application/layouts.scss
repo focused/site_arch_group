@@ -102,6 +102,32 @@ body.inner {
       padding: 0;
       margin: 0;
     }
+    .fancybox {
+      position: relative;
+      display: inline-block;
+    }
+    span.zoom {
+      background: image_url('zoom.png') no-repeat center center;
+      width: 27px;
+      height: 26px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    span.left_arrow, span.right_arrow {
+      width: 17px;
+      height: 34px;
+      position: absolute;
+      top: 50%;
+    }
+    span.left_arrow {
+      background: image_url('left_arrow.png') no-repeat center center;
+      left: 15px;
+    }
+    span.right_arrow {
+      background: image_url('right_arrow.png') no-repeat center center;
+      right: 15px;
+    }
   }
   .right_column {
     width: 30% - $h_pad * 100%;
@@ -159,6 +185,18 @@ body.inner {
       .right_column {
         width: auto;
         padding-right: 0;
+      }
+      .fancybox {
+        // position: relative;
+        // display: inline-block;
+      }
+      span.zoom {
+        background: image_url('zoom.png') no-repeat center center;
+        width: 27px;
+        height: 26px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
       }
     }
   }

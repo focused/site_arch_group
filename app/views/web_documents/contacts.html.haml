@@ -3,4 +3,6 @@
   .picture
     = link_to @doc.section(:full).picture.url, class: 'fancybox' do
       = image_tag @doc.section(:full).picture.main.url
+      -#%span.zoom
+
     = raw @doc.section(:full).content

@@ -5,6 +5,7 @@
     - if @article
       = link_to @article.picture.url, class: 'fancybox' do
         = image_tag @article.picture.main.url
+        %span.zoom
 
       %h2= @article.title
 
