@@ -4,12 +4,13 @@ $ ->
   # Fades in project previews.
   $('#projects_index ul li').on 'mousemove', 'a', (e)->
     return if $('#main_menu li .wrap [data-overlay=object]:visible').length > 0
+
+    $el = $(@).find('img:hidden')
+    return if $el.length == 0
+
     $('#projects_index ul li img:visible').hide()
-    $el = $(@).find("img:hidden")
     $el.show()
-    setTimeout(->
-        hideProjectPreview($el)
-      , 1000)
+
 
   # Clears menu timeout when over menu and fades out others.
   $('#main_menu li').on 'click mousemove', '.wrap', (e)->
@@ -18,10 +19,15 @@ $ ->
     # e.preventDefault()
 
   # Fades out all others.
-  # $('body').on 'click', (e)->
-  #   $container = $('#projects_index ul li .wrap')
-  #   $object = $container.find("img:visible")
-  #   Overlays.fadeOutOthers($container, $object, e)
+  $('body').on 'click mousemove', (e)->
+    $container = $('#projects_index ul li .wrap')
+    $object = $container.find('img:visible')
+    if !$container.is(e.target) && $container.has(e.target).size() == 0 && $object.length > 0
+      setTimeout(->
+          hideProjectPreview($object)
+        , 1000)
+    # Overlays.fadeOutOthers($container, $object, e)
+
 
   $('a.fancybox').fancybox()
 
