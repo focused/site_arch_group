@@ -2,7 +2,7 @@ window.App ||= {}
 
 $ ->
   # Fades in project previews.
-  $('#projects_index ul li').on 'mousemove', 'span', (e)->
+  $('#projects_index ul li').on 'mousemove', 'a', (e)->
     return if $('#main_menu li .wrap [data-overlay=object]:visible').length > 0
     $('#projects_index ul li img:visible').hide()
     $el = $(@).find("img:hidden")

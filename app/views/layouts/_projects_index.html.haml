@@ -8,8 +8,8 @@
           .wrap
             - if pc.projects
               - pc.projects.each do |pr|
-                %span{ class: f_class[pr] }
+                -#%span{ class: f_class[pr] }
+                = link_to pr, class: f_class[pr] do
                   - if pr.picture
                     = image_tag image_url(pr.picture.index_item.url)
-              =# link_to pc.title, projects_path(category: pc)
 
