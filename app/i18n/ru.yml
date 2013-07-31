@@ -11,4 +11,6 @@ main_menu:
   clients: Клиенты
   news: Новости
 
-
+news:
+  index:
+    title: Новости компании

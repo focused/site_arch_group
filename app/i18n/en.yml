@@ -7,9 +7,11 @@ main_menu:
   articles: Publications
   awards: Diplomas
   company: Company
-  contacts: contacts
-  clients: clients
+  contacts: Contacts
+  clients: Clients
   news: News
 
-
+news:
+  index:
+    title: Company news
 
