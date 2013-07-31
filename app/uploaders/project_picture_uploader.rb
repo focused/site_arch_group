@@ -18,6 +18,6 @@ class ProjectPictureUploader < ApplicationUploader
   protected
 
   def dynamic_process(*args)
-    resize_to_fill *(model.get_size) if model.persisted?
+    resize_to_fit *(model.get_size) if model.persisted?
   end
 end
