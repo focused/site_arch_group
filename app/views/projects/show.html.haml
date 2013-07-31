@@ -4,11 +4,12 @@
 
     - if @project.main_item
       - s = @project.main_item.picture ? @project.main_item.picture.url : @project.picture.url
-      = link_to s, class: 'fancybox' do
+      = content_tag :div, class: 'slide' do
         = image_tag(s, class: 'bg')
-        %span.left_arrow.hidden
-        %span.right_arrow.hidden
-        %span.zoom
+        -#%span.left_arrow.hidden
+        -#%span.right_arrow.hidden
+        -#%span.zoom
+        = link_to '', s, class: 'fancybox'
 
     = raw @project.content
 
@@ -17,6 +18,6 @@
     %ul
       - @project.items.each_with_index do |item, i|
         - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
-        %li{ class: cls }
-          = image_tag item.picture.preview, data: { src: item.picture.main.present? ? item.picture.main.url : item.picture.url, full: item.picture.url }
+        %li{ class: cls, data: { src: item.picture.main.present? ? item.picture.main.url : item.picture.url, full: item.picture.url } }
+          = image_tag item.picture.preview
 

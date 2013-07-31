@@ -1,6 +1,13 @@
 class WebDocument < ActiveRecord::Base
-  validate :title, length: { max: 255 }
-  validates_presence_of :title
+  include R18n::Translated
+  translations :title
+  before_save do
+    self.title_en = nil if title_en.blank?
+  end
+
+  validate :title_ru, length: { max: 255 }
+  validate :title_en, length: { max: 255 }
+  validates_presence_of :title_ru
 
   # validate :alias_cant_change
   # def alias_cant_change

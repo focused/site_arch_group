@@ -60,7 +60,8 @@ RailsAdmin.config do |config|
       field :picture do
         column_width 120
       end
-      field :content
+      field :content_ru
+      field :content_en
       field :created_at do
         sort_reverse true
       end
@@ -69,12 +70,14 @@ RailsAdmin.config do |config|
     end
     edit do
       field :created_at
-      field :content, :ck_editor
+      field :content_ru, :ck_editor
+      field :content_en, :ck_editor
       field :picture
     end
     show do
       field :created_at
-      field :content
+      field :content_ru
+      field :content_en
       field :picture
       field :updated_at
     end
@@ -89,20 +92,24 @@ RailsAdmin.config do |config|
       field :picture do
         column_width 120
       end
-      field :title
+      field :title_ru
+      field :title_en
       field :position
       sort_by :position
       field :created_at
       field :updated_at
     end
     edit do
-      field :title
+      field :title_ru
+      field :title_en
       field :picture
       field :position
-      field :content, :ck_editor
+      field :content_ru, :ck_editor
+      field :content_en, :ck_editor
     end
     show do
-      field :title
+      field :title_ru
+      field :title_en
       field :picture
       field :content
       field :created_at
@@ -117,7 +124,8 @@ RailsAdmin.config do |config|
     weight 201
     list do
       field :picture
-      field :title
+      field :title_ru
+      field :title_en
       field :project_group do
         sortable :position
       end
@@ -129,24 +137,28 @@ RailsAdmin.config do |config|
       field :updated_at
     end
     edit do
-      field :title
+      field :title_ru
+      field :title_en
       field :project_group
       field :picture
       field :finished
       field :important
       field :vertical
-      field :content, :ck_editor
+      field :content_ru, :ck_editor
+      field :content_en, :ck_editor
       field :position
       field :project_items
     end
     show do
-      field :title
+      field :title_ru
+      field :title_en
       field :project_group
       field :picture
       field :finished
       field :important
       field :vertical
-      field :content
+      field :content_ru
+      field :content_en
       field :project_items
       field :created_at
       field :updated_at
@@ -187,7 +199,8 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-chevron-right'
     weight 203
     list do
-      field :title
+      field :title_ru
+      field :title_en
       field :project_category do
         sortable :position
       end
@@ -197,13 +210,15 @@ RailsAdmin.config do |config|
       field :updated_at
     end
     edit do
-      field :title
+      field :title_ru
+      field :title_en
       field :project_category
       field :position
       field :projects
     end
     show do
-      field :title
+      field :title_ru
+      field :title_en
       field :project_category
       field :projects
       field :created_at
@@ -217,19 +232,22 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-chevron-right'
     weight 204
     list do
-      field :title
+      field :title_ru
+      field :title_en
       field :position
       sort_by :position
       field :created_at
       field :updated_at
     end
     edit do
-      field :title
+      field :title_ru
+      field :title_en
       field :position
       field :project_groups
     end
     show do
-      field :title
+      field :title_ru
+      field :title_en
       field :project_groups
       field :created_at
       field :updated_at
@@ -301,19 +319,22 @@ RailsAdmin.config do |config|
       field :picture do
         column_width 120
       end
-      field :title
+      field :title_ru
+      field :title_en
       field :position
       sort_by :position
       field :created_at
       field :updated_at
     end
     edit do
-      field :title
+      field :title_ru
+      field :title_en
       field :picture
       field :position
     end
     show do
-      field :title
+      field :title_ru
+      field :title_en
       field :picture
       field :created_at
       field :updated_at
@@ -326,7 +347,8 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-chevron-right'
     weight 401
     list do
-      field :title
+      field :title_ru
+      field :title_en
       field :alias_name
       field :position
       sort_by :position
@@ -334,13 +356,15 @@ RailsAdmin.config do |config|
       field :updated_at
     end
     edit do
-      field :title
+      field :title_ru
+      field :title_en
       field :alias_name
       field :position
       field :web_sections
     end
     show do
-      field :title
+      field :title_ru
+      field :title_en
       field :alias_name
       field :web_sections
       field :created_at
@@ -370,14 +394,16 @@ RailsAdmin.config do |config|
         sortable :position
       end
       field :picture
-      field :content, :ck_editor
+      field :content_ru, :ck_editor
+      field :content_en, :ck_editor
       field :position
     end
     show do
       field :alias_name
       field :web_document
       field :picture
-      field :content
+      field :content_ru
+      field :content_en
     end
   end
 

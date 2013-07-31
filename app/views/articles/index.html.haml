@@ -3,11 +3,14 @@
     %h1 Публикации
 
     - if @article
-      = link_to @article.picture.url, class: 'fancybox' do
-        = image_tag @article.picture.main.url
-        %span.zoom
+      = content_tag :span, class: 'slide' do
+        = image_tag(@article.picture.main.url)
+        -#%span.left_arrow.hidden
+        -#%span.right_arrow.hidden
+        -#%span.zoom
+        = link_to '', @article.picture.url, class: 'fancybox'
 
-      %h2= @article.title
+      %h2= @article.title # @article.title_ru
 
       = raw @article.content
 

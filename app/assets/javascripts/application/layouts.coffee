@@ -30,6 +30,10 @@ $ ->
 
 
   $('a.fancybox').fancybox()
+  $('#fancybox-wrap').on 'click', '#fancybox-content', ->
+    $.fancybox.close()
+
+  # $('.scrollable').scrollable()
 
   # ----------------------------------------------------------------------------
 

@@ -1,9 +1,15 @@
 class News < ActiveRecord::Base
+  include R18n::Translated
+  translations :content
+  before_save do
+    self.content_en = nil if content_en.blank?
+  end
+
   mount_uploader :picture, NewsPictureUploader
 
   scope :recent, -> n { limit(n).order(:created_at) }
 
-  validates_presence_of :content
+  validates_presence_of :content_ru
 
   validates_presence_of :created_at
   # validate :created_at_is_valid_datetime

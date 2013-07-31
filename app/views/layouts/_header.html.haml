@@ -2,23 +2,26 @@
   %nav
     = link_to '', root_path, class: 'logo'
     %ul#main_menu
-      %li= link_to 'контакты', web_path(:contacts)
-      %li= link_to 'клиенты', web_path(:clients)
+      %li= link_to t.main_menu.contacts, web_path(:contacts)
+      %li= link_to t.main_menu.clients, web_path(:clients)
       %li#main_menu_pro.submenu{ data: { overlay: 'container' } }
         .wrap
-          = link_to 'pro бюро', '', data: { overlay: 'switcher' }
+          = link_to t.main_menu.about, '', data: { overlay: 'switcher' }
           %ul{ data: { overlay: 'object' } }
-            %li= link_to 'Новости', news_index_path
-            %li= link_to 'О компании', web_path(:about)
-            %li= link_to 'Публикации', articles_path
-            %li= link_to 'Награды', awards_path
+            %li= link_to t.main_menu.news, news_index_path
+            %li= link_to t.main_menu.company, web_path(:about)
+            %li= link_to t.main_menu.articles, articles_path
+            %li= link_to t.main_menu.awards, awards_path
             -#%li= link_to 'Пресс-пакеты', '#'
 
   %section#top_links
     .social
       = link_to '', '#', class: 'vkontakte'
       = link_to '', '#', class: 'facebook'
-    = link_to 'eng', '#', class: 'locale'
+    - if r18n.locale.code == 'ru'
+      = link_to 'eng', url_for(locale: 'en'), class: 'locale'
+    - else
+      = link_to 'рус', url_for(locale: ''), class: 'locale'
 
 #top_menu
   - if @project_categories

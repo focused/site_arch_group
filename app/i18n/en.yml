@@ -1,0 +1,15 @@
+helpers:
+  labels:
+    all: all
+
+main_menu:
+  about: About us
+  articles: Publications
+  awards: Diplomas
+  company: Company
+  contacts: contacts
+  clients: clients
+  news: News
+
+
+

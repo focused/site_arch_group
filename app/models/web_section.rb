@@ -1,4 +1,10 @@
 class WebSection < ActiveRecord::Base
+  include R18n::Translated
+  translations :content
+  before_save do
+    self.content_en = nil if content_en.blank?
+  end
+
   mount_uploader :picture, WebSectionPictureUploader
 
   # validate :alias_cant_change

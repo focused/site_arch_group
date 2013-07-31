@@ -13,7 +13,7 @@ class ProjectsController < SiteController
     end
 
     @projects = if @group && @group.persisted?
-      @group.projects.order(:position).all
+      @group.projects.order(:position)
     else
       @category.projects
     end

@@ -9,7 +9,7 @@
             - if pc.projects
               - pc.projects.each do |pr|
                 -#%span{ class: f_class[pr] }
-                = link_to pr, class: f_class[pr] do
+                = link_to project_path(pr.id), class: f_class[pr] do
                   - if pr.picture
                     = image_tag image_url(pr.picture.index_item.url)
 

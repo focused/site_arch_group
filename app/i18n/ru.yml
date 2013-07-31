@@ -1,3 +1,12 @@
 helpers:
   labels:
     all: все
+
+main_menu:
+  about: pro бюро
+  articles: Публикации
+  awards: Награды
+  company: О компании
+  contacts: контакты
+  clients: клиенты
+  news: Новости

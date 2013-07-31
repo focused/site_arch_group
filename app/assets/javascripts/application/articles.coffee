@@ -1,7 +1,7 @@
 $ ->
-  $('.right_column.articles').on 'mousemove', 'a', (e)->
-    $('.right_column.articles span.tooltip:visible').hide()
-    $(@).closest('li').find('span.tooltip').show()
+  # $('.right_column.articles').on 'mousemove', 'a', (e)->
+  #   $('.right_column.articles span.tooltip:visible').hide()
+  #   $(@).closest('li').find('span.tooltip').show()
     # e.preventDefault()
 
   $('body').on 'mousemove', (e)->

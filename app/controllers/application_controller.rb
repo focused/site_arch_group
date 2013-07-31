@@ -7,10 +7,15 @@ class ApplicationController < ActionController::Base
 
   layout :resolve_layout
 
+  def default_url_options
+    # { locale: nil }
+    { locale: (r18n.locale.code == 'ru' || Rails.env.test?) ? nil : r18n.locale.code }
+  end
+
   protected
 
   def set_locale
-    params[:locale] ||= :ru
+    params[:locale] ||= 'ru'
   end
 
   def resolve_layout

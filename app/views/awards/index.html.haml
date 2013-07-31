@@ -1,11 +1,14 @@
 .full
-  .left_column.awards
+  .left_column.articles
     %h1 Награды
 
     - if @award
-      = link_to @award.picture.url, class: 'fancybox' do
-        = image_tag @award.picture.main.url
-        %span.zoom
+      = content_tag :span, class: 'slide' do
+        = image_tag(@award.picture.main.url)
+        -#%span.left_arrow.hidden
+        -#%span.right_arrow.hidden
+        -#%span.zoom
+        = link_to '', @award.picture.url, class: 'fancybox'
 
   .right_column.articles
     %ul

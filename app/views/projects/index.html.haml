@@ -4,7 +4,7 @@
       = link_to @group.title, projects_path(group: @group), data: { overlay: 'switcher' }
 
       %ul{ data: { overlay: 'object' } }
-        - @category.project_groups.each do |g|
+        - @category.groups.each do |g|
           %li
             - if g.persisted?
               = link_to g.title, projects_path(group: g)

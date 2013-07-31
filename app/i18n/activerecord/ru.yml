@@ -1,11 +1,13 @@
 activerecord:
   attributes:
     article:
-      content: текст
+      content_en: текст (en)
+      content_ru: текст (ru)
       created_at: создана
       picture: изображение
       position: порядок
-      title: заголовок
+      title_en: заголовок (en)
+      title_ru: заголовок (ru)
       updated_at: изменена
 
     award:
@@ -18,7 +20,8 @@ activerecord:
       created_at: создан
       picture: изображение
       position: порядок
-      title: заголовок
+      title_en: заголовок (en)
+      title_ru: заголовок (ru)
       updated_at: изменен
 
     employee:
@@ -30,7 +33,8 @@ activerecord:
       updated_at: изменен
 
     news:
-      content: текст
+      content_en: текст (en)
+      content_ru: текст (ru)
       created_at: дата/время
       picture: изображение
       updated_at: изменена
@@ -39,7 +43,8 @@ activerecord:
       created_at: создана
       position: порядок
       project_groups: разделы
-      title: заголовок
+      title_en: заголовок (en)
+      title_ru: заголовок (ru)
       updated_at: изменена
 
     project_group:
@@ -47,11 +52,13 @@ activerecord:
       position: порядок
       projects: проекты
       project_category: рубрика
-      title: заголовок
+      title_en: заголовок (en)
+      title_ru: заголовок (ru)
       updated_at: изменена
 
     project:
-      content: текст
+      content_en: текст (en)
+      content_ru: текст (ru)
       created_at: создан
       finished: завершен
       important: важный
@@ -59,7 +66,8 @@ activerecord:
       position: порядок
       project_group: раздел
       project_items: превью
-      title: заголовок
+      title_en: заголовок (en)
+      title_ru: заголовок (ru)
       vertical: вертикальное изображение
       updated_at: изменен
 
@@ -88,13 +96,15 @@ activerecord:
       alias_name: псевдоним (системный)
       created_at: создан
       position: порядок
-      title: заголовок
+      title_en: заголовок (en)
+      title_ru: заголовок (ru)
       updated_at: изменен
       web_sections: фрагменты
 
     web_section:
       alias_name: псевдоним (системный)
-      content: текст
+      content_en: текст (en)
+      content_ru: текст (ru)
       created_at: создан
       picture: изображение
       position: порядок

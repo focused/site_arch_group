@@ -14,4 +14,5 @@
 // require jquery_ujs
 // require turbolinks
 //= require fancybox
+// require jquery.tools.min
 //= require_tree ./application
