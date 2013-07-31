@@ -3,10 +3,12 @@ helpers:
     all: все
 
 main_menu:
-  about: pro бюро
+  about: Pro бюро
   articles: Публикации
   awards: Награды
   company: О компании
-  contacts: контакты
-  clients: клиенты
+  contacts: Контакты
+  clients: Клиенты
   news: Новости
+
+
