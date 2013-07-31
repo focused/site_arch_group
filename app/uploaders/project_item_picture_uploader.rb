@@ -9,7 +9,7 @@ class ProjectItemPictureUploader < ApplicationUploader
   end
 
   version :main do
-    process resize_to_fit: [800, 750]
+    process resize_to_limit: [800, 750]
   end
 
   version :preview do
@@ -19,6 +19,6 @@ class ProjectItemPictureUploader < ApplicationUploader
   protected
 
   def dynamic_process(*args)
-    resize_to_fit *(model.get_size) if model.persisted?
+    resize_and_pad *(model.get_size) if model.persisted?
   end
 end
