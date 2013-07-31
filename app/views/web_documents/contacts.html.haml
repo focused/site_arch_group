@@ -1,5 +1,5 @@
 .full
-  %h1 Контакты
+  %h1= t.main_menu.contacts
   .picture
     = image_tag(@doc.section(:full).picture.main.url)
     = link_to '', @doc.section(:full).picture.url, class: 'fancybox'

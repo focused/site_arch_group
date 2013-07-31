@@ -1,6 +1,6 @@
 .full
   .left_column.articles
-    %h1 Публикации
+    %h1= t.main_menu.articles
 
     - if @article
       = content_tag :span, class: 'slide' do
