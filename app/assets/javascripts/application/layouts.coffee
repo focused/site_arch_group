@@ -23,9 +23,10 @@ $ ->
     $container = $('#projects_index ul li .wrap')
     $object = $container.find('img:visible')
     if !$container.is(e.target) && $container.has(e.target).size() == 0 && $object.length > 0
-      setTimeout(->
-          hideProjectPreview($object)
-        , 1000)
+      hideProjectPreview($object)
+      # setTimeout(->
+      #     hideProjectPreview($object)
+      #   , 1000)
     # Overlays.fadeOutOthers($container, $object, e)
 
 

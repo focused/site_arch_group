@@ -84,12 +84,15 @@ body.inner {
       font-size: 16.5px;
     }
     a {
-      display: block;
-      width: 132px;
-      height: 92px;
+      display: inline-block;
+      // width: 132px;
+      // height: 92px;
       margin-bottom: 22px;
       // background: image_url('tmp/home_main_preview.png') no-repeat center center;
       border: solid 1px #fff;
+      img {
+        display: block;
+      }
     }
   }
   .left_column {

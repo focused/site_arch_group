@@ -15,3 +15,6 @@ news:
   index:
     title: Company news
 
+web_documents:
+  home:
+    latest: Top projects

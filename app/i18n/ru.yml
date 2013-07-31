@@ -14,3 +14,7 @@ main_menu:
 news:
   index:
     title: Новости компании
+
+web_documents:
+  home:
+    latest: Самое новое

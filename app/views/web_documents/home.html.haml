@@ -1,8 +1,14 @@
 .present
-  = raw @doc.section('present').content
+  %h1= t('.latest')
+  = link_to image_tag(@doc.project1.picture.url), @doc.project1 if @doc.project1
+  .clear
+  = link_to image_tag(@doc.project2.picture.url), @doc.project2 if @doc.project2
+  .clear
+  = link_to image_tag(@doc.project3.picture.url), @doc.project3 if @doc.project3
 
 .left_column
-  = raw @doc.section('left_column').content
+  - if @doc.section('left_column').try(:picture)
+    = image_tag @doc.section('left_column').picture.url, class: 'bg'
 
 
 .right_column

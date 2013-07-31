@@ -96,6 +96,9 @@ activerecord:
       alias_name: псевдоним (системный)
       created_at: создан
       position: порядок
+      project1: проект 1
+      project2: проект 2
+      project3: проект 3
       title_en: заголовок (en)
       title_ru: заголовок (ru)
       updated_at: изменен

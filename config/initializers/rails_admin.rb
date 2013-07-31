@@ -361,12 +361,18 @@ RailsAdmin.config do |config|
       field :alias_name
       field :position
       field :web_sections
+      field :project1
+      field :project2
+      field :project3
     end
     show do
       field :title_ru
       field :title_en
       field :alias_name
       field :web_sections
+      field :project1
+      field :project2
+      field :project3
       field :created_at
       field :updated_at
     end
