@@ -13,7 +13,7 @@ class ProjectItemPictureUploader < ApplicationUploader
   end
 
   version :main do
-    process resize_to_limit: [1000, 570]
+    process resize_and_pad: [1000, 590]
   end
 
   version :preview do

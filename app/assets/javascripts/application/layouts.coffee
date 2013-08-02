@@ -30,7 +30,9 @@ $ ->
     # Overlays.fadeOutOthers($container, $object, e)
 
 
-  $('a.fancybox').fancybox()
+  $('a.fancybox').fancybox(
+    titlePosition: 'inside'
+  )
   $('#fancybox-wrap').on 'click', '#fancybox-content', ->
     $.fancybox.close()
 

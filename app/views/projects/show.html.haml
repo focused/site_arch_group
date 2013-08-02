@@ -10,7 +10,7 @@
           -#%span.right_arrow.hidden
 
         - if @project.main_item.picture.full.present?
-          = link_to '', @project.main_item.picture.full.url, class: 'fancybox'
+          = link_to '', @project.main_item.picture.full.url, class: 'fancybox', title: 'abc'
 
     = raw @project.content
 

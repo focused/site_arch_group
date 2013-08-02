@@ -145,6 +145,15 @@ body.inner {
       list-style: none;
       padding: 0 0 0 10%;
     }
+    &.no_pad {
+      padding-top: 0;
+    }
+    .all {
+      display: inline-block;
+      float: right;
+      text-align: right;
+      margin-bottom: 15px;
+    }
     ul {
       margin: 0;
       li {
@@ -156,6 +165,9 @@ body.inner {
           img {
             float: right;
             margin: 0 0 15px 15px;
+          }
+          a {
+            color: #04b;
           }
         }
       }
@@ -234,4 +246,8 @@ body.inner {
 
 #fancybox-content {
   cursor: pointer;
+}
+
+.event_date {
+  color: #888
 }

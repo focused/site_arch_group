@@ -11,13 +11,16 @@
     = image_tag @doc.section('left_column').picture.url, class: 'bg'
 
 
-.right_column
+.right_column.no_pad
+  = link_to t('.all_news'), news_index_path, class: 'all'
+  .clear
   %ul
     - @news_list.each do |news|
       %li
         %p
           = image_tag image_url(news.picture.item.url)
-          %span.event_date= link_to l(news.created_at.to_date), "#{ news_index_path }#id#{ news.id }"
+          -#%span.event_date= link_to l(news.created_at.to_date), "#{ news_index_path }#id#{ news.id }"
+          %span.event_date= l(news.created_at.to_date)
           %br
           = raw news.intro
         .clear
