@@ -25,6 +25,9 @@
     .left_column {
       padding: 0 2% 0 2%;
       width: 53%;
+      .bg {
+        opacity: 0;
+      }
     }
     .right_column {
       overflow: visible;
