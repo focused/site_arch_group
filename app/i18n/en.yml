@@ -15,6 +15,10 @@ news:
   index:
     title: Company news
 
+projects:
+  show:
+    real_size: open in real size
+
 web_documents:
   home:
     latest: Top projects
