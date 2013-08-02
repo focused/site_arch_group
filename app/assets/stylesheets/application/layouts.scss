@@ -68,7 +68,7 @@ body.inner {
   min-height: 500px;
   // padding-bottom: 150px;
   a {
-    color: #d67400;
+    color: #04b;
   }
   .present {
     position: absolute;
@@ -152,6 +152,7 @@ body.inner {
       float: right;
       text-align: right;
       margin-bottom: 15px;
+      color: #d67400;
     }
     ul {
       margin: 0;
@@ -164,9 +165,6 @@ body.inner {
           img {
             float: right;
             margin: 0 0 15px 15px;
-          }
-          a {
-            color: #04b;
           }
         }
       }
