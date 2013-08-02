@@ -31,6 +31,6 @@ class Project < ActiveRecord::Base
 
   after_save :recreate_delayed_versions!
   def recreate_delayed_versions!
-    picture.recreate_versions!
+    picture.recreate_versions!(:item)
   end
 end

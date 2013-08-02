@@ -23,14 +23,14 @@
   }
   #content .inner .full {
     .left_column {
-      padding: 0 3% 0 5%;
-      width: 60%;
+      padding: 0 2% 0 2%;
+      width: 53%;
     }
     .right_column {
       overflow: visible;
       padding-bottom: 60px !important;
       float: right;
-      width: 32%;
+      width: 41%;
       ul {
         position: relative;
         // right: 40px;
@@ -48,6 +48,7 @@
           img {
             display: block;
             cursor: pointer;
+            margin: 0 auto;
           }
           &.active {
             img {

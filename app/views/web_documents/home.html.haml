@@ -1,10 +1,10 @@
 .present
   %h1= t('.latest')
-  = link_to image_tag(@doc.project1.picture.url), @doc.project1 if @doc.project1
+  = link_to image_tag(@doc.project1.picture.preview.url), @doc.project1 if @doc.project1
   .clear
-  = link_to image_tag(@doc.project2.picture.url), @doc.project2 if @doc.project2
+  = link_to image_tag(@doc.project2.picture.preview.url), @doc.project2 if @doc.project2
   .clear
-  = link_to image_tag(@doc.project3.picture.url), @doc.project3 if @doc.project3
+  = link_to image_tag(@doc.project3.picture.preview.url), @doc.project3 if @doc.project3
 
 .left_column
   - if @doc.section('left_column').try(:picture)

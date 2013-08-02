@@ -1,15 +1,19 @@
 class ProjectItemPictureUploader < ApplicationUploader
   after :cache, :delete_tmp_dir
 
-  process resize_to_limit: [1600, 1200]
   process quality: 100
+  process resize_to_limit: [4000, 4000]
 
   version :thumb do
     process resize_to_fill: [50, 50]
   end
 
+  version :full do
+    process resize_to_limit: [2000, 2000]
+  end
+
   version :main do
-    process resize_to_limit: [800, 750]
+    process resize_to_limit: [1000, 570]
   end
 
   version :preview do
@@ -19,6 +23,6 @@ class ProjectItemPictureUploader < ApplicationUploader
   protected
 
   def dynamic_process(*args)
-    resize_and_pad *(model.get_size) if model.persisted?
+    resize_to_fit *(model.get_size) if model.persisted?
   end
 end

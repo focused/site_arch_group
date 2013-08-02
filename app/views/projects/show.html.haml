@@ -3,13 +3,14 @@
     %h1= @project.title
 
     - if @project.main_item
-      - s = @project.main_item.picture ? @project.main_item.picture.url : @project.picture.url
       = content_tag :div, class: 'slide' do
-        = image_tag(s, class: 'bg')
-        -#%span.left_arrow.hidden
-        -#%span.right_arrow.hidden
-        -#%span.zoom
-        = link_to '', s, class: 'fancybox'
+        - if @project.main_item.picture.main.present?
+          = image_tag(@project.main_item.picture.main.url, class: 'bg')
+          -#%span.left_arrow.hidden
+          -#%span.right_arrow.hidden
+
+        - if @project.main_item.picture.full.present?
+          = link_to '', @project.main_item.picture.full.url, class: 'fancybox'
 
     = raw @project.content
 
@@ -19,5 +20,5 @@
       - @project.items.each_with_index do |item, i|
         - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
         %li{ class: cls, data: { src: item.picture.main.present? ? item.picture.main.url : item.picture.url, full: item.picture.url } }
-          = image_tag item.picture.preview
+          = image_tag item.picture.preview.url
 
