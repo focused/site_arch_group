@@ -1,0 +1,14 @@
+- project_item ||= @project_item
+
+- if project_item.picture.main.present?
+  = image_tag(project_item.picture.main.url, class: 'bg')
+  -#%span.left_arrow.hidden
+  -#%span.right_arrow.hidden
+
+- project_item.project.items.reject.each_with_index do |item, i|
+  - if item.id == project_item.id && project_item.picture.full.present?
+    = link_to '', project_item.picture.full.url, class: 'fancybox', rel: 'gallery', data: { title: "<a href='#{ project_item.picture.url }' data-new-window='true'>#{ t('.real_size') }</a>" }
+
+  - else
+    = link_to '', item.picture.full.url, class: 'fancybox hidden', rel: 'gallery', data: { title: "<a href='#{ item.picture.url }' data-new-window='true'>#{ t('project_items.project_item.real_size') }</a>" }
+

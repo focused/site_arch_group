@@ -1,0 +1,7 @@
+:plain
+  $('.slide').html('#{ escape_javascript render(@project_item) }')
+
+  $(function() {
+    App.findImageBgRealSize()
+    App.initFancybox()
+  })

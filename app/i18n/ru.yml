@@ -15,8 +15,8 @@ news:
   index:
     title: Новости компании
 
-projects:
-  show:
+project_items:
+  project_item:
     real_size: посмотреть в реальном размере
 
 web_documents:

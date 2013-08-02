@@ -9,6 +9,8 @@ SiteArchGroup::Application.routes.draw do
   scope '(:locale)', locale: /ru|en/ do
     get 'projects(/category/:category)(/group/:group)' => 'projects#index', as: 'projects'
     resources :projects, only: %i(show)
+    resources :project_items, only: %i(show)
+
     resources :awards, only: %i(index show)
     resources :articles, only: %i(index show)
     resources :news, only: %i(index)

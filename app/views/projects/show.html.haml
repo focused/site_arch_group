@@ -2,15 +2,8 @@
   .left_column
     %h1= @project.title
 
-    - if @project.main_item
-      = content_tag :div, class: 'slide' do
-        - if @project.main_item.picture.main.present?
-          = image_tag(@project.main_item.picture.main.url, class: 'bg')
-          -#%span.left_arrow.hidden
-          -#%span.right_arrow.hidden
-
-        - if @project.main_item.picture.full.present?
-          = link_to '', @project.main_item.picture.full.url, class: 'fancybox', title: "<a href='#{ @project.main_item.picture.url }'>#{ t('.real_size') }</a>"
+    = content_tag :div, class: 'slide' do
+      = render @project.main_item if @project.main_item
 
     = raw @project.content
 
@@ -19,6 +12,7 @@
     %ul
       - @project.items.each_with_index do |item, i|
         - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
-        %li{ class: cls, data: { src: item.picture.main.present? ? item.picture.main.url : item.picture.url, full: item.picture.url } }
-          = image_tag item.picture.preview.url
+        %li{ class: cls }
+          = link_to item, remote: true do
+            = image_tag item.picture.preview.url
 

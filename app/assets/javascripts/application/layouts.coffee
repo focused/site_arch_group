@@ -30,11 +30,11 @@ $ ->
     # Overlays.fadeOutOthers($container, $object, e)
 
 
-  $('a.fancybox').fancybox(
-    titlePosition: 'inside'
-  )
-  $('#fancybox-wrap').on 'click', '#fancybox-content', ->
+  $('body').on 'click', '.fancybox-inner', ->
     $.fancybox.close()
+
+  App.initFancybox()
+
 
   # $('.scrollable').scrollable()
 
@@ -43,3 +43,18 @@ $ ->
 hideProjectPreview = ($el)->
   $el.hide()
 
+App.initFancybox = ->
+  $('a.fancybox').fancybox({
+    padding    : 10,
+    margin     : 20,
+    nextEffect : 'fade',
+    prevEffect : 'fade',
+    helpers: {
+      title: {
+        type: 'over'
+      }
+    },
+    beforeLoad: ->
+      @.title = $(@.element).data('title')
+
+  })

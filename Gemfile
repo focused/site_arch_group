@@ -87,6 +87,6 @@ gem 'rails_admin'
 # gem 'rails_admin-i18n'
 gem 'ckeditor'
 # gem 'el_finder'#, '= 1.0.21'
-gem 'fancybox-rails'
+gem 'fancybox2-rails', '~> 0.2.4'
 
 
