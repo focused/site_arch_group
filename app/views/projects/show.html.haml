@@ -12,7 +12,7 @@
     %ul
       - @project.items.each_with_index do |item, i|
         - cls = [ i == 0 ? 'active' : '', item.double ? 'double' : '' ].join(' ')
-        %li{ class: cls }
+        %li{ class: cls, data: { id: item.id } }
           = link_to item, remote: true do
             = image_tag item.picture.preview.url
 

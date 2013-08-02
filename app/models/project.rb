@@ -18,11 +18,11 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :project_items, allow_destroy: true
 
   def main_item
-    project_items.order(:position).first
+    items.first
   end
 
   def items
-    project_items.order(:position).all
+    project_items.order(:position, :id)
   end
 
   def get_size

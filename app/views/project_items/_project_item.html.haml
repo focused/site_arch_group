@@ -2,8 +2,10 @@
 
 - if project_item.picture.main.present?
   = image_tag(project_item.picture.main.url, class: 'bg')
-  -#%span.left_arrow.hidden
-  -#%span.right_arrow.hidden
+  = link_to project_item.prev, class: 'left_arrow', remote: true do
+    %span
+  = link_to project_item.next, class: 'right_arrow', remote: true do
+    %span
 
 - project_item.project.items.reject.each_with_index do |item, i|
   - if item.id == project_item.id && project_item.picture.full.present?
