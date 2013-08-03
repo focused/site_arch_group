@@ -17,7 +17,7 @@ class ProjectItem < ActiveRecord::Base
   def next
     return unless project_id
     item = other
-      .where('position >= ?', position)
+      .where('position >= ? OR position IS NULL', position)
       .order(position: :asc, id: :asc).first
     item || other.order(position: :asc, id: :asc).first
   end
@@ -25,7 +25,7 @@ class ProjectItem < ActiveRecord::Base
   def prev
     return unless project_id
     item = other
-      .where('position <= ?', position)
+      .where('position <= ? OR position IS NULL', position)
       .order(position: :desc, id: :desc).first
     item || other.order(position: :asc, id: :asc).last
   end

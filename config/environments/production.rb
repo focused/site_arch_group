@@ -62,6 +62,7 @@ SiteArchGroup::Application.configure do
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w(ie.js ie.css)
   config.assets.precompile += %w(rails_admin/rails_admin.css rails_admin/rails_admin.js)
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   # config.assets.precompile += %w(jquery.ui/smoothness/jquery-ui-1.8.23.custom.css)
   # config.assets.precompile += %w(elfinder.css elfinder.js)
 

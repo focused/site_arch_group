@@ -1,7 +1,12 @@
 :plain
+
   $('.slide').html('#{ escape_javascript render(@project_item) }')
 
   $(function() {
     App.findImageBgRealSize()
     App.initFancybox()
+
+    $el = $('.right_column li[data-id=#{ @project_item.id }]')
+    $el.parent().find('li.active').removeClass('active')
+    $el.addClass('active')
   })

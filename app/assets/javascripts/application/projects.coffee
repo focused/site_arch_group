@@ -6,6 +6,8 @@ $ ->
 
   $('#projects_controller')
   .find('.right_column ul, .slide .left_arrow, .slide .right_arrow').on 'click', 'a', (e)->
+    h = $('.slide').height()
+    $('.slide').css('height', h)
     $('.slide .bg').fadeTo('fast', 0.01)
 
 
@@ -41,5 +43,6 @@ App.findImageBgRealSize = ->
 
     $(@).data({ height: actualHeight, width: actualWidth })
 
+    $('.slide').css('height', 'auto')
     limitBgSize()
 
