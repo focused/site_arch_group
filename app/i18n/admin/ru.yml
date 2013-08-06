@@ -8,6 +8,8 @@ admin:
     clients: Клиенты
     employee: Сотрудник
     employees: Сотрудники
+    gallery_item: Слайд галереи
+    gallery_items: Слайды галереи
     news_one: Новость
     news: Новости
     project_category: Рубрика проектов

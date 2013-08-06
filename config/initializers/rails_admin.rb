@@ -51,11 +51,33 @@ RailsAdmin.config do |config|
   # Now you probably need to tour the wiki a bit: https://github.com/sferik/rails_admin/wiki
   # Anyway, here is how RailsAdmin saw your application's models when you ran the initializer:
 
+  config.model 'GalleryItem' do
+    label I18n.t('admin.menu.gallery_item')
+    label_plural I18n.t('admin.menu.gallery_items')
+    navigation_icon 'icon-chevron-right'
+    weight 101
+    list do
+      field :picture do
+        column_width 120
+      end
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :picture
+      field :position
+    end
+    show do
+      field :picture
+      field :position
+    end
+  end
+
   config.model 'News' do
     label I18n.t('admin.menu.news_one')
     label_plural I18n.t('admin.menu.news')
     navigation_icon 'icon-chevron-right'
-    weight 101
+    weight 102
     list do
       field :picture do
         column_width 120
@@ -87,7 +109,7 @@ RailsAdmin.config do |config|
     label I18n.t('admin.menu.article')
     label_plural I18n.t('admin.menu.articles')
     navigation_icon 'icon-chevron-right'
-    weight 102
+    weight 103
     list do
       field :picture do
         column_width 120

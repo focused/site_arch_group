@@ -7,7 +7,12 @@
   = link_to image_tag(@doc.project3.picture.preview.url), @doc.project3 if @doc.project3
 
 .left_column
-  - if @doc.section('left_column').try(:picture)
+  - if @gallery_items
+    - active = rand(@gallery_items.size)
+    - @gallery_items.each_with_index do |item, i|
+      = div_for item, class: i == active ? 'active' : '', data: { index: i } do
+        = image_tag item.picture.main.url, class: 'bg'
+  - elsif @doc.section('left_column').try(:picture)
     = image_tag @doc.section('left_column').picture.url, class: 'bg'
 
 

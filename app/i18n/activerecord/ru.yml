@@ -32,6 +32,10 @@ activerecord:
       name: имя
       updated_at: изменен
 
+    gallery_item:
+      picture: изображение
+      position: порядок
+
     news:
       content_en: текст (en)
       content_ru: текст (ru)

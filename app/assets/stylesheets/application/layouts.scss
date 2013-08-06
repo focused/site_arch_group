@@ -136,7 +136,6 @@ body.inner {
   .right_column {
     width: 30% - $h_pad * 100%;
     padding: 15px $h_pad * 100% 65px 0;
-    // float: right;
     overflow: hidden;
     font-size: 13px;
     line-height: 15.5px;
@@ -238,8 +237,14 @@ body.inner {
       right: 0;
     }
   }
-
 }
+
+.home {
+  .right_column {
+    float: right;
+  }
+}
+
 
 #fancybox-content {
   cursor: pointer;

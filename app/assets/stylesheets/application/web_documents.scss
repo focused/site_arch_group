@@ -1,3 +1,16 @@
+.gallery_item {
+  position: relative;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+  }
+  &.active img {
+    visibility: visible;
+  }
+}
+
 #web_documents_controller #about_action {
   .left_column {
     width: 535px;
