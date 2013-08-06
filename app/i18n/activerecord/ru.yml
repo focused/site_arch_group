@@ -1,11 +1,11 @@
 activerecord:
   attributes:
     article:
-      article_items: превью
+      article_items: развороты
       content_en: текст (en)
       content_ru: текст (ru)
       created_at: создана
-      picture: изображение
+      picture: обложка
       position: порядок
       title_en: заголовок (en)
       title_ru: заголовок (ru)
@@ -14,7 +14,7 @@ activerecord:
     article_item:
       picture: изображение
       position: порядок
-      article: статья
+      article: публикация
 
     award:
       created_at: создана

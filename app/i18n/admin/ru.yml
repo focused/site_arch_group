@@ -4,8 +4,8 @@ admin:
     awards: Награды
     article: Публикация
     articles: Публикации
-    article_item: Превью публикаций
-    article_items: Превью публикаций
+    article_item: Разворот публикации
+    article_items: Развороты публикаций
     client: Клиент
     clients: Клиенты
     employee: Сотрудник
