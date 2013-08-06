@@ -126,6 +126,7 @@ RailsAdmin.config do |config|
       field :title_en
       field :picture
       field :position
+      field :article_items
       field :content_ru, :ck_editor
       field :content_en, :ck_editor
     end
@@ -133,9 +134,37 @@ RailsAdmin.config do |config|
       field :title_ru
       field :title_en
       field :picture
-      field :content
+      field :article_items
+      field :content_ru
+      field :content_en
       field :created_at
       field :updated_at
+    end
+  end
+
+  config.model 'ArticleItem' do
+    label I18n.t('admin.menu.article_item')
+    label_plural I18n.t('admin.menu.article_items')
+    navigation_icon 'icon-chevron-right'
+    weight 104
+    list do
+      field :picture do
+        column_width 120
+      end
+      field :article do
+        sortable :position
+      end
+      field :position
+      sort_by :position
+    end
+    edit do
+      field :picture
+      field :article
+      field :position
+    end
+    show do
+      field :picture
+      field :article
     end
   end
 

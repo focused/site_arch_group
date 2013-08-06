@@ -1,6 +1,7 @@
 activerecord:
   attributes:
     article:
+      article_items: превью
       content_en: текст (en)
       content_ru: текст (ru)
       created_at: создана
@@ -9,6 +10,11 @@ activerecord:
       title_en: заголовок (en)
       title_ru: заголовок (ru)
       updated_at: изменена
+
+    article_item:
+      picture: изображение
+      position: порядок
+      article: статья
 
     award:
       created_at: создана

@@ -12,4 +12,7 @@ class Article < ActiveRecord::Base
   validate :title_ru, length: { max: 255 }
   validate :title_en, length: { max: 255 }
   validates_presence_of :title_ru
+
+  has_many :article_items, inverse_of: :article
+  accepts_nested_attributes_for :article_items, allow_destroy: true
 end

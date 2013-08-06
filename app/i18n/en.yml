@@ -1,6 +1,7 @@
 helpers:
   labels:
     all: all
+    real_size: open in real size
 
 main_menu:
   about: About us
@@ -14,10 +15,6 @@ main_menu:
 news:
   index:
     title: Company news
-
-project_items:
-  project_item:
-    real_size: open in real size
 
 web_documents:
   home:

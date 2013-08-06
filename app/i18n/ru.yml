@@ -1,6 +1,7 @@
 helpers:
   labels:
     all: все
+    real_size: посмотреть в реальном размере
 
 main_menu:
   about: Pro бюро
@@ -14,10 +15,6 @@ main_menu:
 news:
   index:
     title: Новости компании
-
-project_items:
-  project_item:
-    real_size: посмотреть в реальном размере
 
 web_documents:
   home:

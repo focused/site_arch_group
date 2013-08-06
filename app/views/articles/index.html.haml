@@ -1,18 +1,23 @@
 .full
-  .left_column.articles
-    %h1= t.main_menu.articles
+  .left_column
+    -#%h1= t.main_menu.articles
+    %h1= @article.title
 
     - if @article
-      = content_tag :span, class: 'slide' do
+      -# content_tag :span, class: 'slide' do
         = image_tag(@article.picture.main.url)
-        -#%span.left_arrow.hidden
-        -#%span.right_arrow.hidden
-        -#%span.zoom
         = link_to '', @article.picture.url, class: 'fancybox'
 
-      %h2= @article.title # @article.title_ru
+    - @article.article_items.order(:position).each do |item|
+      = content_tag :div, class: 'slide' do
+        = image_tag(item.picture.main.url, class: 'bg')
+        = link_to '', item.picture.full.url, class: 'fancybox', rel: 'gallery', data: { title: "<a href='#{ item.picture.url }' data-new-window='true'>#{ t.helpers.labels.real_size }</a>" }
+      %br
 
-      = raw @article.content
+
+    -#%h2= @article.title
+
+    = raw @article.content
 
   .right_column.articles
     %ul

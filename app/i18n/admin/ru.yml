@@ -4,6 +4,8 @@ admin:
     awards: Награды
     article: Публикация
     articles: Публикации
+    article_item: Превью публикаций
+    article_items: Превью публикаций
     client: Клиент
     clients: Клиенты
     employee: Сотрудник
@@ -18,8 +20,8 @@ admin:
     project_groups: Разделы проектов
     project: Проект
     projects: Проекты
-    project_item: Превью проекта
-    project_items: Превью проекта
+    project_item: Превью проектов
+    project_items: Превью проектов
     user: Пользователь
     users: Пользователи
     web_document: Документ
