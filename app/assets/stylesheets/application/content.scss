@@ -74,3 +74,12 @@ ul.entries {
     }
   }
 }
+
+#clients_action ul.entries {
+  & > li {
+    height: 140px;
+    .wrap {
+      height: 140px;
+    }
+  }
+}
