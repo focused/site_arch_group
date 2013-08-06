@@ -18,7 +18,7 @@ buildColumns = ->
   w = $(window).width()
   switch
     when w >= 1150 && w < 1500 then refineColumns(4)
-    when w >= 1500 && w < 1800 then refineColumns(5)
-    when w >= 1800 then refine6Columns()
+    when w >= 1500 && w < 1900 then refineColumns(5)
+    when w >= 1900 then refine6Columns()
     else refine3Columns()
 

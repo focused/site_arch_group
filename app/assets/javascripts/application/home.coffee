@@ -22,4 +22,4 @@ changeSlide = ->
   $showing = $(".gallery_item[data-index=#{ Slideshow.current }] img")
 
   $hiding.fadeTo(5000, 0)
-  $showing.fadeTo(5000, 1)
+  $showing.fadeTo(3000, 1)
