@@ -253,6 +253,7 @@ RailsAdmin.config do |config|
     label_plural I18n.t('admin.menu.project_groups')
     navigation_icon 'icon-chevron-right'
     weight 203
+    object_label_method :name
     list do
       field :title_ru
       field :title_en
