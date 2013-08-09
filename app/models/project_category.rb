@@ -15,8 +15,14 @@ class ProjectCategory < ActiveRecord::Base
   def projects
     group_ids = project_groups.order(:position).pluck(:id)
     return if group_ids.empty?
-    Project.where("project_group_id IN (#{ group_ids.join(',') })")
-      .order(:position)
+    Project
+      .distinct
+      .joins('
+        INNER JOIN project_groups_projects pgp
+        ON projects.id = pgp.project_id'
+      )
+      .where("pgp.project_group_id IN (#{ group_ids.join(',') })")
+      .order('projects.position')
   end
 
   def groups

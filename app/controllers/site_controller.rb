@@ -4,6 +4,6 @@ class SiteController < ApplicationController
   protected
 
   def shared_procs
-    @project_categories = ProjectCategory.order(:position).all
+    @project_categories = ProjectCategory.order(:position)
   end
 end

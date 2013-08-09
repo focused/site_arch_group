@@ -177,20 +177,24 @@ RailsAdmin.config do |config|
       field :picture
       field :title_ru
       field :title_en
-      field :project_group do
-        sortable :position
+      field :project_groups do
+        inverse_of :projects
+        sortable :project_category_id
       end
       field :finished
       field :important
       field :position
-      sort_by :project_group
+      sort_by :position
       field :created_at
       field :updated_at
     end
     edit do
       field :title_ru
       field :title_en
-      field :project_group
+      field :project_groups do
+        inverse_of :projects
+        sortable :project_category_id
+      end
       field :picture
       field :finished
       field :important
@@ -203,7 +207,7 @@ RailsAdmin.config do |config|
     show do
       field :title_ru
       field :title_en
-      field :project_group
+      field :project_groups
       field :picture
       field :finished
       field :important
@@ -265,13 +269,17 @@ RailsAdmin.config do |config|
       field :title_en
       field :project_category
       field :position
-      field :projects
+      field :projects do
+        inverse_of :project_groups
+      end
     end
     show do
       field :title_ru
       field :title_en
       field :project_category
-      field :projects
+      field :projects do
+        inverse_of :project_groups
+      end
       field :created_at
       field :updated_at
     end

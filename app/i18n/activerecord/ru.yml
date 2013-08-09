@@ -74,7 +74,7 @@ activerecord:
       important: важный
       picture: изображение
       position: порядок
-      project_group: раздел
+      project_groups: разделы
       project_items: превью
       title_en: заголовок (en)
       title_ru: заголовок (ru)
