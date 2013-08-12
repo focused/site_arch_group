@@ -16,6 +16,13 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     params[:locale] ||= 'ru'
+
+    if (session[:prev_locale] ||= 'ru') != params[:locale]
+      R18n.get.try(:reload!)
+      # R18n.clear_cache!
+      # R18n::Rails::Filters.reload!
+    end
+    session[:prev_locale] = params[:locale]
   end
 
   def resolve_layout

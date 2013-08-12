@@ -14,7 +14,7 @@
   - if @projects
     %ul.entries.x3
       - @projects.each_with_index do |pr, i|
-        - cls = [(i % 6 == 0 || i + 1 % 6 == 0) && 's', (i + 2) % 3 == 0 && 'c', pr.vertical ? 'v' : 'h'].reject(&:blank?).join(' ')
+        - cls = [(i % 6 == 0 || (i + 1) % 6 == 0) && 's', (i + 2) % 3 == 0 && 'c', pr.vertical ? 'v' : 'h'].reject(&:blank?).join(' ')
 
         %li{ class: cls }
           = link_to image_tag(pr.picture.item.url), pr

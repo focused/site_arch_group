@@ -1,3 +1,47 @@
 .inner
-  .copy= "(c) Arch Group 2007 - 2013"
+  .copy
+    = "(c) Arch Group 2007 - 2013"
+    .clear
+
+    / Rating@Mail.ru counter
+    %script{:language => "javascript", :type => "text/javascript"}
+      /
+        d=document;var a='';a+=';r='+escape(d.referrer);js=10;//
+    %script{:language => "javascript1.1", :type => "text/javascript"}
+      /
+        a+=';j='+navigator.javaEnabled();js=11;//
+    %script{:language => "javascript1.2", :type => "text/javascript"}
+      /
+        s=screen;a+=';s='+s.width+'*'+s.height;
+        a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth);js=12;//
+    %script{:language => "javascript1.3", :type => "text/javascript"}
+      /
+        js=13;//
+    %script{:language => "javascript", :type => "text/javascript"}
+      /
+        d.write('<a href="http://top.mail.ru/jump?from=1656661" target="_top">'+
+        '<img src="http://d7.c4.b9.a1.top.mail.ru/counter?id=1656661;t=84;js='+js+
+        a+';rand='+Math.random()+'" alt="Рейтинг@Mail.ru" border="0" '+
+        'height="18" width="88"><\/a>');if(11<js)d.write('<'+'!-- ');//
+    %noscript
+      %a{:href => "http://top.mail.ru/jump?from=1656661", :target => "_top"}
+        %img{:alt => "Рейтинг@Mail.ru", :border => "0", :height => "18", :src => "http://d7.c4.b9.a1.top.mail.ru/counter?js=na;id=1656661;t=84", :width => "88"}/
+    %script{:language => "javascript", :type => "text/javascript"}
+      /
+        if(11<js)d.write('--'+'>');//
+    / // Rating@Mail.ru counter
+    %br
+    %a{:href => "http://yandex.ru/cy?base=0&amp;host=arx-group.ru"}
+      %img{:alt => "Яндекс цитирования", :border => "0", :height => "31", :src => "http://www.yandex.ru/cycounter?arx-group.ru", :width => "88"}/
+    %br/
+    / Yandex.Metrika
+    %script{:src => "//mc.yandex.ru/resource/watch.js", :type => "text/javascript"}
+    :javascript
+      try { var yaCounter196935 = new Ya.Metrika(196935); } catch(e){}
+    %noscript
+      %div{:style => "position: absolute;"}
+        %img{:alt => "", :src => "//mc.yandex.ru/watch/196935"}/
+    / Yandex.Metrika
+
+
   .contacts= "тел. +7 (495) 988-25-54; +7 (495) 241-29-67"

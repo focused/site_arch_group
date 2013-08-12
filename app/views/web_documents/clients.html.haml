@@ -3,7 +3,7 @@
 
   %ul.entries.x3
     - @clients.each_with_index do |client, i|
-      - cls = [(i % 6 == 0 || i + 1 % 6 == 0) && 's', (i + 2) % 3 == 0 && 'c'].reject(&:blank?).join(' ')
+      - cls = [(i % 6 == 0 || (i + 1) % 6 == 0) && 's', (i + 2) % 3 == 0 && 'c'].reject(&:blank?).join(' ')
       %li{ class: cls }
         .wrap{ style: "background-image: url('#{ client.picture.item.url }');" }
         %p= client.title

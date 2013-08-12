@@ -73,6 +73,7 @@
     padding: 0 14px 0 0;
     max-width: 200px;
     background: image_url('menu_arrow.png') right 4px no-repeat;
+    white-space: nowrap;
   }
   a {
     text-decoration: none;
@@ -96,6 +97,7 @@
         display: block;
         font-size: 13px;
         line-height: 20px;
+        white-space: nowrap;
       }
       span {
         font-weight: bold;
@@ -107,9 +109,11 @@
 #project_groups_menu {
   ul {
     left: -15px;
+    width: 100%;
   }
   & > a {
     font-weight: bold;
+    max-width: inherit;
   }
 }
 .projects_menu ul {

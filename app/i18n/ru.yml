@@ -4,7 +4,7 @@ helpers:
     real_size: посмотреть в реальном размере
 
 main_menu:
-  about: Pro бюро
+  about: Бюро
   articles: Публикации
   awards: Награды
   company: О компании
