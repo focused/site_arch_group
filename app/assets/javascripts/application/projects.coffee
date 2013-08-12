@@ -4,6 +4,10 @@ $ ->
     Overlays.wontHide($(@).parents('div'))
     # e.preventDefault()
 
+  $('#project_groups_menu').on 'mousemove', '[data-overlay=switcher]', (e)->
+    $ul = $(@).parent().find('ul')
+    $ul.css('width', '100%') if $ul.width() - 14 < $(@).width()
+
   $('#projects_controller')
   .find('.right_column ul, .slide .left_arrow, .slide .right_arrow').on 'click', 'a', (e)->
     h = $('.slide').height()
