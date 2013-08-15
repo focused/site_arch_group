@@ -5,5 +5,6 @@ class SiteController < ApplicationController
 
   def shared_procs
     @project_categories = ProjectCategory.order(:position)
+    @layout_doc = WebDocument.where(alias_name: 'layout').first
   end
 end

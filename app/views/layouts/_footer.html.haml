@@ -1,6 +1,6 @@
 .inner
   .copy
-    = "(c) Arch Group 2007 - 2013"
+    = @layout_doc.section(:copy).try(:content)
     .clear
 
     / Rating@Mail.ru counter
@@ -44,4 +44,4 @@
     / Yandex.Metrika
 
 
-  .contacts= "тел. +7 (495) 988-25-54; +7 (495) 241-29-67"
+  .contacts= @layout_doc.section(:contacts).try(:content)

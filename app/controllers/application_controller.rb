@@ -8,16 +8,19 @@ class ApplicationController < ActionController::Base
   layout :resolve_layout
 
   def default_url_options
-    # { locale: nil }
-    { locale: (r18n.locale.code == 'ru' || Rails.env.test?) ? nil : r18n.locale.code }
+    f = r18n.locale.code == zone_locale || Rails.env.test?
+    { locale: f ? nil : r18n.locale.code }
   end
 
   protected
 
   def set_locale
-    params[:locale] ||= 'ru'
+    p zone_locale
+    params[:locale] ||= zone_locale
 
-    if (session[:prev_locale] ||= 'ru') != params[:locale]
+    session[:prev_locale] ||= params[:locale]
+
+    if session[:prev_locale] != params[:locale]
       R18n.get.try(:reload!)
       R18n.clear_cache!
       R18n::Rails::Filters.reload!
@@ -26,9 +29,12 @@ class ApplicationController < ActionController::Base
   end
 
   def resolve_layout
-    if (controller_name == 'web_documents' && action_name == 'home')
-      return 'application'
-    end
-    'inner'
+    f = controller_name == 'web_documents' && action_name == 'home'
+    f ? 'application' : 'inner'
+  end
+
+  def zone_locale
+    zone = request.host.split(/\./)[-1]
+    zone.in?(%w(com net org)) ? 'en' : 'ru'
   end
  end

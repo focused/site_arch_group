@@ -1,4 +1,7 @@
 SiteArchGroup::Application.routes.draw do
+  get '*path', constraints: { host: '/[^.]*\.org/' }, to: redirect { |params, req|
+    "#{ req.protocol }#{ req.host.sub(/([^.]*\.)org/, '\1.com') }#{ req.fullpath }"
+  }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #elfinder

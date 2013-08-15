@@ -23,7 +23,7 @@
     - @news_list.each do |news|
       %li
         %p
-          = image_tag image_url(news.picture.item.url)
+          = image_tag image_url(news.picture.item.url) if news.picture.item.url
           -#%span.event_date= link_to l(news.created_at.to_date), "#{ news_index_path }#id#{ news.id }"
           %span.event_date= l(news.created_at.to_date)
           %br
