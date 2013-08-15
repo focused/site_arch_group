@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_locale
-    p zone_locale
     params[:locale] ||= zone_locale
 
     session[:prev_locale] ||= params[:locale]

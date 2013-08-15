@@ -19,9 +19,11 @@
       = link_to '', '#', class: 'vkontakte'
       = link_to '', '#', class: 'facebook'
     - if r18n.locale.code == 'ru'
-      = link_to 'eng', url_for(locale: 'en'), class: 'locale'
+      =# link_to 'eng', url_for(locale: 'en'), class: 'locale'
+      = link_to 'eng', "//arch-group.com#{ request.fullpath.sub('/ru', '') }", class: 'locale'
     - else
-      = link_to 'рус', url_for(locale: ''), class: 'locale'
+      =# link_to 'рус', url_for(locale: ''), class: 'locale'
+      = link_to 'рус', "//arch-group.ru#{ request.fullpath.sub('/en', '') }", class: 'locale'
 
 #top_menu
   - if @project_categories
