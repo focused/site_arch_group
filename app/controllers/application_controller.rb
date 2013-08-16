@@ -15,16 +15,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_locale
-    params[:locale] ||= zone_locale
-
-    session[:prev_locale] ||= params[:locale]
-
-    if session[:prev_locale] != params[:locale]
-      R18n.get.try(:reload!)
-      R18n.clear_cache!
-      R18n::Rails::Filters.reload!
-    end
-    session[:prev_locale] = params[:locale]
+    params[:locale] ||=  zone_locale
+    session[:prev_locale] ||= zone_locale
+    clear_locale_cache if session[:prev_locale] != params[:locale]
   end
 
   def resolve_layout
@@ -36,4 +29,10 @@ class ApplicationController < ActionController::Base
     zone = request.host.split(/\./)[-1]
     zone.in?(%w(com net org)) ? 'en' : 'ru'
   end
- end
+
+  def clear_locale_cache
+    R18n.get.try(:reload!)
+    R18n.clear_cache!
+    R18n::Rails::Filters.reload!
+  end
+end

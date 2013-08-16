@@ -1,6 +1,6 @@
 .inner
   .copy
-    = @layout_doc.section(:copy).try(:content)
+    = @layout_doc.section(:copy).try(:content) if @layout_doc
     .clear
 
     / Rating@Mail.ru counter
@@ -44,4 +44,5 @@
     / Yandex.Metrika
 
 
-  .contacts= @layout_doc.section(:contacts).try(:content)
+  .contacts
+    = @layout_doc.section(:contacts).try(:content) if @layout_doc
