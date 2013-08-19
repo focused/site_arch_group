@@ -32,10 +32,12 @@ activerecord:
 
     employee:
       created_at: создан
+      name_en: имя (en)
+      name_ru: имя (ru)
       photo: фото
       position: порядок
-      post: должность
-      name: имя
+      post_en: должность (en)
+      post_ru: должность (ru)
       updated_at: изменен
 
     gallery_item:

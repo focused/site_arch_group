@@ -16,8 +16,9 @@
 
   %section#top_links
     .social
-      = link_to '', '#', class: 'vkontakte'
-      = link_to '', '#', class: 'facebook'
+      = @layout_doc.section(:social).try(:content) if @layout_doc
+      =# link_to '', '#', class: 'vkontakte'
+      =# link_to '', '#', class: 'facebook'
     - if r18n.locale.code == 'ru'
       =# link_to 'eng', url_for(locale: 'en'), class: 'locale'
       = link_to 'eng', "//arch-group.com#{ request.fullpath.sub('/ru', '') }", class: 'locale'

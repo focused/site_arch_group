@@ -50,6 +50,9 @@ body.inner {
   line-height: 15.5px;
   height: 110px;
   margin-top: -150px;
+  a {
+    color: #04b;
+  }
   .inner {
     padding: 0 100% * $h_pad;
     .copy {

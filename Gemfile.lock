@@ -100,6 +100,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta-tags (1.2.4)
+      actionpack
     mime-types (1.23)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
@@ -235,6 +237,7 @@ DEPENDENCIES
   haml-rails
   jbuilder (~> 1.2)
   kramdown
+  meta-tags (= 1.2.4)
   mini_magick
   pg
   puma

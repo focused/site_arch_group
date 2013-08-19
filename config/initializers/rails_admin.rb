@@ -348,22 +348,28 @@ RailsAdmin.config do |config|
       field :photo do
         column_width 120
       end
-      field :name
-      field :post
+      field :name_ru
+      field :name_en
+      field :post_ru
+      field :post_en
       field :position
       sort_by :position
       field :created_at
       field :updated_at
     end
     edit do
-      field :name
-      field :post
+      field :name_ru
+      field :name_en
+      field :post_ru
+      field :post_en
       field :photo
       field :position
     end
     show do
-      field :name
-      field :post
+      field :name_ru
+      field :name_en
+      field :post_ru
+      field :post_en
       field :photo
       field :created_at
       field :updated_at

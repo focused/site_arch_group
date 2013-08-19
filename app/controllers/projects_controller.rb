@@ -7,8 +7,11 @@ class ProjectsController < SiteController
     end
 
     @group = if params[:group]
-      ProjectGroup.find(params[:group])
+      gr = ProjectGroup.find(params[:group])
+      meta_tags title: [@category.title, gr.title]
+      gr
     else
+      meta_tags title: [@category.title]
       @category.groups.first
     end
 

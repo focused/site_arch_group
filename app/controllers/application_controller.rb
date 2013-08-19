@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     params[:locale] ||=  zone_locale
-    session[:prev_locale] ||= zone_locale
-    clear_locale_cache if session[:prev_locale] != params[:locale]
+    # session[:prev_locale] ||= zone_locale
+    # clear_locale_cache if session[:prev_locale] != params[:locale]
   end
 
   def resolve_layout

@@ -1,3 +1,17 @@
+app:
+  name: Arch group
+
+articles:
+  index:
+    title: 'Публикации'
+  show:
+    title: 'Публикации'
+awards:
+  index:
+    title: 'Награды'
+  show:
+    title: 'Награды'
+
 helpers:
   labels:
     all: все
@@ -12,11 +26,29 @@ main_menu:
   clients: Клиенты
   news: Новости
 
+meta:
+  title: ''
+  description: 'Архитектурная мастерская «Arch group» выполняет весь комплекс проектных работ от первых консультаций и разработки концепции до выполнения рабочей документации во всех разделах и авторского надзора за строительством.'
+  keywords: 'Архитектурное проектирование, дизайн, интерьеры, градостроительство'
+
 news:
   index:
     title: Новости компании
 
+projects:
+  index:
+    title: Проекты
+
 web_documents:
+  about:
+    title: О компании
+  clients:
+    title: Клиенты
+  contacts:
+    title: Контакты
   home:
-    latest: Самое новое
     all_news: Все новости
+    latest: Самое новое
+    title: ''
+
+

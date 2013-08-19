@@ -12,8 +12,7 @@
         %li
           = image_tag e.photo.item.url
           %p
-            = content_tag :strong, e.name
+            = content_tag :strong, "#{ e.name }#{ e.post ? ',' : '' }"
             - if e.post
-              ,
               %br
               = e.post

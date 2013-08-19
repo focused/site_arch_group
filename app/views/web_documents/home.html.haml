@@ -1,5 +1,5 @@
 .present
-  %h1= t('.latest')
+  %h1= t.web_documents.home.latest
   = link_to image_tag(@doc.project1.picture.preview.url), @doc.project1 if @doc.project1
   .clear
   = link_to image_tag(@doc.project2.picture.preview.url), @doc.project2 if @doc.project2

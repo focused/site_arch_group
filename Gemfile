@@ -77,6 +77,7 @@ gem 'haml-rails'
 # gem 'kaminari'
 gem 'kramdown'
 gem 'simple_form', '>= 3.0.0.rc'
+gem 'meta-tags', '1.2.4', require: 'meta_tags'
 
 # Media.
 gem 'carrierwave'

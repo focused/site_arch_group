@@ -85,12 +85,22 @@ section#top_links {
   .social {
     margin: 0 26px;
     float: left;
+    p {
+      margin: 0;
+      padding: 0;
+    }
     a {
       display: block;
       width: 17px;
       height: 17px;
       float: left;
       margin-left: 9px;
+      font-size: 1px;
+      line-height: 1px;
+      color: #fff;
+      img {
+        display: none;
+      }
       &.vkontakte {
         background: image_url('vkontakte.png') center center no-repeat;
       }

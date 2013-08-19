@@ -9,6 +9,7 @@ class ArticlesController < SiteController
 
   def show
     @article = Article.find params[:id]
+    meta_tags title: [t('.title'), @article.title]
     render :index
   end
 end
