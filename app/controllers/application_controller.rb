@@ -16,8 +16,10 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     params[:locale] ||=  zone_locale
-    # session[:prev_locale] ||= zone_locale
-    # clear_locale_cache if session[:prev_locale] != params[:locale]
+    session[:prev_locale] ||= zone_locale
+    if session[:prev_locale] != params[:locale] || came_from_other_zone?(params[:locale])
+      clear_locale_cache
+    end
   end
 
   def resolve_layout
@@ -25,9 +27,14 @@ class ApplicationController < ActionController::Base
     f ? 'application' : 'inner'
   end
 
-  def zone_locale
-    zone = request.host.split(/\./)[-1]
+  def zone_locale(host = request.host)
+    zone = host.split(/\./)[-1]
     zone.in?(%w(com net org)) ? 'en' : 'ru'
+  end
+
+  def came_from_other_zone?(locale)
+    return unless request.referer
+    zone_locale(URI(request.referer).host) != locale
   end
 
   def clear_locale_cache
