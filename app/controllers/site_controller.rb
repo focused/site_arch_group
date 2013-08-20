@@ -11,7 +11,9 @@ class SiteController < ApplicationController
 
   def meta_tags(meta = {})
     # meta = PageMetaTag.by_path(params[:path] || request.path, "/#{params[:controller]}")
-    meta[:title] ||= [t.send(params[:controller]).send(params[:action]).title]
+    unless params[:controller] == 'web_documents' && params[:action] == 'home'
+      meta[:title] ||= [t.send(params[:controller]).send(params[:action]).title]
+    end
     set_meta_tags(
       site: t.app.name,
       title: meta[:title].present? ? meta[:title] : t.meta.title,
