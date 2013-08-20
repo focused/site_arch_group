@@ -24,5 +24,6 @@ class ProjectsController < SiteController
 
   def show
     @project = Project.find params[:id]
+    meta_tags title: [@project.title]
   end
 end

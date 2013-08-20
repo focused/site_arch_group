@@ -38,6 +38,8 @@ news:
 projects:
   index:
     title: Проекты
+  show:
+    title: ''
 
 web_documents:
   about:
