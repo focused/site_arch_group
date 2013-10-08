@@ -303,9 +303,7 @@ RailsAdmin.config do |config|
       field :project_links do
         visible { project_visible_field }
       end
-      field :project_groups do
-        visible { project_visible_field }
-      end
+      field :project_groups
       field :picture do
         visible { project_visible_field }
       end
