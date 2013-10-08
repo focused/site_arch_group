@@ -21,6 +21,8 @@ class Project < ActiveRecord::Base
   belongs_to :parent, class_name: 'Project', foreign_key: 'project_id', inverse_of: :project_links
   has_many :project_links, class_name: 'Project', inverse_of: :parent
 
+  has_and_belongs_to_many :project_groups
+
   def main_item
     items.first
   end
