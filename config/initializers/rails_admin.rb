@@ -208,19 +208,19 @@ RailsAdmin.config do |config|
 
   def project_parent_link_a(value)
     model = bindings[:object]
-    return value unless model.parent
+    return value unless model.respond_to?(:parent) && model.parent
     project_parent_link(model.parent)
   end
 
   def project_visible_field
     model = bindings[:object]
-    return true unless model.parent
+    return true unless model.respond_to?(:parent) && model.parent
     !model.parent.present?
   end
 
   def project_value_field(method, value)
     model = bindings[:object]
-    return value unless model.parent
+    return value unless model.respond_to?(:parent) && model.parent
     ''#model.parent.send(method)
   end
 
@@ -238,13 +238,17 @@ RailsAdmin.config do |config|
       # field :parent do
       #   pretty_value { project_parent_link(value) }
       # end
-      field :project_groups do
-        inverse_of :projects
+      field :project_group do
+        # inverse_of :projects
         sortable :project_category_id
         visible { project_visible_field }
+        searchable [:title_ru, :id]
+        # sort_reverse false
       end
+      # field :project_category_name
       field :position
-      sort_by :position
+      sort_by "project_group_id, projects.position"
+      sort_reverse false
       field :finished
       field :important
       field :created_at
@@ -257,14 +261,15 @@ RailsAdmin.config do |config|
       field :title_en do
         visible { project_visible_field }
       end
+      field :position
       field :parent do
         read_only true
         formatted_value { project_parent_link(value) }
         visible { value.present? }
       end
       # field :project_links
-      field :project_groups do
-        inverse_of :projects
+      field :project_group do
+        # inverse_of :projects
         sortable :project_category_id
       end
       field :picture do
@@ -285,7 +290,6 @@ RailsAdmin.config do |config|
       field :content_en, :ck_editor do
         visible { project_visible_field }
       end
-      field :position
       field :project_items do
         visible { project_visible_field }
       end
@@ -297,13 +301,15 @@ RailsAdmin.config do |config|
       field :title_en do
         visible { project_visible_field }
       end
+      field :position
       field :parent do
         pretty_value { project_parent_link(value) }
       end
       field :project_links do
         visible { project_visible_field }
       end
-      field :project_groups
+      field :project_group
+      # field :project_category_name
       field :picture do
         visible { project_visible_field }
       end
@@ -341,9 +347,11 @@ RailsAdmin.config do |config|
       end
       field :project do
         sortable :position
+        searchable [:title_ru, :id]
       end
       field :position
-      sort_by :position
+      sort_by "project_id, project_items.position"
+      sort_reverse false
     end
     edit do
       field :picture
@@ -365,13 +373,14 @@ RailsAdmin.config do |config|
     weight 203
     object_label_method :name
     list do
-      field :title_ru
-      field :title_en
+      field :name
       field :project_category do
         sortable :position
+        searchable [:title_ru, :id]
       end
       field :position
-      sort_by :project_category
+      sort_by "project_category_id, project_groups.position"
+      sort_reverse false
       field :created_at
       field :updated_at
     end
@@ -381,7 +390,7 @@ RailsAdmin.config do |config|
       field :project_category
       field :position
       field :projects do
-        inverse_of :project_groups
+        # inverse_of :project_groups
       end
     end
     show do
@@ -389,7 +398,7 @@ RailsAdmin.config do |config|
       field :title_en
       field :project_category
       field :projects do
-        inverse_of :project_groups
+        # inverse_of :project_groups
       end
       field :created_at
       field :updated_at

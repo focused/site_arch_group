@@ -61,6 +61,7 @@ activerecord:
 
     project_group:
       created_at: создана
+      name: рубрика -> раздел (Id)
       position: порядок
       projects: проекты
       project_category: рубрика
@@ -78,7 +79,7 @@ activerecord:
       position: порядок
       parent: ссылка на проект
       project_id: ссылка на проект (Id)
-      project_groups: разделы
+      project_group: раздел
       project_items: превью
       project_links: копии по ссылке
       title_en: заголовок (en)

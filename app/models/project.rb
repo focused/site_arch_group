@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
   validate :title_en, length: { max: 255 }
   validates_presence_of :title_ru
 
-  has_and_belongs_to_many :project_groups, uniq: true
+  belongs_to :project_group, inverse_of: :projects
 
   has_many :project_items, inverse_of: :project
   accepts_nested_attributes_for :project_items, allow_destroy: true
@@ -37,5 +37,10 @@ class Project < ActiveRecord::Base
   def recreate_delayed_versions!
     return unless picture.present?
     picture.recreate_versions!(:item)
+  end
+
+  def project_category_name
+    return unless project_group
+    project_group.project_category.try(:title)
   end
 end

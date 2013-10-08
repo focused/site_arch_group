@@ -11,10 +11,11 @@ class ProjectGroup < ActiveRecord::Base
 
   belongs_to :project_category, inverse_of: :project_groups
 
-  has_and_belongs_to_many :projects, uniq: true
+  has_many :projects, inverse_of: :project_group #, uniq: true
   accepts_nested_attributes_for :projects, allow_destroy: true
 
   def name
-    [project_category.try(:title_ru), title_ru].reject(&:blank?).join('-')
+    s = [project_category.try(:title_ru), title_ru].reject(&:blank?).join(' -> ')
+    s << " (#{ id })"
   end
 end
