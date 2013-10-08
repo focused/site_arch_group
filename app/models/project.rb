@@ -14,6 +14,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :title_ru
 
   has_and_belongs_to_many :project_groups, uniq: true
+
   has_many :project_items, inverse_of: :project
   accepts_nested_attributes_for :project_items, allow_destroy: true
 
@@ -37,8 +38,4 @@ class Project < ActiveRecord::Base
     return unless picture.present?
     picture.recreate_versions!(:item)
   end
-
-  # def to_s
-
-  # end
 end

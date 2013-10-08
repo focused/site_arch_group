@@ -18,6 +18,10 @@ module RailsAdmin
           'icon-link'
         end
 
+        register_instance_option :visible? do
+          authorized? && !bindings[:object].parent.present?
+        end
+
         register_instance_option :controller do
          proc do
            new_object = Project.new(title_ru: @object.title_ru, project_id: @object.id)

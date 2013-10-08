@@ -10,6 +10,7 @@ class ProjectGroup < ActiveRecord::Base
   validates_presence_of :title_ru
 
   belongs_to :project_category, inverse_of: :project_groups
+
   has_and_belongs_to_many :projects, uniq: true
   accepts_nested_attributes_for :projects, allow_destroy: true
 

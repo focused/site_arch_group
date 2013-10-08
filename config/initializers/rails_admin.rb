@@ -31,9 +31,9 @@ RailsAdmin.config do |config|
     delete
     # history_show
     show_in_app
-    # clone_by_link
     clone_by_link do
-      only Project # no other model will have the `index` action visible.
+      only Project
+
     end
   end
 
@@ -206,10 +206,22 @@ RailsAdmin.config do |config|
     h.link_to(value.title, h.rails_admin.show_path(:project, value.id))
   end
 
+  def project_parent_link_a(value)
+    model = bindings[:object]
+    return value unless model.parent
+    project_parent_link(model.parent)
+  end
+
   def project_visible_field
     model = bindings[:object]
     return true unless model.parent
     !model.parent.present?
+  end
+
+  def project_value_field(method, value)
+    model = bindings[:object]
+    return value unless model.parent
+    ''#model.parent.send(method)
   end
 
   config.model 'Project' do
@@ -218,32 +230,30 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-chevron-right'
     weight 201
     list do
-      field :picture do
-        visible { project_visible_field }
+      field :picture
+      field :title_ru do
+        pretty_value { project_parent_link_a(value) }
       end
-      field :title_ru
       # field :title_en
+      # field :parent do
+      #   pretty_value { project_parent_link(value) }
+      # end
       field :project_groups do
         inverse_of :projects
         sortable :project_category_id
         visible { project_visible_field }
       end
-      field :finished do
-        visible { project_visible_field }
-      end
-      field :important do
-        visible { project_visible_field }
-      end
-      field :parent do
-        pretty_value { project_parent_link(value) }
-      end
       field :position
       sort_by :position
+      field :finished
+      field :important
       field :created_at
       field :updated_at
     end
     edit do
-      field :title_ru
+      field :title_ru do
+        visible { project_visible_field }
+      end
       field :title_en do
         visible { project_visible_field }
       end
@@ -281,7 +291,9 @@ RailsAdmin.config do |config|
       end
     end
     show do
-      field :title_ru
+      field :title_ru do
+        visible { project_visible_field }
+      end
       field :title_en do
         visible { project_visible_field }
       end
