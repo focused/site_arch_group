@@ -15,15 +15,24 @@ class ProjectsController < SiteController
       @category.groups.first
     end
 
-    @projects = if @group && @group.persisted?
-      @group.projects.order(:position)
+    projects = if @group && @group.persisted?
+      @group.projects.order(:position).index_by(&:id)
     else
-      @category.projects
+      @category.projects.index_by(&:id)
     end
 
-    if @projects
-      @projects.each_with_index do |pr, n|
-        @projects[n] = pr.parent if pr.parent
+    found_parents = []
+    @projects = []
+    if projects
+      projects.each do |id, pr|
+        if pr.parent
+          unless projects[pr.project_id] || found_parents.include?(pr.project_id)
+            @projects << pr.parent
+            found_parents << pr.project_id
+          end
+        else
+          @projects << pr
+        end
       end
     end
   end
