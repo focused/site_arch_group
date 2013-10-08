@@ -76,8 +76,11 @@ activerecord:
       important: важный
       picture: изображение
       position: порядок
+      parent: ссылка на проект
+      project_id: ссылка на проект (Id)
       project_groups: разделы
       project_items: превью
+      project_links: копии по ссылке
       title_en: заголовок (en)
       title_ru: заголовок (ru)
       vertical: вертикальное изображение

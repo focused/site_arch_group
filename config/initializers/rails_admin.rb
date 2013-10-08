@@ -1,9 +1,41 @@
 # RailsAdmin config file. Generated on July 23, 2013 00:32
 # See github.com/sferik/rails_admin for more informations
 
+require 'rails_admin_extension'
+
 
 RailsAdmin.config do |config|
 
+  # module RailsAdmin
+  #   module Config
+  #     module Actions
+  #       class CloneByLink < RailsAdmin::Config::Actions::Base
+  #         RailsAdmin::Config::Actions.register(self)
+  #       end
+  #     end
+  #   end
+  # end
+
+  config.actions do
+    # root actions
+    dashboard                     # mandatory
+    # collection actions
+    index                         # mandatory
+    new
+    export
+    history_index
+    bulk_delete
+    # member actions
+    show
+    edit
+    delete
+    # history_show
+    show_in_app
+    # clone_by_link
+    clone_by_link do
+      only Project # no other model will have the `index` action visible.
+    end
+  end
 
   ################  Global configuration  ################
 
@@ -168,21 +200,43 @@ RailsAdmin.config do |config|
     end
   end
 
+  def project_parent_link(value)
+    return '-' unless value
+    h = bindings[:view]
+    h.link_to(value.title, h.rails_admin.show_path(:project, value.id))
+  end
+
+  def project_visible_field
+    model = bindings[:object]
+    return true unless model.parent
+    !model.parent.present?
+  end
+
   config.model 'Project' do
     label I18n.t('admin.menu.project')
     label_plural I18n.t('admin.menu.projects')
     navigation_icon 'icon-chevron-right'
     weight 201
     list do
-      field :picture
+      field :picture do
+        visible { project_visible_field }
+      end
       field :title_ru
-      field :title_en
+      # field :title_en
       field :project_groups do
         inverse_of :projects
         sortable :project_category_id
+        visible { project_visible_field }
       end
-      field :finished
-      field :important
+      field :finished do
+        visible { project_visible_field }
+      end
+      field :important do
+        visible { project_visible_field }
+      end
+      field :parent do
+        pretty_value { project_parent_link(value) }
+      end
       field :position
       sort_by :position
       field :created_at
@@ -190,31 +244,77 @@ RailsAdmin.config do |config|
     end
     edit do
       field :title_ru
-      field :title_en
+      field :title_en do
+        visible { project_visible_field }
+      end
+      field :parent do
+        read_only true
+        formatted_value { project_parent_link(value) }
+        visible { value.present? }
+      end
+      # field :project_links
       field :project_groups do
         inverse_of :projects
         sortable :project_category_id
       end
-      field :picture
-      field :finished
-      field :important
-      field :vertical
-      field :content_ru, :ck_editor
-      field :content_en, :ck_editor
+      field :picture do
+        visible { project_visible_field }
+      end
+      field :finished do
+        visible { project_visible_field }
+      end
+      field :important do
+        visible { project_visible_field }
+      end
+      field :vertical do
+        visible { project_visible_field }
+      end
+      field :content_ru, :ck_editor do
+        visible { project_visible_field }
+      end
+      field :content_en, :ck_editor do
+        visible { project_visible_field }
+      end
       field :position
-      field :project_items
+      field :project_items do
+        visible { project_visible_field }
+      end
     end
     show do
       field :title_ru
-      field :title_en
-      field :project_groups
-      field :picture
-      field :finished
-      field :important
-      field :vertical
-      field :content_ru
-      field :content_en
-      field :project_items
+      field :title_en do
+        visible { project_visible_field }
+      end
+      field :parent do
+        pretty_value { project_parent_link(value) }
+      end
+      field :project_links do
+        visible { project_visible_field }
+      end
+      field :project_groups do
+        visible { project_visible_field }
+      end
+      field :picture do
+        visible { project_visible_field }
+      end
+      field :finished do
+        visible { project_visible_field }
+      end
+      field :important do
+        visible { project_visible_field }
+      end
+      field :vertical do
+        visible { project_visible_field }
+      end
+      field :content_ru do
+        visible { project_visible_field }
+      end
+      field :content_en do
+        visible { project_visible_field }
+      end
+      field :project_items do
+        visible { project_visible_field }
+      end
       field :created_at
       field :updated_at
     end
@@ -502,7 +602,6 @@ RailsAdmin.config do |config|
       field :updated_at
     end
   end
-
 
   ###  News  ###
 

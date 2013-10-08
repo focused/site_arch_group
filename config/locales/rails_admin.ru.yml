@@ -95,6 +95,10 @@ ru:
         title: "История для %{model_label} '%{object_label}'"
         menu: "История"
         breadcrumb: "история"
+      clone_by_link:
+        title: "Копия по ссылке"
+        menu: "Копия по ссылке"
+        breadcrumb: "копия по ссылке"
     form:
       cancel: "Отмена"
       basic_info: "Основное"

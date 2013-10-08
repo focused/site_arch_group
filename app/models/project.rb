@@ -7,7 +7,7 @@ class Project < ActiveRecord::Base
   end
 
   mount_uploader :picture, ProjectPictureUploader
-  validates_presence_of :picture
+  validates_presence_of :picture, unless: -> { project_id.present? }
 
   validate :title_ru, length: { max: 255 }
   validate :title_en, length: { max: 255 }
@@ -16,6 +16,9 @@ class Project < ActiveRecord::Base
   has_and_belongs_to_many :project_groups, uniq: true
   has_many :project_items, inverse_of: :project
   accepts_nested_attributes_for :project_items, allow_destroy: true
+
+  belongs_to :parent, class_name: 'Project', foreign_key: 'project_id', inverse_of: :project_links
+  has_many :project_links, class_name: 'Project', inverse_of: :parent
 
   def main_item
     items.first
@@ -31,6 +34,11 @@ class Project < ActiveRecord::Base
 
   after_save :recreate_delayed_versions!
   def recreate_delayed_versions!
+    return unless picture.present?
     picture.recreate_versions!(:item)
   end
+
+  # def to_s
+
+  # end
 end
