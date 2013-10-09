@@ -1,6 +1,7 @@
 %meta{ charset: Rails.application.config.encoding }
 %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=Edge,chrome=1' }
 %meta{ name: 'viewport', content: 'width=device-width' }
+= favicon_link_tag '/favicon.png', rel: 'icon', type: 'image/x-icon'
 
 -# if respond_to? :display_meta_tags
 = display_meta_tags(reverse: true, separator: '-')
