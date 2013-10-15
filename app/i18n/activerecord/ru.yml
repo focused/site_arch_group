@@ -18,6 +18,8 @@ activerecord:
 
     award:
       created_at: создана
+      content_en: текст (en)
+      content_ru: текст (ru)
       picture: изображение
       position: порядок
       updated_at: изменена

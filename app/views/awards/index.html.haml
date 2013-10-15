@@ -10,6 +10,10 @@
         -#%span.zoom
         = link_to '', @award.picture.url, class: 'fancybox'
 
+    .clear
+    %br
+    = raw @award.content
+
   .right_column.articles
     %ul
       - @awards.each do |award|

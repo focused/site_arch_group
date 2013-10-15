@@ -457,9 +457,13 @@ RailsAdmin.config do |config|
     edit do
       field :picture
       field :position
+      field :content_ru, :ck_editor
+      field :content_en, :ck_editor
     end
     show do
       field :picture
+      field :content_ru
+      field :content_en
       field :created_at
       field :updated_at
     end
