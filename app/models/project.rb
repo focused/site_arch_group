@@ -2,17 +2,18 @@ class Project < ActiveRecord::Base
   include R18n::Translated
   translations :title, :content
   before_save do
+    self.title_ru = parent.title_ru if parent
     self.title_en = nil if title_en.blank?
     self.content_en = nil if content_en.blank?
     self.project_category = project_group.project_category
   end
 
   mount_uploader :picture, ProjectPictureUploader
-  validates_presence_of :picture, unless: -> { project_id.present? }
+  validates_presence_of :picture, unless: -> m { p "==#{m.project_id}=="; m.project_id.present? }
 
   validate :title_ru, length: { max: 255 }
   validate :title_en, length: { max: 255 }
-  validates_presence_of :title_ru
+  validates_presence_of :title_ru, unless: -> m { m.project_id.present? }
 
   belongs_to :project_group, inverse_of: :projects
   belongs_to :project_category, inverse_of: :projects

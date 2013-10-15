@@ -235,9 +235,6 @@ RailsAdmin.config do |config|
         pretty_value { project_parent_link_a(value) }
       end
       # field :title_en
-      # field :parent do
-      #   pretty_value { project_parent_link(value) }
-      # end
       field :project_category do
         # inverse_of :projects
         sortable :position
@@ -270,9 +267,9 @@ RailsAdmin.config do |config|
       end
       field :position
       field :parent do
-        read_only true
-        formatted_value { project_parent_link(value) }
-        visible { value.present? }
+        # read_only true
+        # formatted_value { project_parent_link(value) }
+        # visible { value.present? }
       end
       # field :project_links
       field :project_group do
