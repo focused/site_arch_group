@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
   before_save do
     self.title_en = nil if title_en.blank?
     self.content_en = nil if content_en.blank?
+    self.project_category = project_group.project_category
   end
 
   mount_uploader :picture, ProjectPictureUploader
@@ -14,6 +15,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :title_ru
 
   belongs_to :project_group, inverse_of: :projects
+  belongs_to :project_category, inverse_of: :projects
 
   has_many :project_items, inverse_of: :project
   accepts_nested_attributes_for :project_items, allow_destroy: true

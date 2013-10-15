@@ -238,16 +238,23 @@ RailsAdmin.config do |config|
       # field :parent do
       #   pretty_value { project_parent_link(value) }
       # end
+      field :project_category do
+        # inverse_of :projects
+        sortable :position
+        visible false
+        searchable [:title_ru, :id]
+        # sort_reverse false
+      end
       field :project_group do
         # inverse_of :projects
-        sortable :project_category_id
-        visible { project_visible_field }
+        sortable 'project_groups.project_category_id'
+        # visible { project_visible_field }
         searchable [:title_ru, :id]
         # sort_reverse false
       end
       # field :project_category_name
       field :position
-      sort_by "project_group_id, projects.position"
+      sort_by "project_category_id, projects.position"
       sort_reverse false
       field :finished
       field :important
@@ -270,6 +277,8 @@ RailsAdmin.config do |config|
       # field :project_links
       field :project_group do
         # inverse_of :projects
+        # read_only true
+        # formatted_value { value.id }
         sortable :project_category_id
       end
       field :picture do
@@ -308,6 +317,7 @@ RailsAdmin.config do |config|
       field :project_links do
         visible { project_visible_field }
       end
+      field :project_category
       field :project_group
       # field :project_category_name
       field :picture do
@@ -371,7 +381,7 @@ RailsAdmin.config do |config|
     label_plural I18n.t('admin.menu.project_groups')
     navigation_icon 'icon-chevron-right'
     weight 203
-    object_label_method :name
+    # object_label_method :name
     list do
       field :name
       field :project_category do

@@ -6,10 +6,10 @@
       - @project_categories.each do |pc|
         %li
           .wrap
-            - if pc.projects
-              - pc.projects.each do |pr|
+            - if pc.filtered_projects
+              - pc.filtered_projects.each do |pr|
                 -#%span{ class: f_class[pr] }
-                - pr = pr.parent if pr.parent
+                -# pr = pr.parent if pr.parent
                 = link_to project_path(pr.id), class: f_class[pr] do
                   - if pr.picture
                     = image_tag image_url(pr.picture.index_item.url)

@@ -14,8 +14,32 @@ class ProjectGroup < ActiveRecord::Base
   has_many :projects, inverse_of: :project_group #, uniq: true
   accepts_nested_attributes_for :projects, allow_destroy: true
 
+  # def name_a
+  #   "#{ title_ru } (#{ id })"
+  # end
+
+  def filtered_projects
+    found_parents = []
+    ar = []
+
+    projects.order('projects.position').distinct.index_by(&:id).each do |id, pr|
+      if pr.parent
+        unless found_parents.include?(pr.project_id)
+          ar << pr.parent
+          found_parents << pr.project_id
+        end
+      elsif found_parents.exclude?(id)
+        ar << pr
+      end
+    end
+
+    ar
+  end
+
   def name
-    s = [project_category.try(:title_ru), title_ru].reject(&:blank?).join(' -> ')
-    s << " (#{ id })"
+    s = [
+      project_category ? "#{ project_category.title_ru } (#{ project_category.id })" : nil,
+      "#{ title_ru } (#{ id })"
+    ].join(' -> ')
   end
 end

@@ -15,25 +15,10 @@ class ProjectsController < SiteController
       @category.groups.first
     end
 
-    projects = if @group && @group.persisted?
-      @group.projects.order(:position).index_by(&:id)
+    @projects = if @group && @group.persisted?
+      @group.filtered_projects
     else
-      @category.projects.index_by(&:id)
-    end
-
-    found_parents = []
-    @projects = []
-    if projects
-      projects.each do |id, pr|
-        if pr.parent
-          unless projects[pr.project_id] || found_parents.include?(pr.project_id)
-            @projects << pr.parent
-            found_parents << pr.project_id
-          end
-        else
-          @projects << pr
-        end
-      end
+      @category.filtered_projects
     end
   end
 

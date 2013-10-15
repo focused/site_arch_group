@@ -80,6 +80,7 @@ activerecord:
       parent: ссылка на проект
       project_id: ссылка на проект (Id)
       project_group: раздел
+      project_category: рубрика
       project_items: превью
       project_links: копии по ссылке
       title_en: заголовок (en)
