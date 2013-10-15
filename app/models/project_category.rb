@@ -54,6 +54,7 @@ class ProjectCategory < ActiveRecord::Base
         end
       elsif found_parents.exclude?(id)
         ar << pr
+        found_parents << id
       end
     end
 

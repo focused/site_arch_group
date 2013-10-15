@@ -2,7 +2,10 @@ class Project < ActiveRecord::Base
   include R18n::Translated
   translations :title, :content
   before_save do
-    self.title_ru = parent.title_ru if parent
+    if parent
+      self.title_ru = parent.title_ru
+      self.position ||= parent.position
+    end
     self.title_en = nil if title_en.blank?
     self.content_en = nil if content_en.blank?
     self.project_category = project_group.project_category
