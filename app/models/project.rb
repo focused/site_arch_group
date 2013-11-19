@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
     end
     self.title_en = nil if title_en.blank?
     self.content_en = nil if content_en.blank?
-    self.project_category = project_group.project_category
+    self.project_category = project_group.project_category if project_group
   end
 
   mount_uploader :picture, ProjectPictureUploader

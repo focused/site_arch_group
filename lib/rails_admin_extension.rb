@@ -24,14 +24,18 @@ module RailsAdmin
 
         register_instance_option :controller do
          proc do
-           new_object = Project.new(title_ru: @object.title_ru, project_id: @object.id)
-           @object = new_object
-           # flash[:notice] = "You have approved the review titled: #{@object.title}."
+          new_object = Project.new(
+            title_ru: @object.title_ru,
+            project_id: @object.id,
+            position: @object.position
+          )
+          @object = new_object
+          # flash[:notice] = "You have approved the review titled: #{@object.title}."
 
-           respond_to do |format|
-              format.json { render json: @object }
-              format.html { render :new }
-            end
+          respond_to do |format|
+            format.json { render json: @object }
+            format.html { render :new }
+          end
          end
        end
       end
