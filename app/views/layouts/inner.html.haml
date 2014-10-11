@@ -1,6 +1,8 @@
 !!!
 %html{ lang: r18n.locale.code }
-  %head= render 'layouts/html_head'
+  %head
+    = render 'layouts/html_head'
+    = yield :head_extra
 
   %body.inner{ id: "#{ controller_name }_controller" }
     .global_wrap

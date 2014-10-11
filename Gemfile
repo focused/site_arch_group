@@ -40,7 +40,7 @@ gem 'unicorn'
 
 group :development do
   gem 'capistrano', "~> 2.15.4"
-  gem 'capistrano-recipes', git: 'https://github.com/auxilium/capistrano-recipes.git'
+  # gem 'capistrano-recipes', git: 'https://github.com/auxilium/capistrano-recipes.git'
   # gem 'puma'
   # gem 'rack-mini-profiler'
 end

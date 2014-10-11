@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/auxilium/capistrano-recipes.git
-  revision: 52ffbfa410467c5ed78b1a20b8ef1d70a6e15b3f
-  specs:
-    capistrano-recipes (0.1.1)
-      capistrano (>= 2.13.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -226,7 +219,6 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (~> 2.15.4)
-  capistrano-recipes!
   carrierwave
   ckeditor
   coffee-rails (~> 4.0.0)

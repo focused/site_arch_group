@@ -7,6 +7,16 @@
 
     = raw @project.content
 
+    - social_img_url = @project.try(:main_item).try(:picture).try(:main).try(:url)
+
+    = content_for :head_extra do
+      %link{ rel: "image_src", href: "#{social_img_url}" }
+
+      %meta{ name: "og:type", content: "website" }
+      %meta{ name: "og:image", content: "#{social_img_url}" }
+      %meta{ name: "og:title", content: "#{@project.title}" }
+      %meta{ name: "og:description", content: "#{strip_tags @project.content}" }
+      %meta{ name: "og:url", content: "#{request.url}" }
 
     .social_buttons
       .social_item
