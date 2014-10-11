@@ -28,6 +28,12 @@
       .bg {
         opacity: 0;
       }
+      .social_buttons {
+        .social_item {
+          float: left;
+          margin-right: 15px;
+        }
+      }
     }
     .right_column {
       overflow: visible;

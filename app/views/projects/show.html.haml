@@ -8,6 +8,25 @@
     = raw @project.content
 
 
+    .social_buttons
+      .social_item
+        #fb-root
+        %script
+          = raw "(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = '//connect.facebook.net/#{r18n.locale.code}/sdk.js#xfbml=1&version=v2.0';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));"
+        .fb-share-button{ data: { layout: "button_count" } }
+
+      .social_item
+        %script{ src: "http://vk.com/js/api/share.js?90", charset: "windows-1251" }
+        %script
+          = raw "document.write(VK.Share.button(false,{type: 'round', text: '#{t.social.buttons.vk}'}));"
+
+      .social_item
+        %a{ href: "https://twitter.com/share", class: "twitter-share-button", data: { lang: r18n.locale.code, size: "small"} }
+          = t.social.buttons.tweet
+        %script
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+
   .right_column
     %ul
       - @project.items.each_with_index do |item, i|

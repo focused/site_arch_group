@@ -96,7 +96,7 @@ GEM
       activesupport (>= 3.0.0)
     kgio (2.8.0)
     kramdown (1.1.0)
-    libv8 (3.11.8.17)
+    libv8 (3.16.14.7)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -121,8 +121,6 @@ GEM
     orm_adapter (0.4.0)
     pg (0.16.0)
     polyglot (0.3.3)
-    puma (2.4.1)
-      rack (>= 1.1, < 2.0)
     r18n-core (1.1.5)
     r18n-rails (1.1.5)
       r18n-rails-api (= 1.1.5)
@@ -202,8 +200,8 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     subexec (0.2.3)
-    therubyracer (0.11.4)
-      libv8 (~> 3.11.8.12)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
       ref
     thor (0.18.1)
     thread_safe (0.1.2)
@@ -227,7 +225,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano
+  capistrano (~> 2.15.4)
   capistrano-recipes!
   carrierwave
   ckeditor
@@ -240,7 +238,6 @@ DEPENDENCIES
   meta-tags (= 1.2.4)
   mini_magick
   pg
-  puma
   r18n-rails
   rails (= 4.0.0)
   rails_admin

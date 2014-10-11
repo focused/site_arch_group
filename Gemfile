@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', group: "production"
 
 # Use jquery as the JavaScript library
 # gem 'jquery-rails'
@@ -39,9 +39,9 @@ end
 gem 'unicorn'
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', "~> 2.15.4"
   gem 'capistrano-recipes', git: 'https://github.com/auxilium/capistrano-recipes.git'
-  gem 'puma'
+  # gem 'puma'
   # gem 'rack-mini-profiler'
 end
 

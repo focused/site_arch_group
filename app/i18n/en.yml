@@ -41,6 +41,12 @@ projects:
   show:
     title: ''
 
+social:
+  buttons:
+    facebook: Share
+    tweet: Tweet
+    vk: Share
+
 web_documents:
   about:
     title: Company
