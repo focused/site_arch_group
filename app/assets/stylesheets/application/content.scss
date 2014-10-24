@@ -83,3 +83,11 @@ ul.entries {
     }
   }
 }
+
+// does not work
+// .social_buttons a {
+//   text-decoration: none !important;
+//   &:hover {
+//     text-decoration: none !important;
+//   }
+// }
