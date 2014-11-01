@@ -111,6 +111,12 @@ section#top_links {
   }
 }
 
+section#top_share_links {
+  position: absolute;
+  right: 6.7%;
+  top: 120px;
+}
+
 #top_menu {
   @include inner_content;
   height: 27px;
