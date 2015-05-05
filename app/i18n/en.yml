@@ -60,3 +60,5 @@ web_documents:
     all_news: All news
     latest: Top projects
     title: ''
+  international:
+    title: Arch Group International

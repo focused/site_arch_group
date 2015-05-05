@@ -60,5 +60,7 @@ web_documents:
     all_news: Все новости
     latest: Самое новое
     title: ''
+  international:
+    title: Arch Group International
 
 
