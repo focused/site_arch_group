@@ -1,6 +1,10 @@
 window.App ||= {}
 
 $ ->
+  displayTopShareLinks()
+  $(window).scroll displayTopShareLinks
+  $(window).resize displayTopShareLinks
+
   # Fades in project previews.
   $('#projects_index ul li').on 'mousemove', 'a', (e)->
     return if $('#main_menu li .wrap [data-overlay=object]:visible').length > 0
@@ -42,6 +46,12 @@ $ ->
 
 hideProjectPreview = ($el)->
   $el.hide()
+
+displayTopShareLinks = ->
+  if $(window).scrollTop() > 35
+    $("#top_share_links").hide()
+  else
+    $("#top_share_links").show()
 
 App.initFancybox = ->
   $('a.fancybox').fancybox({
