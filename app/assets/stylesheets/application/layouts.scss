@@ -243,6 +243,9 @@ body.inner {
 }
 
 .home {
+  #content {
+    border-top: 1px solid black;
+  }
   .right_column {
     float: right;
   }
@@ -265,5 +268,6 @@ body.inner {
 
 
 .event_date {
-  color: #888
+  color: #888;
+  // margin: 0 0 10px;
 }

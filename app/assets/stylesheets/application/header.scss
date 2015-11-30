@@ -120,7 +120,7 @@ section#top_share_links {
 #top_menu {
   @include inner_content;
   height: 27px;
-  background: #f6a41f;
+  // background: #f6a41f;
   ul {
     padding: 0 $h_pad * 100%;
     font-family: $title_font;

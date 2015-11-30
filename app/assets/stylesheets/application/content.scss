@@ -12,15 +12,32 @@ p {
 
 ul.news {
   list-style: none;
-  margin: 0;
+  margin: 40px 0;
   padding: 0;
+  max-width: 768px;
   li {
     font-size: 14.5px;
-    margin: 0 0 20px;
+    margin: 0 0 40px;
     p {
       margin: 0 0 10px;
       font-size: 14.5px;
       line-height: 16.5px;
+    }
+  }
+}
+
+.home ul.news {
+  li {
+    padding-right: 145px;
+    position: relative;
+    p {
+    }
+    .image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 132px;
+      text-align: left;
     }
   }
 }
