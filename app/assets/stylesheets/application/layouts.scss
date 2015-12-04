@@ -257,9 +257,11 @@ body.inner {
     }
   }
 }
-
-#content {
+.stripe {
   border-top: 1px solid black;
+  clear: both;
+}
+#content {
   padding-top: 10px;
 }
 .home {
