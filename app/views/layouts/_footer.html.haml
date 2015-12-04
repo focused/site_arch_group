@@ -43,6 +43,6 @@
         %img{:alt => "", :src => "//mc.yandex.ru/watch/196935"}/
     / Yandex.Metrika
 
-
   .contacts
     = @layout_doc.section(:contacts).try(:content) if @layout_doc
+    .social= @layout_doc.section(:social).try(:content) if @layout_doc

@@ -18,7 +18,7 @@
     = image_tag @doc.section('left_column').picture.url, class: 'bg'
 
 
-.right_column.no_pad
+.right_column
   = link_to t('.all_news'), news_index_path, class: 'all'
   .clear
   %ul.news

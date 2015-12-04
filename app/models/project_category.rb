@@ -41,6 +41,10 @@ class ProjectCategory < ActiveRecord::Base
   #   end
   #   ar
   # end
+  #
+  def self.all_group
+    ProjectGroup.new(title: I18n.t('helpers.labels.all'))
+  end
 
   def filtered_projects
     found_parents = []
@@ -62,8 +66,7 @@ class ProjectCategory < ActiveRecord::Base
   end
 
   def groups
-    all_group = ProjectGroup.new(title: I18n.t('helpers.labels.all'))
-    [all_group] + project_groups
+    [self.class.all_group] + project_groups
   end
 
   def name

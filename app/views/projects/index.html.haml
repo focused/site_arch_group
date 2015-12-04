@@ -1,7 +1,10 @@
 .full
   - if @group
     #project_groups_menu{ data: { overlay: 'container' } }
-      = link_to @group.title, projects_path(group: @group), data: { overlay: 'switcher' }
+      - if @group.persisted?
+        = link_to @group.title, projects_path(group: @group), data: { overlay: 'switcher' }
+      - else
+        = link_to t('helpers.labels.choose_group'), projects_path(group: nil), data: { overlay: 'switcher' }
 
       %ul{ data: { overlay: 'object' } }
         - @category.groups.each do |g|

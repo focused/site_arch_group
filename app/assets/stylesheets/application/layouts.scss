@@ -17,21 +17,21 @@ body.inner {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    a.logo {
-      top: 0;
-    }
+    // a.logo {
+    //   top: 0;
+    // }
     nav {
-      height: 53px;
+      // height: 53px;
     }
     ul#main_menu {
-      top: 23px;
+      // top: 23px;
     }
   }
   section#top_links {
-    top: 22px;
+    // top: 22px;
   }
   #projects_index {
-    padding-top: 81px;
+    padding-top: 97px;
   }
 }
 
@@ -60,6 +60,22 @@ body.inner {
     }
     .contacts {
       float: right;
+      font-family: verdana,geneva,sans-serif;
+      padding-bottom: 15px;
+      p {
+        font-size: 14px;
+      }
+      .social {
+        a {
+          display: block;
+          float: left;
+          width: 17px;
+          margin-right: 10px;
+          img {
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 }
@@ -151,10 +167,10 @@ body.inner {
     }
     .all {
       display: inline-block;
-      float: right;
+      float: left;
       text-align: right;
       margin-bottom: 15px;
-      color: #d67400;
+      // color: #d67400;
     }
     ul {
       margin: 0;
@@ -242,12 +258,16 @@ body.inner {
   }
 }
 
+#content {
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
 .home {
-  #content {
-    border-top: 1px solid black;
-  }
   .right_column {
     float: right;
+  }
+  #content {
+    padding-top: 0;
   }
 }
 

@@ -2,8 +2,6 @@
   %nav
     = link_to '', root_path, class: 'logo'
     %ul#main_menu
-      %li= link_to t.main_menu.contacts, web_path(:contacts)
-      %li= link_to t.main_menu.clients, web_path(:clients)
       %li#main_menu_pro.submenu{ data: { overlay: 'container' } }
         .wrap
           = link_to t.main_menu.about, '', data: { overlay: 'switcher' }
@@ -14,9 +12,11 @@
             %li= link_to t.main_menu.awards, awards_path
             %li= link_to t.main_menu.international, web_path(:international)
             -#%li= link_to 'Пресс-пакеты', '#'
+      %li= link_to t.main_menu.clients, web_path(:clients)
+      %li= link_to t.main_menu.contacts, web_path(:contacts)
 
   %section#top_links
-    .social
+    -#.social
       = @layout_doc.section(:social).try(:content) if @layout_doc
       =# link_to '', '#', class: 'vkontakte'
       =# link_to '', '#', class: 'facebook'
@@ -37,4 +37,3 @@
       - @project_categories.each do |pc|
         %li{ class: (params[:category].to_i == pc.id) ? 'active' : '' }
           .wrap= link_to pc.title, projects_path(category: pc)
-

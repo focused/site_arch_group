@@ -15,6 +15,7 @@ awards:
 helpers:
   labels:
     all: все
+    choose_group: выбрать категорию
     real_size: посмотреть в реальном размере
 
 main_menu:
@@ -62,5 +63,3 @@ web_documents:
     title: ''
   international:
     title: Arch Group International
-
-
