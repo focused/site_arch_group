@@ -34,7 +34,7 @@ header {
 ul#main_menu {
   position: absolute;
   // right: 190px;
-  right: 11%;
+  right: 0;
   top: 35px;
   margin: 0;
   list-style: none;
@@ -86,8 +86,9 @@ ul#main_menu {
 
 section#top_links {
   position: absolute;
-  top: 34px;
-  right: $h_pad * 100%;
+  top: 12px;
+  right: 14px;
+  // right: $h_pad * 100%;
   a {
     font-weight: bold;
   }

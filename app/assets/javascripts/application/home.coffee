@@ -11,7 +11,7 @@ initSlideshow = ->
   $('.gallery_item:not(.active) img').hide().css('visibility', 'visible')
   setInterval(->
       changeSlide()
-    , 15000)
+    , 8000)
 
 changeSlide = ->
   prev_index = Slideshow.current
