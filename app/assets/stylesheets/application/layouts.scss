@@ -50,6 +50,7 @@ body.inner {
   line-height: 15.5px;
   height: 110px;
   margin-top: -150px;
+  position: relative;
   a {
     color: #04b;
   }
@@ -69,7 +70,7 @@ body.inner {
         a {
           display: block;
           float: left;
-          width: 17px;
+          width: 16px;
           margin-right: 10px;
           img {
             display: inline-block;
